@@ -48,8 +48,22 @@ class DukeSampleApp extends Application.AppBase {
 
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]
+    // class TestView extends WatchUi.View {
+    //     function initialize(){
+    //         WatchUi.View.initialize();
+    //     }
+    //     function onUpdate(dc){
+    //         dc.drawText(10, 80, Graphics.FONT_LARGE, "HELLO", 0);
+    //     }
+
+    // }
     public function getInitialView() as [Views] or [Views, InputDelegates] {
-        return _viewController.getInitialView();
+        
+        return [new AlarmFlowView() ];
+
+        //return [view] as [WatchUi.View, WatchUi.InputDelegate];
+
+        //return _viewController.getInitialView();
     }
 
 }
