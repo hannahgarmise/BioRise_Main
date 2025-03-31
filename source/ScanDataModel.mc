@@ -101,4 +101,6 @@ class ScanDataModel {
     public function isScanning() as Boolean {
         return _scanState == BluetoothLowEnergy.SCAN_STATE_SCANNING;
     }
+
 }
+
