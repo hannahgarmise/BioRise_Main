@@ -19,10 +19,17 @@ class ViewController {
 
     //! Return the initial views for the app
     //! @return Array Pair [View, InputDelegate]
-    public function getInitialView() as [ScanView] or [ScanView, ScanDelegate] {
-        var scanDataModel = _modelFactory.getScanDataModel();
+    
+    public function getInitialView() as [Views, InputDelegates] {
+        /*
+    var model = new $.AlarmDataModel();
+    var view = new $.AlarmFlowView(model);
+    var delegate = new $.AlarmDelegate(model, self);
+    return [view, delegate];
 
-        return [new $.ScanView(scanDataModel), new $.ScanDelegate(scanDataModel, self)];
+    */
+    var AlarmDataModel = _modelFactory.getAlarmDataModel();
+    return [new $.AlarmFlowView(AlarmDataModel), new $.AlarmDelegate(AlarmFlowView, AlarmDataModel, self)];
     }
 
     //! Push the scan menu view (hold menu button to push this view)

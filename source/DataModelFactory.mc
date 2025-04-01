@@ -11,6 +11,7 @@ import Toybox.WatchUi;
 class DataModelFactory {
     // Dependencies
     private var _delegate as BluetoothDelegate;
+    //private var _alarmdelegate as AlarmDelegate;
     private var _profileManager as ProfileManager;
     private var _phoneCommunication as PhoneCommunication;
 
@@ -18,6 +19,7 @@ class DataModelFactory {
     private var _scanDataModel as WeakReference?;
     private var _deviceDataModel as WeakReference?;
     private var _envModel as WeakReference?;
+    private var _alarmDataModel as WeakReference?;
 
     //! Constructor
     //! @param delegate The BLE delegate to use for the models
@@ -40,6 +42,20 @@ class DataModelFactory {
 
         var dataModel = new $.ScanDataModel(_delegate);
         _scanDataModel = dataModel.weak();
+
+        return dataModel;
+    }
+
+    public function getAlarmDataModel() as AlarmDataModel{
+        var alarmDataModel = _alarmDataModel;
+        if (alarmDataModel != null) {
+            if (alarmDataModel.stillAlive()) {
+                return (alarmDataModel.get() as AlarmDataModel);
+            }
+        }
+
+        var dataModel = new $.AlarmDataModel();
+        _alarmDataModel = dataModel.weak();
 
         return dataModel;
     }

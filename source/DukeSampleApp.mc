@@ -59,11 +59,11 @@ class DukeSampleApp extends Application.AppBase {
     // }
     public function getInitialView() as [Views] or [Views, InputDelegates] {
         
-        return [new AlarmFlowView() ];
+        //return [new AlarmFlowView() ];
 
         //return [view] as [WatchUi.View, WatchUi.InputDelegate];
 
-        //return _viewController.getInitialView();
+        return _viewController.getInitialView();
     }
 
 }
