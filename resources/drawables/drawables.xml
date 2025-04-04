@@ -5,4 +5,6 @@
     <bitmap id="LeafInd" filename="ic_leaf_24pt.png" />
     <bitmap id="PressureInd" filename="ic_pressure_24pt.png" />
     <bitmap id="TempInd" filename="ic_temp_24pt.png" />
+
+
 </drawables>

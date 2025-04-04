@@ -1,7 +1,4 @@
-<strings>
-    <string id="AppName">Duke Sample App</string>
-    <string id="menu_label_1">Start Scanning</string>
-    <string id="menu_label_2">Stop Scanning</string>
+<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
     <!-- Application -->
     <string id="appName">Picker</string>
     <!-- Main View -->
@@ -42,4 +39,4 @@
     <string id="month12">Dec</string>
     <!-- CharacterFactory -->
     <string id="characterPickerOk">OK</string>
-</strings>
+</resources>
