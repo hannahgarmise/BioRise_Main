@@ -31,6 +31,7 @@ class PickerView extends WatchUi.View {
         var string = findDrawableById("string") as Text;
         var date = findDrawableById("date") as Text;
         var time = findDrawableById("time") as Text;
+        var time2 = findDrawableById("time2") as Text;
 
         var prop = Storage.getValue("string");
         if (prop instanceof String) {
@@ -45,6 +46,11 @@ class PickerView extends WatchUi.View {
         prop = Storage.getValue("time");
         if (prop instanceof String) {
             time.setText(prop);
+        }
+
+        prop = Storage.getValue("time2");
+        if (prop instanceof String) {
+            time2.setText(prop);
         }
 
         // set the color of each Text object

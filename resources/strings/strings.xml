@@ -16,10 +16,12 @@
     <string id="pickerChooserDate">Date</string>
     <string id="pickerChooserString">String</string>
     <string id="pickerChooserLayout">Layout</string>
+    <string id="pickerChooserSecondTime">Second Time</string>
     <!-- Color Picker -->
     <string id="colorPickerTitle">Pick a color</string>
     <!-- Time Picker -->
-    <string id="timePickerTitle">Pick a time of day</string>
+    <string id="timePickerTitle">Set Lower Alarm:</string>
+    <string id="timePickerTitle2">Set Upper Alarm:</string>
     <string id="timeSeparator">:</string>
     <string id="morning">AM</string>
     <string id="afternoon">PM</string>

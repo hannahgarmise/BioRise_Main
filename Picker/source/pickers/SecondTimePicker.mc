@@ -10,16 +10,12 @@ import Toybox.Lang;
 import Toybox.System;
 import Toybox.WatchUi;
 
-const FACTORY_COUNT_24_HOUR = 3;
-const FACTORY_COUNT_12_HOUR = 4;
-const MINUTE_FORMAT = "%02d";
-
 //! Picker that allows the user to choose a time
-class TimePicker extends WatchUi.Picker {
+class SecondTimePicker extends WatchUi.Picker {
 
     //! Constructor
     public function initialize() {
-        var title = new WatchUi.Text({:text=>$.Rez.Strings.timePickerTitle, :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
+        var title = new WatchUi.Text({:text=>$.Rez.Strings.timePickerTitle2, :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
             :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM, :color=>Graphics.COLOR_WHITE, :font=>Graphics.FONT_XTINY});
         var factories;
 
@@ -98,7 +94,7 @@ class TimePicker extends WatchUi.Picker {
     //! @param factoryCount Number of factories used to make the time
     //! @return Array with the stored time
     private function splitStoredTime(factoryCount as Number) as Array<String>? {
-        var storedValue = Storage.getValue("time");
+        var storedValue = Storage.getValue("time2");
         var defaults = null;
         var separatorIndex = 0;
 
@@ -131,7 +127,7 @@ class TimePicker extends WatchUi.Picker {
 }
 
 //! Responds to a time picker selection or cancellation
-class TimePickerDelegate extends WatchUi.PickerDelegate {
+class SecondTimePickerDelegate extends WatchUi.PickerDelegate {
 
     //! Constructor
     public function initialize() {
@@ -160,9 +156,9 @@ class TimePickerDelegate extends WatchUi.PickerDelegate {
                 time += " " + WatchUi.loadResource(dayPart as ResourceId);
             }
         }
-        Storage.setValue("time", time);
+        Storage.setValue("time2", time);
 
-        WatchUi.pushView(new $.SecondTimePicker(), new $.SecondTimePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
 

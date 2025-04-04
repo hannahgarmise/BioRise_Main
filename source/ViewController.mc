@@ -21,6 +21,8 @@ class ViewController {
     //! @return Array Pair [View, InputDelegate]
     
     public function getInitialView() as [Views, InputDelegates] {
+
+        return [new TimePicker(), new TimePickerDelegate()];
         /*
     var model = new $.AlarmDataModel();
     var view = new $.AlarmFlowView(model);
@@ -28,8 +30,10 @@ class ViewController {
     return [view, delegate];
 
     */
+    /*
     var AlarmDataModel = _modelFactory.getAlarmDataModel();
     return [new $.AlarmFlowView(AlarmDataModel), new $.AlarmDelegate(AlarmFlowView, AlarmDataModel, self)];
+    */
     }
 
     //! Push the scan menu view (hold menu button to push this view)

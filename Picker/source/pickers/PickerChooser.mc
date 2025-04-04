@@ -16,7 +16,7 @@ class PickerChooser extends WatchUi.Picker {
         var title = new WatchUi.Text({:text=>$.Rez.Strings.pickerChooserTitle, :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
             :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM, :color=>Graphics.COLOR_WHITE});
         var factory = new $.WordFactory([$.Rez.Strings.pickerChooserColor, $.Rez.Strings.pickerChooserDate,
-            $.Rez.Strings.pickerChooserString, $.Rez.Strings.pickerChooserTime, $.Rez.Strings.pickerChooserLayout],
+            $.Rez.Strings.pickerChooserString, $.Rez.Strings.pickerChooserTime, $.Rez.Strings.pickerChooserLayout, $.Rez.Strings.pickerChooserSecondTime],
             {:font=>Graphics.FONT_MEDIUM});
         Picker.initialize({:title=>title, :pattern=>[factory]});
     }
@@ -60,6 +60,8 @@ class PickerChooserDelegate extends WatchUi.PickerDelegate {
             WatchUi.pushView(new $.TimePicker(), new $.TimePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
         } else if (values[0] == $.Rez.Strings.pickerChooserLayout) {
             WatchUi.pushView(new $.LayoutPicker(), new $.LayoutPickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
+        } else if (values[0] == $.Rez.Strings.pickerChooserSecondTime) {
+            WatchUi.pushView(new $.SecondTimePicker(), new $.SecondTimePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
         }
         return true;
     }
