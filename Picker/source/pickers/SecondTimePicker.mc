@@ -158,7 +158,15 @@ class SecondTimePickerDelegate extends WatchUi.PickerDelegate {
         }
         Storage.setValue("time2", time);
 
-        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        var menu = new WatchUi.Menu2({
+            :title => "Wake Sequence"
+        });
+
+        menu.addItem(new WatchUi.MenuItem("Sequence 1", null, "sequence1", null));
+        menu.addItem(new WatchUi.MenuItem("Sequence 2", null, "sequence2", null));
+        menu.addItem(new WatchUi.MenuItem("Sequence 3", null, "sequence3", null));
+
+        //WatchUi.pushView(menu, new $.MenuTestDelegate(), WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
 
