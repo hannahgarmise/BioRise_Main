@@ -129,6 +129,7 @@ class Menu2SampleSubMenuDelegate extends WatchUi.Menu2InputDelegate {
     }
 }
 
+
 //! This is the menu input delegate for the custom sub-menu
 class Menu2SampleCustomDelegate extends WatchUi.Menu2InputDelegate {
     const ITEM_HEIGHT = 30;

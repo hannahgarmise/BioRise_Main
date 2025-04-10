@@ -10,11 +10,11 @@ import Toybox.WatchUi;
 
 //! This delegate is for the main page of our application that pushes the menu
 //! when the onMenu() behavior is received.
-class Menu2TestDelegate extends WatchUi.BehaviorDelegate {
+class Menu2TestDelegate extends WatchUi.Menu2InputDelegate {
 
     //! Constructor
     public function initialize() {
-        BehaviorDelegate.initialize();
+        Menu2InputDelegate.initialize();
     }
 
     //! Handle the menu event
@@ -34,6 +34,22 @@ class Menu2TestDelegate extends WatchUi.BehaviorDelegate {
         menu.addItem(new WatchUi.MenuItem("Sequence 3", null, "sequence3", null));
         WatchUi.pushView(menu, new $.Menu2TestMenu2Delegate(), WatchUi.SLIDE_IMMEDIATE);
         return true;
+    }
+
+    //! Called when the user selects a menu item
+    public function onSelect(item) {
+        var selectedId = item.getId(); // Will be "sequence1", "sequence2", etc.
+
+        // Save the selected sequence
+        System.println("Selected: " + selectedId);
+        Toybox.Application.Storage.setValue("selectedSequence", selectedId);
+
+        // Close the menu and return to previous view
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+
+        WatchUi.pushView(new FinalSummaryView(), null, WatchUi.SLIDE_IMMEDIATE);
+
+        return;
     }
 }
 
