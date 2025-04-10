@@ -166,7 +166,7 @@ class SecondTimePickerDelegate extends WatchUi.PickerDelegate {
         menu.addItem(new WatchUi.MenuItem("Sequence 2", null, "sequence2", null));
         menu.addItem(new WatchUi.MenuItem("Sequence 3", null, "sequence3", null));
 
-        //WatchUi.pushView(menu, new $.MenuTestDelegate(), WatchUi.SLIDE_IMMEDIATE);
+        WatchUi.pushView(menu, new $.Menu2TestDelegate(), WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
 
