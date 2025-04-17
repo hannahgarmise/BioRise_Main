@@ -82,10 +82,10 @@ public function onUpdate(dc as Graphics.Dc) {
     var timeY = 130;
 
     // Draw time elements spaced out horizontally
-    dc.drawText(centerX - 60, timeY, Graphics.FONT_LARGE, hourStr, Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(centerX - 20, timeY, Graphics.FONT_LARGE, ":", Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(centerX + 20, timeY, Graphics.FONT_LARGE, minuteStr, Graphics.TEXT_JUSTIFY_LEFT);
-    dc.drawText(centerX + 70, timeY, Graphics.FONT_LARGE, ampmStr, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(centerX - 100, timeY+100, Graphics.FONT_LARGE, hourStr, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(centerX - 25, timeY, Graphics.FONT_LARGE, ":", Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(centerX + 25, timeY, Graphics.FONT_LARGE, minuteStr, Graphics.TEXT_JUSTIFY_LEFT);
+    dc.drawText(centerX + 100, timeY, Graphics.FONT_LARGE, ampmStr, Graphics.TEXT_JUSTIFY_LEFT);
 
     // Down arrow
     dc.drawText(centerX, 180, Graphics.FONT_LARGE, "▼", Graphics.TEXT_JUSTIFY_CENTER);

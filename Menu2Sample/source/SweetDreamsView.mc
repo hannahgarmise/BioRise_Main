@@ -9,7 +9,7 @@ class SweetDreamsView extends WatchUi.View {
 
     public function onUpdate(dc as Graphics.Dc) {
         dc.clear();
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLUE);
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_ORANGE);
 
         var centerX = dc.getWidth() / 2;
         var centerY = dc.getHeight() / 2;

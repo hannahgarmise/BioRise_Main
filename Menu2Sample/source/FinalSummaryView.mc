@@ -60,7 +60,7 @@ class FinalSummaryView extends WatchUi.View {
         
         y += 50;
         dc.drawText(centerX, y, Graphics.FONT_TINY, _sequence, Graphics.TEXT_JUSTIFY_CENTER);
-        y+=50;
+        y+=60;
 
         dc.drawText(centerX, y, Graphics.FONT_SMALL, "Sweet Dreams!", Graphics.TEXT_JUSTIFY_CENTER);
     }

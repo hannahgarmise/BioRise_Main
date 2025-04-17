@@ -26,30 +26,30 @@ class TimePicker extends WatchUi.Picker {
         if (System.getDeviceSettings().is24Hour) {
             factories = new Array<PickerFactory or Text>[$.FACTORY_COUNT_24_HOUR];
             factories[0] = new $.NumberFactory(0, 23, 1, {
-            :font => Graphics.FONT_XTINY
+            :font => Graphics.FONT_LARGE
             });
 
             factories[1] = new $.WordFactory([$.Rez.Strings.timeSeparator], {
-            :font => Graphics.FONT_XTINY
+            :font => Graphics.FONT_LARGE
             });
 
             factories[2] = new $.NumberFactory(0, 59, 1, {
-            :font => Graphics.FONT_XTINY,
+            :font => Graphics.FONT_LARGE,
             :format => $.MINUTE_FORMAT
             });
 
         } else {
             factories = new Array<PickerFactory or Text>[$.FACTORY_COUNT_12_HOUR];
             factories[0] = new $.NumberFactory(0, 23, 1, {
-            :font => Graphics.FONT_XTINY
+            :font => Graphics.FONT_LARGE
             });
 
             factories[1] = new $.WordFactory([$.Rez.Strings.timeSeparator], {
-            :font => Graphics.FONT_XTINY
+            :font => Graphics.FONT_LARGE
             });
 
             factories[2] = new $.NumberFactory(0, 59, 1, {
-            :font => Graphics.FONT_XTINY,
+            :font => Graphics.FONT_LARGE,
             :format => $.MINUTE_FORMAT
             });
             factories[3] = new $.WordFactory([$.Rez.Strings.morning, $.Rez.Strings.afternoon], {});
@@ -57,12 +57,12 @@ class TimePicker extends WatchUi.Picker {
 
         factories[1] = new $.WordFactory([$.Rez.Strings.timeSeparator], 
             {
-                :font => Graphics.FONT_SMALL,
+                :font => Graphics.FONT_LARGE,
                 //:justify => Graphics.TEXT_JUSTIFY_CENTER
             }
         );
 
-        factories[2] = new $.NumberFactory(0, 59, 1, {:format=>$.MINUTE_FORMAT, :font=>Graphics.FONT_SMALL});
+        factories[2] = new $.NumberFactory(0, 59, 1, {:format=>$.MINUTE_FORMAT, :font=>Graphics.FONT_LARGE, :color=>Graphics.COLOR_RED});
 
         var time = splitStoredTime(factories.size());
         var defaults = new Array<Number>[factories.size()];
@@ -152,7 +152,13 @@ class TimePickerDelegate extends WatchUi.PickerDelegate {
         var hour = values[0] as Number;
         var min = values[2] as Number;
 
-        var time = hour + (WatchUi.loadResource($.Rez.Strings.timeSeparator) as String) + min.format($.MINUTE_FORMAT);
+        //var time = hour + (WatchUi.loadResource($.Rez.Strings.timeSeparator) as String) + min.format($.MINUTE_FORMAT);
+
+        var hourStr = (hour < 10) ? "0" + hour : hour + "";
+        var minStr = min.format($.MINUTE_FORMAT);
+
+        var time = hourStr + (WatchUi.loadResource($.Rez.Strings.timeSeparator) as String) + minStr;
+
 
         if (values.size() == $.FACTORY_COUNT_12_HOUR) {
             var dayPart = values[3];
@@ -160,7 +166,10 @@ class TimePickerDelegate extends WatchUi.PickerDelegate {
                 time += " " + WatchUi.loadResource(dayPart as ResourceId);
             }
         }
+
         Storage.setValue("time", time);
+        System.println("Saving lower time: " + time);
+
 
         WatchUi.pushView(new $.SecondTimePicker(), new $.SecondTimePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
         return true;
