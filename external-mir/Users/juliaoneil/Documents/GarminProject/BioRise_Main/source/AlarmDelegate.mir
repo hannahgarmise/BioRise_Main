@@ -1,0 +1,67 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [WatchUi,1,24,31]; ]
+using Toybox.WatchUi as :WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [System,2,13,19]; @symbol_usingAlias = [System,2,23,29]; ]
+using Toybox.System as :System;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 4; @symbol_classdef = [AlarmDelegate,4,6,19]; @symbol_extends<0> = [WatchUi,4,28,35]; @symbol_extends<1> = [InputDelegate,4,36,49]; ]
+class AlarmDelegate extends WatchUi.InputDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 5; @position = 8; @symbol_vardef = [_view,5,8,13]; @symbol_type<0> = [AlarmFlowView,5,17,30]; ]
+    var _view as AlarmFlowView;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 6; @position = 8; @symbol_vardef = [_model,6,8,14]; @symbol_type<0> = [AlarmDataModel,6,18,32]; ]
+    var _model as AlarmDataModel;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 7; @position = 8; @symbol_vardef = [_viewController,7,8,23]; @symbol_type<0> = [ViewController,7,27,41]; ]
+    var _viewController as ViewController;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 9; @symbol_functiondef = [initialize,9,20,30]; @symbol_param<0> = [view,9,31,35]; @symbol_param<0>_type<0> = [AlarmFlowView,9,39,52]; @symbol_param<1> = [model,9,54,59]; @symbol_param<1>_type<0> = [AlarmDataModel,9,63,77]; @symbol_param<2> = [viewController,9,79,93]; @symbol_param<2>_type<0> = [ViewController,9,97,111]; ]
+    public
+    function initialize(view as AlarmFlowView, model as AlarmDataModel, viewController as ViewController) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_AlarmDelegate_mc_9_113_14_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc" 10 8 ]
+        %tmp.1 = lgetv %view;
+        symbol [ view %tmp.1 10 16 20 ];
+        symbol [ _view ? 10 8 13 ];
+        putv self :_view %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc" 11 8 ]
+        %tmp.2 = lgetv %model;
+        symbol [ model %tmp.2 11 17 22 ];
+        symbol [ _model ? 11 8 14 ];
+        putv self :_model %tmp.2;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc" 12 8 ]
+        %tmp.3 = lgetv %viewController;
+        symbol [ viewController %tmp.3 12 26 40 ];
+        symbol [ _viewController ? 12 8 23 ];
+        putv self :_viewController %tmp.3;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc" 13 8 ]
+        symbol [ WatchUi %tmp.4 13 8 15 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ InputDelegate %tmp.5 13 16 29 ];
+        %tmp.5 = getv %tmp.4 :InputDelegate;
+        symbol [ initialize %tmp.6 13 30 40 ];
+        %tmp.6 = getv function %tmp.5 :initialize;
+        invoke %tmp.5 %tmp.6();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_AlarmDelegate_mc_9_113_14_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 20; @symbol_functiondef = [onTap,20,20,25]; @symbol_param<0> = [position,20,26,34]; ]
+    public
+    function onTap(position) {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_AlarmDelegate_mc_20_36_22_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc" 21 8 ]
+        symbol [ _view %tmp.2 21 15 20 ];
+        %tmp.2 = getv ? :_view;
+        symbol [ onTap %tmp.3 21 21 26 ];
+        %tmp.3 = getv function %tmp.2 :onTap;
+        %tmp.4 = lgetv %position;
+        symbol [ position %tmp.4 21 27 35 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_AlarmDelegate_mc_20_36_22_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDelegate.mc"; @line = 1; ]
+<init> {
+}

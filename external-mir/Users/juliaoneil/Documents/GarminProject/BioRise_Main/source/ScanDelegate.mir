@@ -1,0 +1,164 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Lang,7,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [WatchUi,8,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 10; @symbol_classdef = [ScanDelegate,10,6,18]; @symbol_extends<0> = [WatchUi,10,27,34]; @symbol_extends<1> = [BehaviorDelegate,10,35,51]; ]
+class ScanDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 10; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 10; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 11; @position = 16; @symbol_vardef = [_scanDataModel,11,16,30]; @symbol_type<0> = [ScanDataModel,11,34,47]; ]
+    private
+    var _scanDataModel as ScanDataModel;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 12; @position = 16; @symbol_vardef = [_viewController,12,16,31]; @symbol_type<0> = [ViewController,12,35,49]; ]
+    private
+    var _viewController as ViewController;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 13; @position = 16; @symbol_vardef = [_modelFactory,13,16,29]; @symbol_type<0> = [DataModelFactory,13,33,49]; ]
+    private
+    var _modelFactory as DataModelFactory;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 15; @symbol_functiondef = [initialize,15,20,30]; @symbol_param<0> = [scanDataModel,15,31,44]; @symbol_param<0>_type<0> = [ScanDataModel,15,48,61]; @symbol_param<1> = [viewController,15,63,77]; @symbol_param<1>_type<0> = [ViewController,15,81,95]; @symbol_param<2> = [modelFactory,15,97,109]; @symbol_param<2>_type<0> = [DataModelFactory,15,113,129]; ]
+    public
+    function initialize(scanDataModel as ScanDataModel, viewController as ViewController, modelFactory as DataModelFactory) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_15_131_20_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 16 8 ]
+        symbol [ BehaviorDelegate %tmp.2 16 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 16 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 17 8 ]
+        %tmp.4 = lgetv %scanDataModel;
+        symbol [ scanDataModel %tmp.4 17 25 38 ];
+        symbol [ _scanDataModel ? 17 8 22 ];
+        putv self :_scanDataModel %tmp.4;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 18 8 ]
+        %tmp.5 = lgetv %viewController;
+        symbol [ viewController %tmp.5 18 26 40 ];
+        symbol [ _viewController ? 18 8 23 ];
+        putv self :_viewController %tmp.5;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 19 8 ]
+        %tmp.6 = lgetv %modelFactory;
+        symbol [ modelFactory %tmp.6 19 24 36 ];
+        symbol [ _modelFactory ? 19 8 21 ];
+        putv self :_modelFactory %tmp.6;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_15_131_20_4_stop:
+    }
+    //! Handle menu button press
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 24; @symbol_functiondef = [onMenu,24,20,26]; @symbol_return<0> = [Boolean,24,32,39]; ]
+    public
+    function onMenu() as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_24_40_27_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 25 8 ]
+        symbol [ _viewController %tmp.2 25 8 23 ];
+        %tmp.2 = getv ? :_viewController;
+        symbol [ pushScanMenu %tmp.3 25 24 36 ];
+        %tmp.3 = getv function %tmp.2 :pushScanMenu;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 26 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_24_40_27_4_stop:
+    }
+    //! Handle the select action
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 31; @symbol_functiondef = [onSelect,31,20,28]; @symbol_return<0> = [Boolean,31,34,41]; ]
+    public
+    function onSelect() as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_31_42_39_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 32 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_31_42_39_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_31_42_39_4_stop" ]
+        %displayResult.1 = local;
+        symbol [ displayResult %displayResult.1 32 12 25 ];
+        symbol [ _scanDataModel %tmp.2 32 28 42 ];
+        %tmp.2 = getv ? :_scanDataModel;
+        symbol [ getDisplayResult %tmp.3 32 43 59 ];
+        %tmp.3 = getv function %tmp.2 :getDisplayResult;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %displayResult.1 %tmp.4;
+        symbol [ displayResult %displayResult.1 32 12 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 33 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_8_37_8_if_stmt:
+        %tmp.5 = lgetv %displayResult.1;
+        symbol [ displayResult %tmp.5 33 12 25 ];
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_8_37_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_35_37_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 34 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_35_37_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_35_37_8_stop" ]
+        %deviceDataModel.2 = local;
+        symbol [ deviceDataModel %deviceDataModel.2 34 16 31 ];
+        symbol [ _modelFactory %tmp.9 34 34 47 ];
+        %tmp.9 = getv ? :_modelFactory;
+        symbol [ getDeviceDataModel %tmp.10 34 48 66 ];
+        %tmp.10 = getv function %tmp.9 :getDeviceDataModel;
+        %tmp.11 = lgetv %displayResult.1;
+        symbol [ displayResult %tmp.11 34 67 80 ];
+        %tmp.12 = as %tmp.11 { (!Null) };
+        %tmp.13 = invoke %tmp.9 %tmp.10(%tmp.12);
+        lputv %deviceDataModel.2 %tmp.13;
+        symbol [ deviceDataModel %deviceDataModel.2 34 16 31 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 35 12 ]
+        %tmp.14 = lgetv %deviceDataModel.2;
+        symbol [ deviceDataModel %tmp.14 35 12 27 ];
+        symbol [ pair %tmp.15 35 28 32 ];
+        %tmp.15 = getv function %tmp.14 :pair;
+        invoke %tmp.14 %tmp.15();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 36 12 ]
+        symbol [ _viewController %tmp.17 36 12 27 ];
+        %tmp.17 = getv ? :_viewController;
+        symbol [ getInitialView %tmp.18 36 28 42 ];
+        %tmp.18 = getv function %tmp.17 :getInitialView;
+        invoke %tmp.17 %tmp.18();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_35_37_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_33_8_37_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 38 8 ]
+        %tmp.19 = true;
+        ret %tmp.19;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_31_42_39_4_stop:
+    }
+    //! Handle next page behavior
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 43; @symbol_functiondef = [onNextPage,43,20,30]; @symbol_return<0> = [Boolean,43,36,43]; ]
+    public
+    function onNextPage() as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_43_44_46_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 44 8 ]
+        symbol [ _scanDataModel %tmp.2 44 8 22 ];
+        %tmp.2 = getv ? :_scanDataModel;
+        symbol [ nextResult %tmp.3 44 23 33 ];
+        %tmp.3 = getv function %tmp.2 :nextResult;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 45 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_43_44_46_4_stop:
+    }
+    //! Handle previous page behavior
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 50; @symbol_functiondef = [onPreviousPage,50,20,34]; @symbol_return<0> = [Boolean,50,40,47]; ]
+    public
+    function onPreviousPage() as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_50_48_53_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 51 8 ]
+        symbol [ _scanDataModel %tmp.2 51 8 22 ];
+        %tmp.2 = getv ? :_scanDataModel;
+        symbol [ previousResult %tmp.3 51 23 37 ];
+        %tmp.3 = getv function %tmp.2 :previousResult;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc" 52 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanDelegate_mc_50_48_53_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanDelegate.mc"; @line = 7; ]
+<init> {
+}

@@ -1,0 +1,122 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,7,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 9; @symbol_classdef = [ProfileManager,9,6,20]; ]
+class ProfileManager {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 9; ]
+    <init> {
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc" 15 17 ]
+        symbol [ BluetoothLowEnergy %tmp.1 15 39 57 ];
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ stringToUuid %tmp.2 15 58 70 ];
+        %tmp.2 = getv function %tmp.1 :stringToUuid;
+        %tmp.3 = "7DEF8317-7300-4EE6-8849-46FACE74CA2A";
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        putv self :DUKE_CUSTOM_SERVICE %tmp.4;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc" 22 17 ]
+        symbol [ BluetoothLowEnergy %tmp.5 22 46 64 ];
+        %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ stringToUuid %tmp.6 22 65 77 ];
+        %tmp.6 = getv function %tmp.5 :stringToUuid;
+        %tmp.7 = "7DEF8317-7301-4EE6-8849-46FACE74CA2A";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        putv self :DUKE_CUSTOM_CHARACTERISTIC %tmp.8;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc" 29 17 ]
+        symbol [ BluetoothLowEnergy %tmp.9 29 44 62 ];
+        %tmp.9 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ stringToUuid %tmp.10 29 63 75 ];
+        %tmp.10 = getv function %tmp.9 :stringToUuid;
+        %tmp.11 = "7DEF8317-7302-4EE6-8849-46FACE74CA2A";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        putv self :DUKE_GPIO_CHARACTERISTIC %tmp.12;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc" 31 22 ]
+        %tmp.13 = newd 2;
+        %tmp.15 = const :uuid;
+        symbol [ uuid %tmp.15 32 13 17 const ];
+        symbol [ DUKE_CUSTOM_SERVICE %tmp.17 32 21 40 ];
+        %tmp.17 = getv ? :DUKE_CUSTOM_SERVICE;
+        %tmp.18 = dup %tmp.13;
+        %tmp.19 = aputv %tmp.18 %tmp.15 %tmp.17;
+        %tmp.21 = const :characteristics;
+        symbol [ characteristics %tmp.21 33 13 28 const ];
+        %tmp.22 = newa 2;
+        %tmp.23 = newd 2;
+        %tmp.25 = const :uuid;
+        symbol [ uuid %tmp.25 35 17 21 const ];
+        symbol [ DUKE_CUSTOM_CHARACTERISTIC %tmp.27 35 25 51 ];
+        %tmp.27 = getv ? :DUKE_CUSTOM_CHARACTERISTIC;
+        %tmp.28 = dup %tmp.23;
+        %tmp.29 = aputv %tmp.28 %tmp.25 %tmp.27;
+        %tmp.31 = const :descriptors;
+        symbol [ descriptors %tmp.31 36 17 28 const ];
+        %tmp.32 = newa 1;
+        symbol [ BluetoothLowEnergy %tmp.33 36 33 51 ];
+        %tmp.33 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ cccdUuid %tmp.34 36 52 60 ];
+        %tmp.34 = getv function %tmp.33 :cccdUuid;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        %tmp.36 = dup %tmp.32;
+        %tmp.37 = aputv %tmp.36 0 %tmp.35;
+        %tmp.38 = dup %tmp.29;
+        %tmp.39 = aputv %tmp.38 %tmp.31 %tmp.37;
+        %tmp.40 = dup %tmp.22;
+        %tmp.41 = aputv %tmp.40 0 %tmp.39;
+        %tmp.42 = newd 2;
+        %tmp.44 = const :uuid;
+        symbol [ uuid %tmp.44 39 17 21 const ];
+        symbol [ DUKE_GPIO_CHARACTERISTIC %tmp.46 39 25 49 ];
+        %tmp.46 = getv ? :DUKE_GPIO_CHARACTERISTIC;
+        %tmp.47 = dup %tmp.42;
+        %tmp.48 = aputv %tmp.47 %tmp.44 %tmp.46;
+        %tmp.50 = const :descriptors;
+        symbol [ descriptors %tmp.50 40 17 28 const ];
+        %tmp.51 = newa 1;
+        symbol [ BluetoothLowEnergy %tmp.52 40 33 51 ];
+        %tmp.52 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ cccdUuid %tmp.53 40 52 60 ];
+        %tmp.53 = getv function %tmp.52 :cccdUuid;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        %tmp.55 = dup %tmp.51;
+        %tmp.56 = aputv %tmp.55 0 %tmp.54;
+        %tmp.57 = dup %tmp.48;
+        %tmp.58 = aputv %tmp.57 %tmp.50 %tmp.56;
+        %tmp.59 = dup %tmp.41;
+        %tmp.60 = aputv %tmp.59 1 %tmp.58;
+        %tmp.61 = dup %tmp.19;
+        %tmp.62 = aputv %tmp.61 %tmp.21 %tmp.60;
+        putv self :_envProfileDef %tmp.62;
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 9; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 15; @position = 17; @symbol_constdef = [DUKE_CUSTOM_SERVICE,15,17,36]; ]
+    public
+    const DUKE_CUSTOM_SERVICE;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 22; @position = 17; @symbol_constdef = [DUKE_CUSTOM_CHARACTERISTIC,22,17,43]; ]
+    public
+    const DUKE_CUSTOM_CHARACTERISTIC;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 29; @position = 17; @symbol_constdef = [DUKE_GPIO_CHARACTERISTIC,29,17,41]; ]
+    public
+    const DUKE_GPIO_CHARACTERISTIC;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 31; @position = 22; @symbol_constdef = [_envProfileDef,31,22,36]; ]
+    private
+    const _envProfileDef;
+    //! Register the bluetooth profile
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 45; @symbol_functiondef = [registerProfiles,45,20,36]; ]
+    public
+    function registerProfiles() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ProfileManager_mc_45_47_47_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc" 46 8 ]
+        symbol [ BluetoothLowEnergy %tmp.1 46 8 26 ];
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ registerProfile %tmp.2 46 27 42 ];
+        %tmp.2 = getv function %tmp.1 :registerProfile;
+        symbol [ _envProfileDef %tmp.4 46 43 57 ];
+        %tmp.4 = getv ? :_envProfileDef;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ProfileManager_mc_45_47_47_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ProfileManager.mc"; @line = 7; ]
+<init> {
+}

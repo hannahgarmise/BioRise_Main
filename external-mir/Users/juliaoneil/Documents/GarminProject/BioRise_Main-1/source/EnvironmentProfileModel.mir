@@ -1,0 +1,764 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,7,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [WatchUi,9,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 10; @symbol_usingdef<0> = [Toybox,10,6,12]; @symbol_usingdef<1> = [System,10,13,19]; ]
+using Toybox.System;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 12; @symbol_classdef = [EnvironmentProfileModel,12,6,29]; ]
+class EnvironmentProfileModel {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 13; @position = 16; @symbol_vardef = [_service,13,16,24]; @symbol_type<0> = [Service,13,28,35]; ]
+    private
+    var _service as Service or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 14; @position = 16; @symbol_vardef = [_profileManager,14,16,31]; @symbol_type<0> = [ProfileManager,14,35,49]; ]
+    private
+    var _profileManager as ProfileManager;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 15; @position = 16; @symbol_vardef = [_pendingNotifies,15,16,32]; @symbol_type<0> = [Array,15,36,41]; @symbol_type<1> = [Characteristic,15,42,56]; ]
+    private
+    var _pendingNotifies as Array<Characteristic>;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 16; @position = 16; @symbol_vardef = [_GpioCharacteristic,16,16,35]; @symbol_type<0> = [Characteristic,16,39,53]; ]
+    private
+    var _GpioCharacteristic as Characteristic;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 17; @position = 16; @symbol_vardef = [_BluetoothDelegate,17,16,34]; @symbol_type<0> = [BluetoothDelegate,17,38,55]; ]
+    private
+    var _BluetoothDelegate as BluetoothDelegate;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 18; @position = 16; @symbol_vardef = [_PhoneCommunication,18,16,35]; @symbol_type<0> = [PhoneCommunication,18,39,57]; ]
+    private
+    var _PhoneCommunication as PhoneCommunication;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 20; @position = 16; @symbol_vardef = [_custom_data_byte_array,20,16,39]; @symbol_type<0> = [ByteArray,20,43,52]; ]
+    private
+    var _custom_data_byte_array as ByteArray;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 21; @position = 16; @symbol_vardef = [_gpio_data_byte_array,21,16,37]; @symbol_type<0> = [ByteArray,21,41,50]; ]
+    private
+    var _gpio_data_byte_array as ByteArray;
+    //! Constructor
+    //! @param delegate The BLE delegate for the model
+    //! @param profileManager The profile manager for this model
+    //! @param device The current device
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 27; @symbol_functiondef = [initialize,27,20,30]; @symbol_param<0> = [delegate,27,31,39]; @symbol_param<0>_type<0> = [BluetoothDelegate,27,43,60]; @symbol_param<1> = [profileManager,27,62,76]; @symbol_param<1>_type<0> = [ProfileManager,27,80,94]; @symbol_param<2> = [device,27,96,102]; @symbol_param<2>_type<0> = [Device,27,106,112]; @symbol_param<3> = [phoneComm,27,114,123]; @symbol_param<3>_type<0> = [PhoneCommunication,27,127,145]; ]
+    public
+    function initialize(delegate as BluetoothDelegate, profileManager as ProfileManager, device as Device, phoneComm as PhoneCommunication) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_27_147_53_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 28 8 ]
+        %tmp.1 = lgetv %delegate;
+        symbol [ delegate %tmp.1 28 29 37 ];
+        symbol [ _BluetoothDelegate ? 28 8 26 ];
+        putv self :_BluetoothDelegate %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 29 8 ]
+        symbol [ _BluetoothDelegate %tmp.3 29 8 26 ];
+        %tmp.3 = getv ? :_BluetoothDelegate;
+        symbol [ notifyDescriptorWrite %tmp.4 29 27 48 ];
+        %tmp.4 = getv function %tmp.3 :notifyDescriptorWrite;
+        %tmp.5 = self;
+        symbol [ self %tmp.5 29 49 53 ];
+        invoke %tmp.3 %tmp.4(%tmp.5);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 30 8 ]
+        symbol [ _BluetoothDelegate %tmp.7 30 8 26 ];
+        %tmp.7 = getv ? :_BluetoothDelegate;
+        symbol [ notifyCharacteristicChanged %tmp.8 30 27 54 ];
+        %tmp.8 = getv function %tmp.7 :notifyCharacteristicChanged;
+        %tmp.9 = self;
+        symbol [ self %tmp.9 30 55 59 ];
+        invoke %tmp.7 %tmp.8(%tmp.9);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 32 8 ]
+        %tmp.10 = lgetv %profileManager;
+        symbol [ profileManager %tmp.10 32 26 40 ];
+        symbol [ _profileManager ? 32 8 23 ];
+        putv self :_profileManager %tmp.10;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 33 8 ]
+        %tmp.11 = lgetv %device;
+        symbol [ device %tmp.11 33 19 25 ];
+        symbol [ getService %tmp.12 33 26 36 ];
+        %tmp.12 = getv function %tmp.11 :getService;
+        %tmp.13 = lgetv %profileManager;
+        symbol [ profileManager %tmp.13 33 37 51 ];
+        symbol [ DUKE_CUSTOM_SERVICE %tmp.14 33 52 71 ];
+        %tmp.14 = getv %tmp.13 :DUKE_CUSTOM_SERVICE;
+        %tmp.15 = invoke %tmp.11 %tmp.12(%tmp.14);
+        symbol [ _service ? 33 8 16 ];
+        putv self :_service %tmp.15;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 34 8 ]
+        symbol [ _service %tmp.17 34 30 38 ];
+        %tmp.17 = getv ? :_service;
+        symbol [ getCharacteristic %tmp.18 34 39 56 ];
+        %tmp.18 = getv function %tmp.17 :getCharacteristic;
+        symbol [ _profileManager %tmp.20 34 57 72 ];
+        %tmp.20 = getv ? :_profileManager;
+        symbol [ DUKE_GPIO_CHARACTERISTIC %tmp.21 34 73 97 ];
+        %tmp.21 = getv %tmp.20 :DUKE_GPIO_CHARACTERISTIC;
+        %tmp.22 = invoke %tmp.17 %tmp.18(%tmp.21);
+        symbol [ _GpioCharacteristic ? 34 8 27 ];
+        putv self :_GpioCharacteristic %tmp.22;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 36 8 ]
+        %tmp.23 = lgetv %phoneComm;
+        symbol [ phoneComm %tmp.23 36 30 39 ];
+        symbol [ _PhoneCommunication ? 36 8 27 ];
+        putv self :_PhoneCommunication %tmp.23;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 38 8 ]
+        %tmp.24 = newa 0 Array<Characteristic>;
+        symbol [ Array %tmp.24 38 33 38 ];
+        symbol [ Characteristic %tmp.24 38 39 53 ];
+        symbol [ _pendingNotifies ? 38 8 24 ];
+        putv self :_pendingNotifies %tmp.24;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 39 8 ]
+        %tmp.25 = newba 0;
+        symbol [ _custom_data_byte_array ? 39 8 31 ];
+        putv self :_custom_data_byte_array %tmp.25;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 40 8 ]
+        %tmp.26 = newba 0;
+        symbol [ _gpio_data_byte_array ? 40 8 29 ];
+        putv self :_gpio_data_byte_array %tmp.26;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 42 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_27_147_53_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_27_147_53_4_stop" ]
+        %service.1 = local;
+        symbol [ service %service.1 42 12 19 ];
+        symbol [ _service %tmp.28 42 22 30 ];
+        %tmp.28 = getv ? :_service;
+        lputv %service.1 %tmp.28;
+        symbol [ service %service.1 42 12 19 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 43 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_8_50_8_if_stmt:
+        %tmp.29 = lgetv %service.1;
+        symbol [ service %tmp.29 43 12 19 ];
+        %tmp.30 = null;
+        %tmp.31 = ne %tmp.29 %tmp.30;
+        bf %tmp.31 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_8_50_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_8_50_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_29_50_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 44 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_29_50_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_29_50_8_stop" ]
+        %characteristics.2 = local;
+        symbol [ characteristics %characteristics.2 44 16 31 ];
+        %tmp.32 = lgetv %service.1;
+        symbol [ service %tmp.32 44 34 41 ];
+        %tmp.33 = as %tmp.32 { (!Null) };
+        symbol [ getCharacteristics %tmp.34 44 42 60 ];
+        %tmp.34 = getv function %tmp.33 :getCharacteristics;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        lputv %characteristics.2 %tmp.35;
+        symbol [ characteristics %characteristics.2 44 16 31 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 45 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_29_50_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_29_50_8_stop" ]
+        %characteristic.3 = local;
+        symbol [ characteristic %characteristic.3 45 16 30 ];
+        %tmp.36 = lgetv %characteristics.2;
+        symbol [ characteristics %tmp.36 45 33 48 ];
+        symbol [ next %tmp.37 45 49 53 ];
+        %tmp.37 = getv function %tmp.36 :next;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        %tmp.39 = as %tmp.38 Characteristic;
+        symbol [ Characteristic %tmp.39 45 59 73 ];
+        lputv %characteristic.3 %tmp.39;
+        symbol [ characteristic %characteristic.3 45 16 30 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 46 12 ]
+        while @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_test @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_test:
+        %tmp.40 = null;
+        %tmp.41 = lgetv %characteristic.3;
+        symbol [ characteristic %tmp.41 46 27 41 ];
+        %tmp.42 = ne %tmp.40 %tmp.41;
+        bf %tmp.42 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_begin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_43_49_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 47 16 ]
+        symbol [ _pendingNotifies %tmp.44 47 35 51 ];
+        %tmp.44 = getv ? :_pendingNotifies;
+        symbol [ add %tmp.45 47 52 55 ];
+        %tmp.45 = getv function %tmp.44 :add;
+        %tmp.46 = lgetv %characteristic.3;
+        symbol [ characteristic %tmp.46 47 56 70 ];
+        %tmp.47 = as %tmp.46 { (!Null) };
+        %tmp.48 = invoke %tmp.44 %tmp.45(%tmp.47);
+        symbol [ _pendingNotifies ? 47 16 32 ];
+        putv self :_pendingNotifies %tmp.48;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 48 16 ]
+        %tmp.49 = lgetv %characteristics.2;
+        symbol [ characteristics %tmp.49 48 33 48 ];
+        symbol [ next %tmp.50 48 49 53 ];
+        %tmp.50 = getv function %tmp.49 :next;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = as %tmp.51 Characteristic;
+        symbol [ Characteristic %tmp.52 48 59 73 ];
+        lputv %characteristic.3 %tmp.52;
+        symbol [ characteristic %characteristic.3 48 16 30 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_43_49_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_test;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_46_12_49_12_while_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_29_50_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_8_50_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_43_8_50_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 52 8 ]
+        %tmp.53 = self;
+        symbol [ activateNextNotification %tmp.54 52 8 32 ];
+        %tmp.54 = getv function %tmp.53 :activateNextNotification;
+        invoke %tmp.53 %tmp.54();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_27_147_53_4_stop:
+    }
+    //! Handle a characteristic being changed
+    //! @param char The characteristic that changed
+    //! @param data The updated data of the characteristic
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 58; @symbol_functiondef = [onCharacteristicChanged,58,20,43]; @symbol_param<0> = [char,58,44,48]; @symbol_param<0>_type<0> = [Characteristic,58,52,66]; @symbol_param<1> = [data,58,68,72]; @symbol_param<1>_type<0> = [ByteArray,58,76,85]; ]
+    public
+    function onCharacteristicChanged(char as Characteristic, data as ByteArray) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_58_95_69_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 59 8 ]
+        %tmp.1 = lgetv %char;
+        symbol [ char %tmp.1 59 16 20 ];
+        symbol [ getUuid %tmp.2 59 21 28 ];
+        %tmp.2 = getv function %tmp.1 :getUuid;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        push %tmp.3;
+        switch %tmp.3 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_switchStmtEnd;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_switchStmtBegin:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 60 12 ]
+        %tmp.4 = dup %tmp.3;
+        symbol [ _profileManager %tmp.6 60 17 32 ];
+        %tmp.6 = getv ? :_profileManager;
+        symbol [ DUKE_CUSTOM_CHARACTERISTIC %tmp.7 60 33 59 ];
+        %tmp.7 = getv %tmp.6 :DUKE_CUSTOM_CHARACTERISTIC;
+        %tmp.8 = getv function %tmp.4 :equals;
+        %tmp.9 = invoke %tmp.4 %tmp.8 (%tmp.7);
+        bt %tmp.9 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_60_12_63_21_switchCase;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 64 12 ]
+        %tmp.10 = dup %tmp.3;
+        symbol [ _profileManager %tmp.12 64 17 32 ];
+        %tmp.12 = getv ? :_profileManager;
+        symbol [ DUKE_GPIO_CHARACTERISTIC %tmp.13 64 33 57 ];
+        %tmp.13 = getv %tmp.12 :DUKE_GPIO_CHARACTERISTIC;
+        %tmp.14 = getv function %tmp.10 :equals;
+        %tmp.15 = invoke %tmp.10 %tmp.14 (%tmp.13);
+        bt %tmp.15 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_64_12_67_21_switchCase;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_switchStmtDefault:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_defaultCodeBegin;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_60_12_63_21_switchCase:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 61 16 ]
+        symbol [ System %tmp.16 61 16 22 ];
+        %tmp.16 = getm $.Toybox.System;
+        symbol [ println %tmp.17 61 23 30 ];
+        %tmp.17 = getv function %tmp.16 :println;
+        %tmp.18 = "onCharacteristicChanged(), DUKE_CUSTOM_CHARACTERISTIC, data.size()=";
+        %tmp.19 = lgetv %data;
+        symbol [ data %tmp.19 61 103 107 ];
+        symbol [ size %tmp.20 61 108 112 ];
+        %tmp.20 = getv function %tmp.19 :size;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        %tmp.22 = add %tmp.18 %tmp.21;
+        invoke %tmp.16 %tmp.17(%tmp.22);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 62 16 ]
+        %tmp.23 = self;
+        symbol [ processCustomData %tmp.24 62 16 33 ];
+        %tmp.24 = getv function %tmp.23 :processCustomData;
+        %tmp.25 = lgetv %data;
+        symbol [ data %tmp.25 62 34 38 ];
+        invoke %tmp.23 %tmp.24(%tmp.25);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 63 16 ]
+        goto break @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_switchStmtEnd;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_64_12_67_21_switchCase:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 65 16 ]
+        symbol [ System %tmp.26 65 16 22 ];
+        %tmp.26 = getm $.Toybox.System;
+        symbol [ println %tmp.27 65 23 30 ];
+        %tmp.27 = getv function %tmp.26 :println;
+        %tmp.28 = "onCharacteristicChanged(), DUKE_GPIO_CHARACTERISTIC, data.size()=";
+        %tmp.29 = lgetv %data;
+        symbol [ data %tmp.29 65 101 105 ];
+        symbol [ size %tmp.30 65 106 110 ];
+        %tmp.30 = getv function %tmp.29 :size;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = add %tmp.28 %tmp.31;
+        invoke %tmp.26 %tmp.27(%tmp.32);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 66 16 ]
+        %tmp.33 = self;
+        symbol [ processLedData %tmp.34 66 16 30 ];
+        %tmp.34 = getv function %tmp.33 :processLedData;
+        %tmp.35 = lgetv %data;
+        symbol [ data %tmp.35 66 31 35 ];
+        invoke %tmp.33 %tmp.34(%tmp.35);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 67 16 ]
+        goto break @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_switchStmtEnd;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_defaultCodeBegin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_59_8_68_8_switchStmtEnd:
+        pop;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_58_95_69_4_stop:
+    }
+    //! Handle the completion of a write operation on a descriptor
+    //! @param descriptor The descriptor that was written
+    //! @param status The BluetoothLowEnergy status indicating the result of the operation
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 74; @symbol_functiondef = [onDescriptorWrite,74,20,37]; @symbol_param<0> = [descriptor,74,38,48]; @symbol_param<0>_type<0> = [Descriptor,74,52,62]; @symbol_param<1> = [status,74,64,70]; @symbol_param<1>_type<0> = [Status,74,74,80]; ]
+    public
+    function onDescriptorWrite(descriptor as Descriptor, status as Status) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_74_90_78_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 75 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_8_77_8_if_stmt:
+        symbol [ BluetoothLowEnergy %tmp.1 75 12 30 ];
+        %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ cccdUuid %tmp.2 75 31 39 ];
+        %tmp.2 = getv function %tmp.1 :cccdUuid;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ equals %tmp.4 75 42 48 ];
+        %tmp.4 = getv function %tmp.3 :equals;
+        %tmp.5 = lgetv %descriptor;
+        symbol [ descriptor %tmp.5 75 49 59 ];
+        symbol [ getUuid %tmp.6 75 60 67 ];
+        %tmp.6 = getv function %tmp.5 :getUuid;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = invoke %tmp.3 %tmp.4(%tmp.7);
+        bf %tmp.8 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_8_77_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_8_77_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_72_77_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 76 12 ]
+        %tmp.9 = self;
+        symbol [ processCccdWrite %tmp.10 76 12 28 ];
+        %tmp.10 = getv function %tmp.9 :processCccdWrite;
+        invoke %tmp.9 %tmp.10();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_72_77_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_8_77_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_75_8_77_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_74_90_78_4_stop:
+    }
+    //! Get the custom data ByteArray
+    //! @return The custom data ByteArray
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 82; @symbol_functiondef = [getCustomDataByteArray,82,20,42]; @symbol_return<0> = [ByteArray,82,48,57]; ]
+    public
+    function getCustomDataByteArray() as ByteArray or Null {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_82_59_87_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 83 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_8_85_8_if_stmt:
+        symbol [ _custom_data_byte_array %tmp.2 83 12 35 ];
+        %tmp.2 = getv ? :_custom_data_byte_array;
+        symbol [ size %tmp.3 83 36 40 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = gt %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_8_85_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_8_85_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_48_85_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 84 12 ]
+        symbol [ _custom_data_byte_array %tmp.8 84 19 42 ];
+        %tmp.8 = getv ? :_custom_data_byte_array;
+        ret %tmp.8;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_48_85_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_8_85_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_83_8_85_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 86 8 ]
+        %tmp.9 = null;
+        ret %tmp.9;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_82_59_87_4_stop:
+    }
+    //! Get the custom GPIO data ByteArray
+    //! @return The custom GPIO data ByteArray
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 91; @symbol_functiondef = [getGpioDataByteArray,91,20,40]; @symbol_return<0> = [ByteArray,91,46,55]; ]
+    public
+    function getGpioDataByteArray() as ByteArray or Null {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_91_57_96_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 92 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_8_94_8_if_stmt:
+        symbol [ _gpio_data_byte_array %tmp.2 92 12 33 ];
+        %tmp.2 = getv ? :_gpio_data_byte_array;
+        symbol [ size %tmp.3 92 34 38 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = gt %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_8_94_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_8_94_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_46_94_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 93 12 ]
+        symbol [ _gpio_data_byte_array %tmp.8 93 19 40 ];
+        %tmp.8 = getv ? :_gpio_data_byte_array;
+        ret %tmp.8;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_46_94_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_8_94_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_92_8_94_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 95 8 ]
+        %tmp.9 = null;
+        ret %tmp.9;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_91_57_96_4_stop:
+    }
+    //! Update the GPIO data by writing to the BLE characteristic
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 99; @symbol_functiondef = [writeGpioDataByteArray,99,20,42]; @symbol_param<0> = [writeGpioDataByteArray,99,43,65]; @symbol_param<0>_type<0> = [ByteArray,99,69,78]; ]
+    public
+    function writeGpioDataByteArray(writeGpioDataByteArray as ByteArray) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_99_88_101_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 100 8 ]
+        symbol [ _BluetoothDelegate %tmp.2 100 8 26 ];
+        %tmp.2 = getv ? :_BluetoothDelegate;
+        symbol [ queueCharacteristicWrite %tmp.3 100 27 51 ];
+        %tmp.3 = getv function %tmp.2 :queueCharacteristicWrite;
+        symbol [ _GpioCharacteristic %tmp.5 100 52 71 ];
+        %tmp.5 = getv ? :_GpioCharacteristic;
+        %tmp.6 = lgetv %writeGpioDataByteArray;
+        symbol [ writeGpioDataByteArray %tmp.6 100 73 95 ];
+        invoke %tmp.2 %tmp.3(%tmp.5, %tmp.6);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_99_88_101_4_stop:
+    }
+    //! Write the next notification to the descriptor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 104; @symbol_functiondef = [activateNextNotification,104,21,45]; ]
+    private
+    function activateNextNotification() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_104_56_116_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 105 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_8_108_8_if_stmt:
+        symbol [ _pendingNotifies %tmp.2 105 12 28 ];
+        %tmp.2 = getv ? :_pendingNotifies;
+        symbol [ size %tmp.3 105 29 33 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = eq %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_8_108_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_8_108_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_42_108_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 106 12 ]
+        symbol [ System %tmp.7 106 12 18 ];
+        %tmp.7 = getm $.Toybox.System;
+        symbol [ println %tmp.8 106 19 26 ];
+        %tmp.8 = getv function %tmp.7 :println;
+        %tmp.9 = "activateNextNotification, _pendingNotifies.size() == 0";
+        invoke %tmp.7 %tmp.8(%tmp.9);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 107 12 ]
+        ret ?;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_42_108_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_8_108_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_105_8_108_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 110 8 ]
+        symbol [ System %tmp.10 110 8 14 ];
+        %tmp.10 = getm $.Toybox.System;
+        symbol [ println %tmp.11 110 15 22 ];
+        %tmp.11 = getv function %tmp.10 :println;
+        %tmp.12 = "activateNextNotification, _pendingNotifies.size(): ";
+        symbol [ _pendingNotifies %tmp.14 110 79 95 ];
+        %tmp.14 = getv ? :_pendingNotifies;
+        symbol [ size %tmp.15 110 96 100 ];
+        %tmp.15 = getv function %tmp.14 :size;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        %tmp.17 = add %tmp.12 %tmp.16;
+        invoke %tmp.10 %tmp.11(%tmp.17);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 111 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_104_56_116_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_104_56_116_4_stop" ]
+        %char.1 = local;
+        symbol [ char %char.1 111 12 16 ];
+        symbol [ _pendingNotifies %tmp.19 111 19 35 ];
+        %tmp.19 = getv ? :_pendingNotifies;
+        %tmp.20 = 0;
+        %tmp.21 = agetv %tmp.19 %tmp.20;
+        lputv %char.1 %tmp.21;
+        symbol [ char %char.1 111 12 16 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 112 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_104_56_116_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_104_56_116_4_stop" ]
+        %cccd.2 = local;
+        symbol [ cccd %cccd.2 112 12 16 ];
+        %tmp.22 = lgetv %char.1;
+        symbol [ char %tmp.22 112 19 23 ];
+        symbol [ getDescriptor %tmp.23 112 24 37 ];
+        %tmp.23 = getv function %tmp.22 :getDescriptor;
+        symbol [ BluetoothLowEnergy %tmp.24 112 38 56 ];
+        %tmp.24 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ cccdUuid %tmp.25 112 57 65 ];
+        %tmp.25 = getv function %tmp.24 :cccdUuid;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        %tmp.27 = invoke %tmp.22 %tmp.23(%tmp.26);
+        lputv %cccd.2 %tmp.27;
+        symbol [ cccd %cccd.2 112 12 16 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 113 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_8_115_8_if_stmt:
+        %tmp.28 = lgetv %cccd.2;
+        symbol [ cccd %tmp.28 113 12 16 ];
+        %tmp.29 = null;
+        %tmp.30 = ne %tmp.28 %tmp.29;
+        bf %tmp.30 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_8_115_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_8_115_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_26_115_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 114 12 ]
+        %tmp.31 = lgetv %cccd.2;
+        symbol [ cccd %tmp.31 114 12 16 ];
+        %tmp.32 = as %tmp.31 { (!Null) };
+        symbol [ requestWrite %tmp.33 114 17 29 ];
+        %tmp.33 = getv function %tmp.32 :requestWrite;
+        %tmp.34 = newba 2;
+        %tmp.35 = 0x01;
+        %tmp.36 = dup %tmp.34;
+        %tmp.37 = aputv %tmp.36 0 %tmp.35;
+        %tmp.38 = 0x00;
+        %tmp.39 = dup %tmp.37;
+        %tmp.40 = aputv %tmp.39 1 %tmp.38;
+        invoke %tmp.32 %tmp.33(%tmp.40);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_26_115_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_8_115_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_113_8_115_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_104_56_116_4_stop:
+    }
+    //! Process a CCCD write operation
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 119; @symbol_functiondef = [processCccdWrite,119,21,37]; ]
+    private
+    function processCccdWrite() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_119_48_128_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 120 8 ]
+        symbol [ System %tmp.1 120 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 120 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "processCccdWrite, _pendingNotifies.size(): ";
+        symbol [ _pendingNotifies %tmp.5 120 71 87 ];
+        %tmp.5 = getv ? :_pendingNotifies;
+        symbol [ size %tmp.6 120 88 92 ];
+        %tmp.6 = getv function %tmp.5 :size;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = add %tmp.3 %tmp.7;
+        invoke %tmp.1 %tmp.2(%tmp.8);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 121 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_8_126_8_if_stmt:
+        symbol [ _pendingNotifies %tmp.10 121 12 28 ];
+        %tmp.10 = getv ? :_pendingNotifies;
+        symbol [ size %tmp.11 121 29 33 ];
+        %tmp.11 = getv function %tmp.10 :size;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        %tmp.13 = 1;
+        %tmp.14 = gt %tmp.12 %tmp.13;
+        bf %tmp.14 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_8_126_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_8_126_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_41_124_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 122 12 ]
+        symbol [ _pendingNotifies %tmp.16 122 31 47 ];
+        %tmp.16 = getv ? :_pendingNotifies;
+        symbol [ slice %tmp.17 122 48 53 ];
+        %tmp.17 = getv function %tmp.16 :slice;
+        %tmp.18 = 1;
+        symbol [ _pendingNotifies %tmp.20 122 57 73 ];
+        %tmp.20 = getv ? :_pendingNotifies;
+        symbol [ size %tmp.21 122 74 78 ];
+        %tmp.21 = getv function %tmp.20 :size;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = invoke %tmp.16 %tmp.17(%tmp.18, %tmp.22);
+        symbol [ _pendingNotifies ? 122 12 28 ];
+        putv self :_pendingNotifies %tmp.23;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 123 12 ]
+        %tmp.24 = self;
+        symbol [ activateNextNotification %tmp.25 123 12 36 ];
+        %tmp.25 = getv function %tmp.24 :activateNextNotification;
+        invoke %tmp.24 %tmp.25();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_41_124_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_8_126_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_8_126_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_124_15_126_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 125 12 ]
+        %tmp.26 = newa 0 Array<Characteristic>;
+        symbol [ Array %tmp.26 125 37 42 ];
+        symbol [ Characteristic %tmp.26 125 43 57 ];
+        symbol [ _pendingNotifies ? 125 12 28 ];
+        putv self :_pendingNotifies %tmp.26;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_124_15_126_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_121_8_126_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_119_48_128_4_stop:
+    }
+    //! Process and set the custom data
+    //! @param data The new custom data
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 132; @symbol_functiondef = [processCustomData,132,21,38]; @symbol_param<0> = [data,132,39,43]; @symbol_param<0>_type<0> = [ByteArray,132,47,56]; ]
+    private
+    function processCustomData(data as ByteArray) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_132_66_137_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 133 8 ]
+        symbol [ System %tmp.1 133 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 133 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "processCustomData(), data.size()=";
+        %tmp.4 = lgetv %data;
+        symbol [ data %tmp.4 133 61 65 ];
+        symbol [ size %tmp.5 133 66 70 ];
+        %tmp.5 = getv function %tmp.4 :size;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = add %tmp.3 %tmp.6;
+        invoke %tmp.1 %tmp.2(%tmp.7);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 134 8 ]
+        %tmp.8 = newba 0;
+        symbol [ _custom_data_byte_array ? 134 8 31 ];
+        putv self :_custom_data_byte_array %tmp.8;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 135 8 ]
+        symbol [ _custom_data_byte_array %tmp.10 135 8 31 ];
+        %tmp.10 = getv ? :_custom_data_byte_array;
+        symbol [ addAll %tmp.11 135 32 38 ];
+        %tmp.11 = getv function %tmp.10 :addAll;
+        %tmp.12 = lgetv %data;
+        symbol [ data %tmp.12 135 39 43 ];
+        invoke %tmp.10 %tmp.11(%tmp.12);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 136 8 ]
+        symbol [ WatchUi %tmp.13 136 8 15 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.14 136 16 29 ];
+        %tmp.14 = getv function %tmp.13 :requestUpdate;
+        invoke %tmp.13 %tmp.14();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_132_66_137_4_stop:
+    }
+    //! Process and set the custom data processLedData
+    //! @param data The new custom data
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 141; @symbol_functiondef = [processLedData,141,21,35]; @symbol_param<0> = [data,141,36,40]; @symbol_param<0>_type<0> = [ByteArray,141,44,53]; ]
+    private
+    function processLedData(data as ByteArray) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_141_63_158_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 142 8 ]
+        symbol [ System %tmp.1 142 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 142 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "processLedData(), data.size()=";
+        %tmp.4 = lgetv %data;
+        symbol [ data %tmp.4 142 58 62 ];
+        symbol [ size %tmp.5 142 63 67 ];
+        %tmp.5 = getv function %tmp.4 :size;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = add %tmp.3 %tmp.6;
+        invoke %tmp.1 %tmp.2(%tmp.7);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 143 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_141_63_158_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_141_63_158_4_stop" ]
+        %old_gpio_data.1 = local;
+        symbol [ old_gpio_data %old_gpio_data.1 143 12 25 ];
+        symbol [ _gpio_data_byte_array %tmp.9 143 28 49 ];
+        %tmp.9 = getv ? :_gpio_data_byte_array;
+        lputv %old_gpio_data.1 %tmp.9;
+        symbol [ old_gpio_data %old_gpio_data.1 143 12 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 144 8 ]
+        %tmp.10 = newba 0;
+        symbol [ _gpio_data_byte_array ? 144 8 29 ];
+        putv self :_gpio_data_byte_array %tmp.10;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 145 8 ]
+        symbol [ _gpio_data_byte_array %tmp.12 145 8 29 ];
+        %tmp.12 = getv ? :_gpio_data_byte_array;
+        symbol [ addAll %tmp.13 145 30 36 ];
+        %tmp.13 = getv function %tmp.12 :addAll;
+        %tmp.14 = lgetv %data;
+        symbol [ data %tmp.14 145 37 41 ];
+        invoke %tmp.12 %tmp.13(%tmp.14);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 149 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_13_151_78_begin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_15_150_127_begin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_15_149_74_begin:
+        symbol [ _gpio_data_byte_array %tmp.16 149 15 36 ];
+        %tmp.16 = getv ? :_gpio_data_byte_array;
+        symbol [ size %tmp.17 149 37 41 ];
+        %tmp.17 = getv function %tmp.16 :size;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = 0;
+        %tmp.20 = gt %tmp.18 %tmp.19;
+        bf %tmp.20 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_16_151_78_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_51_149_74_true:
+        %tmp.21 = lgetv %old_gpio_data.1;
+        symbol [ old_gpio_data %tmp.21 149 51 64 ];
+        symbol [ size %tmp.22 149 65 69 ];
+        %tmp.22 = getv function %tmp.21 :size;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        %tmp.24 = 0;
+        %tmp.25 = gt %tmp.23 %tmp.24;
+        push %tmp.25;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_51_149_74_end:
+        %tmp.26 = phi [%tmp.20 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_15_149_74_begin] [%tmp.25 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_51_149_74_true] [%tmp.26 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_51_149_74_end];
+        bf %tmp.26 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_16_151_78_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_150_18_150_127_true:
+        symbol [ _gpio_data_byte_array %tmp.28 150 18 39 ];
+        %tmp.28 = getv ? :_gpio_data_byte_array;
+        symbol [ DeviceView %tmp.30 150 40 50 ];
+        %tmp.30 = getv ? :DeviceView;
+        symbol [ GPIO_PAYLOAD_INDEX_LED4 %tmp.31 150 51 74 ];
+        %tmp.31 = getv %tmp.30 :GPIO_PAYLOAD_INDEX_LED4;
+        %tmp.32 = agetv %tmp.28 %tmp.31;
+        %tmp.33 = lgetv %old_gpio_data.1;
+        symbol [ old_gpio_data %tmp.33 150 79 92 ];
+        symbol [ DeviceView %tmp.35 150 93 103 ];
+        %tmp.35 = getv ? :DeviceView;
+        symbol [ GPIO_PAYLOAD_INDEX_LED4 %tmp.36 150 104 127 ];
+        %tmp.36 = getv %tmp.35 :GPIO_PAYLOAD_INDEX_LED4;
+        %tmp.37 = agetv %tmp.33 %tmp.36;
+        %tmp.38 = ne %tmp.32 %tmp.37;
+        push %tmp.38;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_150_18_150_127_end:
+        %tmp.39 = phi [%tmp.26 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_15_150_127_begin] [%tmp.38 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_150_18_150_127_true] [%tmp.39 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_150_18_150_127_end];
+        bt %tmp.39 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_true;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_16_151_78_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_17_151_77_begin:
+        %tmp.40 = lgetv %old_gpio_data.1;
+        symbol [ old_gpio_data %tmp.40 151 17 30 ];
+        symbol [ size %tmp.41 151 31 35 ];
+        %tmp.41 = getv function %tmp.40 :size;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        %tmp.43 = 0;
+        %tmp.44 = eq %tmp.42 %tmp.43;
+        bf %tmp.44 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_46_151_77_true:
+        symbol [ _gpio_data_byte_array %tmp.46 151 46 67 ];
+        %tmp.46 = getv ? :_gpio_data_byte_array;
+        symbol [ size %tmp.47 151 68 72 ];
+        %tmp.47 = getv function %tmp.46 :size;
+        %tmp.48 = invoke %tmp.46 %tmp.47();
+        %tmp.49 = 0;
+        %tmp.50 = gt %tmp.48 %tmp.49;
+        push %tmp.50;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_46_151_77_end:
+        %tmp.51 = phi [%tmp.44 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_17_151_77_begin] [%tmp.50 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_46_151_77_true] [%tmp.51 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_46_151_77_end];
+        push %tmp.51;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_16_151_78_end:
+        %tmp.52 = phi [%tmp.39 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_13_151_78_begin] [%tmp.51 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_16_151_78_false] [%tmp.52 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_16_151_78_end];
+        bf %tmp.52 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_82_155_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 152 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_82_155_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_82_155_8_stop" ]
+        %message.2 = local;
+        symbol [ message %message.2 152 16 23 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_begin:
+        symbol [ _gpio_data_byte_array %tmp.54 152 26 47 ];
+        %tmp.54 = getv ? :_gpio_data_byte_array;
+        symbol [ DeviceView %tmp.56 152 48 58 ];
+        %tmp.56 = getv ? :DeviceView;
+        symbol [ GPIO_PAYLOAD_INDEX_LED4 %tmp.57 152 59 82 ];
+        %tmp.57 = getv %tmp.56 :GPIO_PAYLOAD_INDEX_LED4;
+        %tmp.58 = agetv %tmp.54 %tmp.57;
+        symbol [ DeviceView %tmp.60 152 87 97 ];
+        %tmp.60 = getv ? :DeviceView;
+        symbol [ LED_STATE_OFF %tmp.61 152 98 111 ];
+        %tmp.61 = getv %tmp.60 :LED_STATE_OFF;
+        %tmp.62 = eq %tmp.58 %tmp.61;
+        bf %tmp.62 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_true:
+        %tmp.63 = "LED4:state:off";
+        push %tmp.63;
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_false:
+        %tmp.64 = "LED4:state:on";
+        push %tmp.64;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_end:
+        %tmp.65 = phi [%tmp.62 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_begin] [%tmp.63 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_true] [%tmp.64 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_false] [%tmp.65 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_152_26_153_35_end];
+        lputv %message.2 %tmp.65;
+        symbol [ message %message.2 152 16 23 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 154 12 ]
+        symbol [ _PhoneCommunication %tmp.67 154 12 31 ];
+        %tmp.67 = getv ? :_PhoneCommunication;
+        symbol [ transmitMessageToPhone %tmp.68 154 32 54 ];
+        %tmp.68 = getv function %tmp.67 :transmitMessageToPhone;
+        %tmp.69 = lgetv %message.2;
+        symbol [ message %tmp.69 154 55 62 ];
+        invoke %tmp.67 %tmp.68(%tmp.69);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_151_82_155_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_149_8_155_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc" 157 8 ]
+        symbol [ WatchUi %tmp.70 157 8 15 ];
+        %tmp.70 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.71 157 16 29 ];
+        %tmp.71 = getv function %tmp.70 :requestUpdate;
+        invoke %tmp.70 %tmp.71();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_EnvironmentProfileModel_mc_141_63_158_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/EnvironmentProfileModel.mc"; @line = 7; ]
+<init> {
+}

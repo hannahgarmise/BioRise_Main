@@ -1,0 +1,88 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Graphics,7,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [WatchUi,9,14,21]; ]
+import Toybox.WatchUi;
+//! This is the main view of the application.
+//! This view only exists to push the sample menus.
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 13; @symbol_classdef = [Menu2TestView,13,6,19]; @symbol_extends<0> = [WatchUi,13,28,35]; @symbol_extends<1> = [View,13,36,40]; ]
+class Menu2TestView extends WatchUi.View {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 16; @symbol_functiondef = [initialize,16,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Menu2Sample_source_MenuTestView_mc_16_33_18_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc" 17 8 ]
+        symbol [ View %tmp.2 17 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 17 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Menu2Sample_source_MenuTestView_mc_16_33_18_4_stop:
+    }
+    //! Load your resources here
+    //! @param dc Device Context
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 22; @symbol_functiondef = [onLayout,22,20,28]; @symbol_param<0> = [dc,22,29,31]; @symbol_param<0>_type<0> = [Dc,22,35,37]; ]
+    public
+    function onLayout(dc as Dc) {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Menu2Sample_source_MenuTestView_mc_22_39_24_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc" 23 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 23 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ $ %tmp.3 23 18 19 ];
+        %tmp.3 = getm $;
+        symbol [ Rez %tmp.4 23 20 23 ];
+        %tmp.4 = getv %tmp.3 :Rez;
+        symbol [ Layouts %tmp.5 23 24 31 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ MainLayout %tmp.6 23 32 42 ];
+        %tmp.6 = getv function %tmp.5 :MainLayout;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 23 43 45 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Menu2Sample_source_MenuTestView_mc_22_39_24_4_stop:
+    }
+    //! Called when this View is brought to the foreground. Restore
+    //! the state of this View and prepare it to be shown. This includes
+    //! loading resources into memory.
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 29; @symbol_functiondef = [onShow,29,20,26]; ]
+    public
+    function onShow() as Void {
+    }
+    //! Update the view
+    //! @param dc Device Context
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 34; @symbol_functiondef = [onUpdate,34,20,28]; @symbol_param<0> = [dc,34,29,31]; @symbol_param<0>_type<0> = [Dc,34,35,37]; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Menu2Sample_source_MenuTestView_mc_34_47_37_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc" 36 8 ]
+        symbol [ View %tmp.2 36 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ onUpdate %tmp.3 36 13 21 ];
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 36 22 24 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Menu2Sample_source_MenuTestView_mc_34_47_37_4_stop:
+    }
+    //! Called when this View is removed from the screen. Save the
+    //! state of this View here. This includes freeing resources from
+    //! memory.
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 42; @symbol_functiondef = [onHide,42,20,26]; ]
+    public
+    function onHide() as Void {
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Menu2Sample/source/MenuTestView.mc"; @line = 7; ]
+<init> {
+}

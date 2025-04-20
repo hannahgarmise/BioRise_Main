@@ -1,0 +1,1157 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Application,7,14,25]; @symbol_importdef<2> = [Storage,7,26,33]; ]
+import Toybox.Application.Storage;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Graphics,8,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Lang,9,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 10; @symbol_importdef<0> = [Toybox,10,7,13]; @symbol_importdef<1> = [System,10,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 11; @symbol_importdef<0> = [Toybox,11,7,13]; @symbol_importdef<1> = [WatchUi,11,14,21]; ]
+import Toybox.WatchUi;
+//! Picker that allows the user to choose a time
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 14; @symbol_classdef = [SecondTimePicker,14,6,22]; @symbol_extends<0> = [WatchUi,14,31,38]; @symbol_extends<1> = [Picker,14,39,45]; ]
+class SecondTimePicker extends WatchUi.Picker {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 14; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 14; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 17; @symbol_functiondef = [initialize,17,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 18 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_stop" ]
+        %title.1 = local;
+        symbol [ title %title.1 18 12 17 ];
+        symbol [ WatchUi %tmp.3 18 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ Text %tmp.4 18 32 36 ];
+        %tmp.4 = getv function ? %tmp.3 :Text;
+        %tmp.5 = newd 5;
+        %tmp.7 = const :text;
+        symbol [ text %tmp.7 18 39 43 const ];
+        symbol [ $ %tmp.8 18 45 46 ];
+        %tmp.8 = getm $;
+        symbol [ Rez %tmp.9 18 47 50 ];
+        %tmp.9 = getv %tmp.8 :Rez;
+        symbol [ Strings %tmp.10 18 51 58 ];
+        %tmp.10 = getv %tmp.9 :Strings;
+        symbol [ timePickerTitle2 %tmp.11 18 59 75 ];
+        %tmp.11 = getv %tmp.10 :timePickerTitle2;
+        %tmp.12 = dup %tmp.5;
+        %tmp.13 = aputv %tmp.12 %tmp.7 %tmp.11;
+        %tmp.15 = const :locX;
+        symbol [ locX %tmp.15 18 78 82 const ];
+        symbol [ WatchUi %tmp.16 18 84 91 ];
+        %tmp.16 = getm $.Toybox.WatchUi;
+        symbol [ LAYOUT_HALIGN_CENTER %tmp.17 18 92 112 ];
+        %tmp.17 = getv %tmp.16 :LAYOUT_HALIGN_CENTER;
+        %tmp.18 = dup %tmp.13;
+        %tmp.19 = aputv %tmp.18 %tmp.15 %tmp.17;
+        %tmp.21 = const :locY;
+        symbol [ locY %tmp.21 19 13 17 const ];
+        symbol [ WatchUi %tmp.22 19 19 26 ];
+        %tmp.22 = getm $.Toybox.WatchUi;
+        symbol [ LAYOUT_VALIGN_BOTTOM %tmp.23 19 27 47 ];
+        %tmp.23 = getv %tmp.22 :LAYOUT_VALIGN_BOTTOM;
+        %tmp.24 = dup %tmp.19;
+        %tmp.25 = aputv %tmp.24 %tmp.21 %tmp.23;
+        %tmp.27 = const :color;
+        symbol [ color %tmp.27 19 50 55 const ];
+        symbol [ Graphics %tmp.28 19 57 65 ];
+        %tmp.28 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.29 19 66 77 ];
+        %tmp.29 = getv %tmp.28 :COLOR_WHITE;
+        %tmp.30 = dup %tmp.25;
+        %tmp.31 = aputv %tmp.30 %tmp.27 %tmp.29;
+        %tmp.33 = const :font;
+        symbol [ font %tmp.33 19 80 84 const ];
+        symbol [ Graphics %tmp.34 19 86 94 ];
+        %tmp.34 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.35 19 95 105 ];
+        %tmp.35 = getv %tmp.34 :FONT_XTINY;
+        %tmp.36 = dup %tmp.31;
+        %tmp.37 = aputv %tmp.36 %tmp.33 %tmp.35;
+        %tmp.1 = newc %tmp.4 (%tmp.37);
+        lputv %title.1 %tmp.1;
+        symbol [ title %title.1 18 12 17 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 20 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_stop" ]
+        %factories.2 = local;
+        symbol [ factories %factories.2 20 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 22 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_8_53_8_if_stmt:
+        symbol [ System %tmp.38 22 12 18 ];
+        %tmp.38 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.39 22 19 36 ];
+        %tmp.39 = getv function %tmp.38 :getDeviceSettings;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        symbol [ is24Hour %tmp.41 22 39 47 ];
+        %tmp.41 = getv %tmp.40 :is24Hour;
+        bf %tmp.41 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_8_53_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_8_53_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_49_37_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 23 12 ]
+        symbol [ $ %tmp.43 23 57 58 ];
+        %tmp.43 = getm $;
+        symbol [ FACTORY_COUNT_24_HOUR %tmp.44 23 59 80 ];
+        %tmp.44 = getv %tmp.43 :FACTORY_COUNT_24_HOUR;
+        %tmp.42 = newa Array<PickerFactory or Text> %tmp.44;
+        symbol [ Array %tmp.42 23 28 33 ];
+        symbol [ PickerFactory %tmp.42 23 34 47 ];
+        symbol [ Text %tmp.42 23 51 55 ];
+        lputv %factories.2 %tmp.42;
+        symbol [ factories %factories.2 23 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 24 12 ]
+        %tmp.45 = lgetv %factories.2;
+        symbol [ factories %tmp.45 24 12 21 ];
+        symbol [ $ %tmp.49 24 31 32 ];
+        %tmp.49 = getm $;
+        symbol [ NumberFactory %tmp.50 24 33 46 ];
+        %tmp.50 = getv %tmp.49 :NumberFactory;
+        %tmp.51 = 0;
+        %tmp.52 = 23;
+        %tmp.53 = 1;
+        %tmp.54 = newd 1;
+        %tmp.56 = const :font;
+        symbol [ font %tmp.56 25 13 17 const ];
+        symbol [ Graphics %tmp.57 25 21 29 ];
+        %tmp.57 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.58 25 30 40 ];
+        %tmp.58 = getv %tmp.57 :FONT_LARGE;
+        %tmp.59 = dup %tmp.54;
+        %tmp.60 = aputv %tmp.59 %tmp.56 %tmp.58;
+        %tmp.46 = newc %tmp.50 (%tmp.51, %tmp.52, %tmp.53, %tmp.60);
+        %tmp.61 = 0;
+        aputv %tmp.45 %tmp.61 %tmp.46;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 28 12 ]
+        %tmp.62 = lgetv %factories.2;
+        symbol [ factories %tmp.62 28 12 21 ];
+        symbol [ $ %tmp.66 28 31 32 ];
+        %tmp.66 = getm $;
+        symbol [ WordFactory %tmp.67 28 33 44 ];
+        %tmp.67 = getv %tmp.66 :WordFactory;
+        %tmp.68 = newa 1;
+        symbol [ $ %tmp.69 28 46 47 ];
+        %tmp.69 = getm $;
+        symbol [ Rez %tmp.70 28 48 51 ];
+        %tmp.70 = getv %tmp.69 :Rez;
+        symbol [ Strings %tmp.71 28 52 59 ];
+        %tmp.71 = getv %tmp.70 :Strings;
+        symbol [ timeSeparator %tmp.72 28 60 73 ];
+        %tmp.72 = getv %tmp.71 :timeSeparator;
+        %tmp.73 = dup %tmp.68;
+        %tmp.74 = aputv %tmp.73 0 %tmp.72;
+        %tmp.75 = newd 1;
+        %tmp.77 = const :font;
+        symbol [ font %tmp.77 29 13 17 const ];
+        symbol [ Graphics %tmp.78 29 21 29 ];
+        %tmp.78 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.79 29 30 40 ];
+        %tmp.79 = getv %tmp.78 :FONT_LARGE;
+        %tmp.80 = dup %tmp.75;
+        %tmp.81 = aputv %tmp.80 %tmp.77 %tmp.79;
+        %tmp.63 = newc %tmp.67 (%tmp.74, %tmp.81);
+        %tmp.82 = 1;
+        aputv %tmp.62 %tmp.82 %tmp.63;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 32 12 ]
+        %tmp.83 = lgetv %factories.2;
+        symbol [ factories %tmp.83 32 12 21 ];
+        symbol [ $ %tmp.87 32 31 32 ];
+        %tmp.87 = getm $;
+        symbol [ NumberFactory %tmp.88 32 33 46 ];
+        %tmp.88 = getv %tmp.87 :NumberFactory;
+        %tmp.89 = 0;
+        %tmp.90 = 59;
+        %tmp.91 = 1;
+        %tmp.92 = newd 2;
+        %tmp.94 = const :font;
+        symbol [ font %tmp.94 33 13 17 const ];
+        symbol [ Graphics %tmp.95 33 21 29 ];
+        %tmp.95 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.96 33 30 40 ];
+        %tmp.96 = getv %tmp.95 :FONT_LARGE;
+        %tmp.97 = dup %tmp.92;
+        %tmp.98 = aputv %tmp.97 %tmp.94 %tmp.96;
+        %tmp.100 = const :format;
+        symbol [ format %tmp.100 34 13 19 const ];
+        symbol [ $ %tmp.101 34 23 24 ];
+        %tmp.101 = getm $;
+        symbol [ MINUTE_FORMAT %tmp.102 34 25 38 ];
+        %tmp.102 = getv %tmp.101 :MINUTE_FORMAT;
+        %tmp.103 = dup %tmp.98;
+        %tmp.104 = aputv %tmp.103 %tmp.100 %tmp.102;
+        %tmp.84 = newc %tmp.88 (%tmp.89, %tmp.90, %tmp.91, %tmp.104);
+        %tmp.105 = 2;
+        aputv %tmp.83 %tmp.105 %tmp.84;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_49_37_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_8_53_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_8_53_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_37_15_53_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 38 12 ]
+        symbol [ $ %tmp.107 38 57 58 ];
+        %tmp.107 = getm $;
+        symbol [ FACTORY_COUNT_12_HOUR %tmp.108 38 59 80 ];
+        %tmp.108 = getv %tmp.107 :FACTORY_COUNT_12_HOUR;
+        %tmp.106 = newa Array<PickerFactory or Text> %tmp.108;
+        symbol [ Array %tmp.106 38 28 33 ];
+        symbol [ PickerFactory %tmp.106 38 34 47 ];
+        symbol [ Text %tmp.106 38 51 55 ];
+        lputv %factories.2 %tmp.106;
+        symbol [ factories %factories.2 38 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 39 12 ]
+        %tmp.109 = lgetv %factories.2;
+        symbol [ factories %tmp.109 39 12 21 ];
+        symbol [ $ %tmp.113 39 31 32 ];
+        %tmp.113 = getm $;
+        symbol [ NumberFactory %tmp.114 39 33 46 ];
+        %tmp.114 = getv %tmp.113 :NumberFactory;
+        %tmp.115 = 0;
+        %tmp.116 = 23;
+        %tmp.117 = 1;
+        %tmp.118 = newd 1;
+        %tmp.120 = const :font;
+        symbol [ font %tmp.120 40 13 17 const ];
+        symbol [ Graphics %tmp.121 40 21 29 ];
+        %tmp.121 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.122 40 30 40 ];
+        %tmp.122 = getv %tmp.121 :FONT_LARGE;
+        %tmp.123 = dup %tmp.118;
+        %tmp.124 = aputv %tmp.123 %tmp.120 %tmp.122;
+        %tmp.110 = newc %tmp.114 (%tmp.115, %tmp.116, %tmp.117, %tmp.124);
+        %tmp.125 = 0;
+        aputv %tmp.109 %tmp.125 %tmp.110;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 43 12 ]
+        %tmp.126 = lgetv %factories.2;
+        symbol [ factories %tmp.126 43 12 21 ];
+        symbol [ $ %tmp.130 43 31 32 ];
+        %tmp.130 = getm $;
+        symbol [ WordFactory %tmp.131 43 33 44 ];
+        %tmp.131 = getv %tmp.130 :WordFactory;
+        %tmp.132 = newa 1;
+        symbol [ $ %tmp.133 43 46 47 ];
+        %tmp.133 = getm $;
+        symbol [ Rez %tmp.134 43 48 51 ];
+        %tmp.134 = getv %tmp.133 :Rez;
+        symbol [ Strings %tmp.135 43 52 59 ];
+        %tmp.135 = getv %tmp.134 :Strings;
+        symbol [ timeSeparator %tmp.136 43 60 73 ];
+        %tmp.136 = getv %tmp.135 :timeSeparator;
+        %tmp.137 = dup %tmp.132;
+        %tmp.138 = aputv %tmp.137 0 %tmp.136;
+        %tmp.139 = newd 2;
+        %tmp.141 = const :font;
+        symbol [ font %tmp.141 44 13 17 const ];
+        symbol [ Graphics %tmp.142 44 21 29 ];
+        %tmp.142 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.143 44 30 40 ];
+        %tmp.143 = getv %tmp.142 :FONT_LARGE;
+        %tmp.144 = dup %tmp.139;
+        %tmp.145 = aputv %tmp.144 %tmp.141 %tmp.143;
+        %tmp.147 = const :color;
+        symbol [ color %tmp.147 45 13 18 const ];
+        symbol [ Graphics %tmp.148 45 22 30 ];
+        %tmp.148 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.149 45 31 40 ];
+        %tmp.149 = getv %tmp.148 :COLOR_RED;
+        %tmp.150 = dup %tmp.145;
+        %tmp.151 = aputv %tmp.150 %tmp.147 %tmp.149;
+        %tmp.127 = newc %tmp.131 (%tmp.138, %tmp.151);
+        %tmp.152 = 1;
+        aputv %tmp.126 %tmp.152 %tmp.127;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 48 12 ]
+        %tmp.153 = lgetv %factories.2;
+        symbol [ factories %tmp.153 48 12 21 ];
+        symbol [ $ %tmp.157 48 31 32 ];
+        %tmp.157 = getm $;
+        symbol [ NumberFactory %tmp.158 48 33 46 ];
+        %tmp.158 = getv %tmp.157 :NumberFactory;
+        %tmp.159 = 0;
+        %tmp.160 = 59;
+        %tmp.161 = 1;
+        %tmp.162 = newd 2;
+        %tmp.164 = const :font;
+        symbol [ font %tmp.164 49 13 17 const ];
+        symbol [ Graphics %tmp.165 49 21 29 ];
+        %tmp.165 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.166 49 30 40 ];
+        %tmp.166 = getv %tmp.165 :FONT_LARGE;
+        %tmp.167 = dup %tmp.162;
+        %tmp.168 = aputv %tmp.167 %tmp.164 %tmp.166;
+        %tmp.170 = const :format;
+        symbol [ format %tmp.170 50 13 19 const ];
+        symbol [ $ %tmp.171 50 23 24 ];
+        %tmp.171 = getm $;
+        symbol [ MINUTE_FORMAT %tmp.172 50 25 38 ];
+        %tmp.172 = getv %tmp.171 :MINUTE_FORMAT;
+        %tmp.173 = dup %tmp.168;
+        %tmp.174 = aputv %tmp.173 %tmp.170 %tmp.172;
+        %tmp.154 = newc %tmp.158 (%tmp.159, %tmp.160, %tmp.161, %tmp.174);
+        %tmp.175 = 2;
+        aputv %tmp.153 %tmp.175 %tmp.154;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 52 12 ]
+        %tmp.176 = lgetv %factories.2;
+        symbol [ factories %tmp.176 52 12 21 ];
+        symbol [ $ %tmp.180 52 31 32 ];
+        %tmp.180 = getm $;
+        symbol [ WordFactory %tmp.181 52 33 44 ];
+        %tmp.181 = getv %tmp.180 :WordFactory;
+        %tmp.182 = newa 2;
+        symbol [ $ %tmp.183 52 46 47 ];
+        %tmp.183 = getm $;
+        symbol [ Rez %tmp.184 52 48 51 ];
+        %tmp.184 = getv %tmp.183 :Rez;
+        symbol [ Strings %tmp.185 52 52 59 ];
+        %tmp.185 = getv %tmp.184 :Strings;
+        symbol [ morning %tmp.186 52 60 67 ];
+        %tmp.186 = getv %tmp.185 :morning;
+        %tmp.187 = dup %tmp.182;
+        %tmp.188 = aputv %tmp.187 0 %tmp.186;
+        symbol [ $ %tmp.189 52 69 70 ];
+        %tmp.189 = getm $;
+        symbol [ Rez %tmp.190 52 71 74 ];
+        %tmp.190 = getv %tmp.189 :Rez;
+        symbol [ Strings %tmp.191 52 75 82 ];
+        %tmp.191 = getv %tmp.190 :Strings;
+        symbol [ afternoon %tmp.192 52 83 92 ];
+        %tmp.192 = getv %tmp.191 :afternoon;
+        %tmp.193 = dup %tmp.188;
+        %tmp.194 = aputv %tmp.193 1 %tmp.192;
+        %tmp.195 = newd 0;
+        %tmp.177 = newc %tmp.181 (%tmp.194, %tmp.195);
+        %tmp.196 = 3;
+        aputv %tmp.176 %tmp.196 %tmp.177;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_37_15_53_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_22_8_53_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 55 8 ]
+        %tmp.197 = lgetv %factories.2;
+        symbol [ factories %tmp.197 55 8 17 ];
+        symbol [ $ %tmp.201 55 27 28 ];
+        %tmp.201 = getm $;
+        symbol [ WordFactory %tmp.202 55 29 40 ];
+        %tmp.202 = getv %tmp.201 :WordFactory;
+        %tmp.203 = newa 1;
+        symbol [ $ %tmp.204 55 42 43 ];
+        %tmp.204 = getm $;
+        symbol [ Rez %tmp.205 55 44 47 ];
+        %tmp.205 = getv %tmp.204 :Rez;
+        symbol [ Strings %tmp.206 55 48 55 ];
+        %tmp.206 = getv %tmp.205 :Strings;
+        symbol [ timeSeparator %tmp.207 55 56 69 ];
+        %tmp.207 = getv %tmp.206 :timeSeparator;
+        %tmp.208 = dup %tmp.203;
+        %tmp.209 = aputv %tmp.208 0 %tmp.207;
+        %tmp.210 = newd 1;
+        %tmp.212 = const :font;
+        symbol [ font %tmp.212 57 17 21 const ];
+        symbol [ Graphics %tmp.213 57 25 33 ];
+        %tmp.213 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.214 57 34 44 ];
+        %tmp.214 = getv %tmp.213 :FONT_LARGE;
+        %tmp.215 = dup %tmp.210;
+        %tmp.216 = aputv %tmp.215 %tmp.212 %tmp.214;
+        %tmp.198 = newc %tmp.202 (%tmp.209, %tmp.216);
+        %tmp.217 = 1;
+        aputv %tmp.197 %tmp.217 %tmp.198;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 62 8 ]
+        %tmp.218 = lgetv %factories.2;
+        symbol [ factories %tmp.218 62 8 17 ];
+        symbol [ $ %tmp.222 62 27 28 ];
+        %tmp.222 = getm $;
+        symbol [ NumberFactory %tmp.223 62 29 42 ];
+        %tmp.223 = getv %tmp.222 :NumberFactory;
+        %tmp.224 = 0;
+        %tmp.225 = 59;
+        %tmp.226 = 1;
+        %tmp.227 = newd 3;
+        %tmp.229 = const :format;
+        symbol [ format %tmp.229 62 55 61 const ];
+        symbol [ $ %tmp.230 62 63 64 ];
+        %tmp.230 = getm $;
+        symbol [ MINUTE_FORMAT %tmp.231 62 65 78 ];
+        %tmp.231 = getv %tmp.230 :MINUTE_FORMAT;
+        %tmp.232 = dup %tmp.227;
+        %tmp.233 = aputv %tmp.232 %tmp.229 %tmp.231;
+        %tmp.235 = const :font;
+        symbol [ font %tmp.235 62 81 85 const ];
+        symbol [ Graphics %tmp.236 62 87 95 ];
+        %tmp.236 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.237 62 96 106 ];
+        %tmp.237 = getv %tmp.236 :FONT_LARGE;
+        %tmp.238 = dup %tmp.233;
+        %tmp.239 = aputv %tmp.238 %tmp.235 %tmp.237;
+        %tmp.241 = const :color;
+        symbol [ color %tmp.241 62 109 114 const ];
+        symbol [ Graphics %tmp.242 62 116 124 ];
+        %tmp.242 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.243 62 125 134 ];
+        %tmp.243 = getv %tmp.242 :COLOR_RED;
+        %tmp.244 = dup %tmp.239;
+        %tmp.245 = aputv %tmp.244 %tmp.241 %tmp.243;
+        %tmp.219 = newc %tmp.223 (%tmp.224, %tmp.225, %tmp.226, %tmp.245);
+        %tmp.246 = 2;
+        aputv %tmp.218 %tmp.246 %tmp.219;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 64 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_stop" ]
+        %time.3 = local;
+        symbol [ time %time.3 64 12 16 ];
+        %tmp.247 = self;
+        symbol [ splitStoredTime %tmp.248 64 19 34 ];
+        %tmp.248 = getv function %tmp.247 :splitStoredTime;
+        %tmp.249 = lgetv %factories.2;
+        symbol [ factories %tmp.249 64 35 44 ];
+        symbol [ size %tmp.250 64 45 49 ];
+        %tmp.250 = getv function %tmp.249 :size;
+        %tmp.251 = invoke %tmp.249 %tmp.250();
+        %tmp.252 = invoke %tmp.247 %tmp.248(%tmp.251);
+        lputv %time.3 %tmp.252;
+        symbol [ time %time.3 64 12 16 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 65 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_stop" ]
+        %defaults.4 = local;
+        symbol [ defaults %defaults.4 65 12 20 ];
+        %tmp.254 = lgetv %factories.2;
+        symbol [ factories %tmp.254 65 41 50 ];
+        symbol [ size %tmp.255 65 51 55 ];
+        %tmp.255 = getv function %tmp.254 :size;
+        %tmp.256 = invoke %tmp.254 %tmp.255();
+        %tmp.253 = newa Array<Number> %tmp.256;
+        symbol [ Array %tmp.253 65 27 32 ];
+        symbol [ Number %tmp.253 65 33 39 ];
+        lputv %defaults.4 %tmp.253;
+        symbol [ defaults %defaults.4 65 12 20 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 66 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_8_80_8_if_stmt:
+        %tmp.257 = lgetv %time.3;
+        symbol [ time %tmp.257 66 12 16 ];
+        %tmp.258 = null;
+        %tmp.259 = ne %tmp.257 %tmp.258;
+        bf %tmp.259 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_8_80_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_8_80_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_26_80_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 67 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_26_80_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_26_80_8_stop" ]
+        %hour.5 = local;
+        symbol [ hour %hour.5 67 16 20 ];
+        %tmp.260 = lgetv %time.3;
+        symbol [ time %tmp.260 67 23 27 ];
+        %tmp.261 = as %tmp.260 { (!Null) };
+        %tmp.262 = 0;
+        %tmp.263 = agetv %tmp.261 %tmp.262;
+        symbol [ toNumber %tmp.264 67 31 39 ];
+        %tmp.264 = getv function %tmp.263 :toNumber;
+        %tmp.265 = invoke %tmp.263 %tmp.264();
+        lputv %hour.5 %tmp.265;
+        symbol [ hour %hour.5 67 16 20 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 68 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_12_70_12_if_stmt:
+        %tmp.266 = lgetv %hour.5;
+        symbol [ hour %tmp.266 68 16 20 ];
+        %tmp.267 = null;
+        %tmp.268 = ne %tmp.266 %tmp.267;
+        bf %tmp.268 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_12_70_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_12_70_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_30_70_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 69 16 ]
+        %tmp.269 = lgetv %defaults.4;
+        symbol [ defaults %tmp.269 69 16 24 ];
+        %tmp.270 = lgetv %factories.2;
+        symbol [ factories %tmp.270 69 31 40 ];
+        %tmp.271 = 0;
+        %tmp.272 = agetv %tmp.270 %tmp.271;
+        %tmp.273 = as %tmp.272 NumberFactory;
+        symbol [ NumberFactory %tmp.273 69 47 60 ];
+        symbol [ getIndex %tmp.274 69 62 70 ];
+        %tmp.274 = getv function %tmp.273 :getIndex;
+        %tmp.275 = lgetv %hour.5;
+        symbol [ hour %tmp.275 69 71 75 ];
+        %tmp.276 = as %tmp.275 { (!Null) };
+        %tmp.277 = invoke %tmp.273 %tmp.274(%tmp.276);
+        %tmp.278 = 0;
+        aputv %tmp.269 %tmp.278 %tmp.277;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_30_70_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_12_70_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_68_12_70_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 72 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_26_80_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_26_80_8_stop" ]
+        %min.6 = local;
+        symbol [ min %min.6 72 16 19 ];
+        %tmp.279 = lgetv %time.3;
+        symbol [ time %tmp.279 72 22 26 ];
+        %tmp.280 = as %tmp.279 { (!Null) };
+        %tmp.281 = 1;
+        %tmp.282 = agetv %tmp.280 %tmp.281;
+        symbol [ toNumber %tmp.283 72 30 38 ];
+        %tmp.283 = getv function %tmp.282 :toNumber;
+        %tmp.284 = invoke %tmp.282 %tmp.283();
+        lputv %min.6 %tmp.284;
+        symbol [ min %min.6 72 16 19 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 73 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_12_75_12_if_stmt:
+        %tmp.285 = lgetv %min.6;
+        symbol [ min %tmp.285 73 16 19 ];
+        %tmp.286 = null;
+        %tmp.287 = ne %tmp.285 %tmp.286;
+        bf %tmp.287 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_12_75_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_12_75_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_29_75_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 74 16 ]
+        %tmp.288 = lgetv %defaults.4;
+        symbol [ defaults %tmp.288 74 16 24 ];
+        %tmp.289 = lgetv %factories.2;
+        symbol [ factories %tmp.289 74 31 40 ];
+        %tmp.290 = 2;
+        %tmp.291 = agetv %tmp.289 %tmp.290;
+        %tmp.292 = as %tmp.291 NumberFactory;
+        symbol [ NumberFactory %tmp.292 74 47 60 ];
+        symbol [ getIndex %tmp.293 74 62 70 ];
+        %tmp.293 = getv function %tmp.292 :getIndex;
+        %tmp.294 = lgetv %min.6;
+        symbol [ min %tmp.294 74 71 74 ];
+        %tmp.295 = as %tmp.294 { (!Null) };
+        %tmp.296 = invoke %tmp.292 %tmp.293(%tmp.295);
+        %tmp.297 = 2;
+        aputv %tmp.288 %tmp.297 %tmp.296;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_29_75_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_12_75_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_73_12_75_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 77 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_12_79_12_if_stmt:
+        %tmp.298 = lgetv %defaults.4;
+        symbol [ defaults %tmp.298 77 16 24 ];
+        symbol [ size %tmp.299 77 25 29 ];
+        %tmp.299 = getv function %tmp.298 :size;
+        %tmp.300 = invoke %tmp.298 %tmp.299();
+        symbol [ $ %tmp.301 77 35 36 ];
+        %tmp.301 = getm $;
+        symbol [ FACTORY_COUNT_12_HOUR %tmp.302 77 37 58 ];
+        %tmp.302 = getv %tmp.301 :FACTORY_COUNT_12_HOUR;
+        %tmp.303 = eq %tmp.300 %tmp.302;
+        bf %tmp.303 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_12_79_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_12_79_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_60_79_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 78 16 ]
+        %tmp.304 = lgetv %defaults.4;
+        symbol [ defaults %tmp.304 78 16 24 ];
+        %tmp.305 = lgetv %factories.2;
+        symbol [ factories %tmp.305 78 31 40 ];
+        %tmp.306 = 3;
+        %tmp.307 = agetv %tmp.305 %tmp.306;
+        %tmp.308 = as %tmp.307 WordFactory;
+        symbol [ WordFactory %tmp.308 78 47 58 ];
+        symbol [ getIndex %tmp.309 78 60 68 ];
+        %tmp.309 = getv function %tmp.308 :getIndex;
+        %tmp.310 = lgetv %time.3;
+        symbol [ time %tmp.310 78 69 73 ];
+        %tmp.311 = as %tmp.310 { (!Null) };
+        %tmp.312 = 2;
+        %tmp.313 = agetv %tmp.311 %tmp.312;
+        %tmp.314 = invoke %tmp.308 %tmp.309(%tmp.313);
+        %tmp.315 = 3;
+        aputv %tmp.304 %tmp.315 %tmp.314;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_60_79_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_12_79_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_77_12_79_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_26_80_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_8_80_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_66_8_80_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 82 8 ]
+        symbol [ Picker %tmp.317 82 8 14 ];
+        %tmp.317 = getv ? :Picker;
+        symbol [ initialize %tmp.318 82 15 25 ];
+        %tmp.318 = getv function %tmp.317 :initialize;
+        %tmp.319 = newd 3;
+        %tmp.321 = const :title;
+        symbol [ title %tmp.321 82 28 33 const ];
+        %tmp.322 = lgetv %title.1;
+        symbol [ title %tmp.322 82 35 40 ];
+        %tmp.323 = dup %tmp.319;
+        %tmp.324 = aputv %tmp.323 %tmp.321 %tmp.322;
+        %tmp.326 = const :pattern;
+        symbol [ pattern %tmp.326 82 43 50 const ];
+        %tmp.327 = lgetv %factories.2;
+        symbol [ factories %tmp.327 82 52 61 ];
+        %tmp.328 = dup %tmp.324;
+        %tmp.329 = aputv %tmp.328 %tmp.326 %tmp.327;
+        %tmp.331 = const :defaults;
+        symbol [ defaults %tmp.331 82 64 72 const ];
+        %tmp.332 = lgetv %defaults.4;
+        symbol [ defaults %tmp.332 82 74 82 ];
+        %tmp.333 = dup %tmp.329;
+        %tmp.334 = aputv %tmp.333 %tmp.331 %tmp.332;
+        invoke %tmp.317 %tmp.318(%tmp.334);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_17_33_84_4_stop:
+    }
+    //! Update the view
+    //! @param dc Device Context
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 88; @symbol_functiondef = [onUpdate,88,20,28]; @symbol_param<0> = [dc,88,29,31]; @symbol_param<0>_type<0> = [Dc,88,35,37]; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_88_47_92_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 89 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 89 8 10 ];
+        symbol [ setColor %tmp.2 89 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 89 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 89 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 89 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 89 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 90 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 90 8 10 ];
+        symbol [ clear %tmp.8 90 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 91 8 ]
+        symbol [ Picker %tmp.10 91 8 14 ];
+        %tmp.10 = getv ? :Picker;
+        symbol [ onUpdate %tmp.11 91 15 23 ];
+        %tmp.11 = getv function %tmp.10 :onUpdate;
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 91 24 26 ];
+        invoke %tmp.10 %tmp.11(%tmp.12);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_88_47_92_4_stop:
+    }
+    //! Get the stored time in an array
+    //! @param factoryCount Number of factories used to make the time
+    //! @return Array with the stored time
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 97; @symbol_functiondef = [splitStoredTime,97,21,36]; @symbol_param<0> = [factoryCount,97,37,49]; @symbol_param<0>_type<0> = [Number,97,53,59]; @symbol_return<0> = [Array,97,64,69]; @symbol_return<1> = [String,97,70,76]; ]
+    private
+    function splitStoredTime(factoryCount as Number) as Array<String> or Null {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 98 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_stop" ]
+        %storedValue.1 = local;
+        symbol [ storedValue %storedValue.1 98 12 23 ];
+        symbol [ Storage %tmp.1 98 26 33 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.2 98 34 42 ];
+        %tmp.2 = getv function %tmp.1 :getValue;
+        %tmp.3 = "time2";
+        %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+        lputv %storedValue.1 %tmp.4;
+        symbol [ storedValue %storedValue.1 98 12 23 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 99 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_stop" ]
+        %defaults.2 = local;
+        symbol [ defaults %defaults.2 99 12 20 ];
+        %tmp.5 = null;
+        lputv %defaults.2 %tmp.5;
+        symbol [ defaults %defaults.2 99 12 20 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 100 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_stop" ]
+        %separatorIndex.3 = local;
+        symbol [ separatorIndex %separatorIndex.3 100 12 26 ];
+        %tmp.6 = 0;
+        lputv %separatorIndex.3 %tmp.6;
+        symbol [ separatorIndex %separatorIndex.3 100 12 26 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 102 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_8_124_8_if_stmt:
+        %tmp.7 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.7 102 12 23 ];
+        symbol [ String %tmp.9 102 35 41 ];
+        %tmp.9 = getv ? :String;
+        %tmp.10 = isa %tmp.7 %tmp.9;
+        bf %tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_8_124_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_8_124_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_43_124_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 103 12 ]
+        %tmp.12 = lgetv %factoryCount;
+        symbol [ factoryCount %tmp.12 103 41 53 ];
+        %tmp.13 = 1;
+        %tmp.14 = sub %tmp.12 %tmp.13;
+        %tmp.11 = newa Array<String> %tmp.14;
+        symbol [ Array %tmp.11 103 27 32 ];
+        symbol [ String %tmp.11 103 33 39 ];
+        lputv %defaults.2 %tmp.11;
+        symbol [ defaults %defaults.2 103 12 20 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 106 12 ]
+        %tmp.15 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.15 106 29 40 ];
+        %tmp.16 = as %tmp.15 { (String) };
+        symbol [ find %tmp.17 106 41 45 ];
+        %tmp.17 = getv function %tmp.16 :find;
+        symbol [ WatchUi %tmp.18 106 46 53 ];
+        %tmp.18 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.19 106 54 66 ];
+        %tmp.19 = getv function %tmp.18 :loadResource;
+        symbol [ $ %tmp.20 106 67 68 ];
+        %tmp.20 = getm $;
+        symbol [ Rez %tmp.21 106 69 72 ];
+        %tmp.21 = getv %tmp.20 :Rez;
+        symbol [ Strings %tmp.22 106 73 80 ];
+        %tmp.22 = getv %tmp.21 :Strings;
+        symbol [ timeSeparator %tmp.23 106 81 94 ];
+        %tmp.23 = getv %tmp.22 :timeSeparator;
+        %tmp.24 = invoke %tmp.18 %tmp.19(%tmp.23);
+        %tmp.25 = as %tmp.24 String;
+        symbol [ String %tmp.25 106 99 105 ];
+        %tmp.26 = invoke %tmp.16 %tmp.17(%tmp.25);
+        lputv %separatorIndex.3 %tmp.26;
+        symbol [ separatorIndex %separatorIndex.3 106 12 26 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 107 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_12_123_12_if_stmt:
+        %tmp.27 = lgetv %separatorIndex.3;
+        symbol [ separatorIndex %tmp.27 107 16 30 ];
+        %tmp.28 = null;
+        %tmp.29 = ne %tmp.27 %tmp.28;
+        bf %tmp.29 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_12_123_12_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_12_123_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_40_121_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 108 16 ]
+        %tmp.30 = lgetv %defaults.2;
+        symbol [ defaults %tmp.30 108 16 24 ];
+        %tmp.31 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.31 108 30 41 ];
+        %tmp.32 = as %tmp.31 { (String) };
+        symbol [ substring %tmp.33 108 42 51 ];
+        %tmp.33 = getv function %tmp.32 :substring;
+        %tmp.34 = 0;
+        %tmp.35 = lgetv %separatorIndex.3;
+        symbol [ separatorIndex %tmp.35 108 55 69 ];
+        %tmp.36 = as %tmp.35 { (!Null) };
+        %tmp.37 = invoke %tmp.32 %tmp.33(%tmp.34, %tmp.36);
+        %tmp.38 = 0;
+        aputv %tmp.30 %tmp.38 %tmp.37;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 110 16 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_16_120_16_if_stmt:
+        %tmp.39 = lgetv %factoryCount;
+        symbol [ factoryCount %tmp.39 110 20 32 ];
+        symbol [ $ %tmp.40 110 36 37 ];
+        %tmp.40 = getm $;
+        symbol [ FACTORY_COUNT_24_HOUR %tmp.41 110 38 59 ];
+        %tmp.41 = getv %tmp.40 :FACTORY_COUNT_24_HOUR;
+        %tmp.42 = eq %tmp.39 %tmp.41;
+        bf %tmp.42 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_16_120_16_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_16_120_16_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_61_112_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 111 20 ]
+        %tmp.43 = lgetv %defaults.2;
+        symbol [ defaults %tmp.43 111 20 28 ];
+        %tmp.44 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.44 111 34 45 ];
+        %tmp.45 = as %tmp.44 { (String) };
+        symbol [ substring %tmp.46 111 46 55 ];
+        %tmp.46 = getv function %tmp.45 :substring;
+        %tmp.47 = lgetv %separatorIndex.3;
+        symbol [ separatorIndex %tmp.47 111 56 70 ];
+        %tmp.48 = as %tmp.47 { (!Null) };
+        %tmp.49 = 1;
+        %tmp.50 = add %tmp.48 %tmp.49;
+        %tmp.51 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.51 111 76 87 ];
+        %tmp.52 = as %tmp.51 { (String) };
+        symbol [ length %tmp.53 111 88 94 ];
+        %tmp.53 = getv function %tmp.52 :length;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        %tmp.55 = invoke %tmp.45 %tmp.46(%tmp.50, %tmp.54);
+        %tmp.56 = 1;
+        aputv %tmp.43 %tmp.56 %tmp.55;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_61_112_16_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_16_120_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_16_120_16_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_112_23_120_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 113 20 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_112_23_120_16_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_112_23_120_16_stop" ]
+        %spaceIndex.4 = local;
+        symbol [ spaceIndex %spaceIndex.4 113 24 34 ];
+        %tmp.57 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.57 113 37 48 ];
+        %tmp.58 = as %tmp.57 { (String) };
+        symbol [ find %tmp.59 113 49 53 ];
+        %tmp.59 = getv function %tmp.58 :find;
+        %tmp.60 = " ";
+        %tmp.61 = invoke %tmp.58 %tmp.59(%tmp.60);
+        lputv %spaceIndex.4 %tmp.61;
+        symbol [ spaceIndex %spaceIndex.4 113 24 34 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 114 20 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_20_119_20_if_stmt:
+        %tmp.62 = lgetv %spaceIndex.4;
+        symbol [ spaceIndex %tmp.62 114 24 34 ];
+        %tmp.63 = null;
+        %tmp.64 = ne %tmp.62 %tmp.63;
+        bf %tmp.64 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_20_119_20_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_20_119_20_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_44_117_20_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 115 24 ]
+        %tmp.65 = lgetv %defaults.2;
+        symbol [ defaults %tmp.65 115 24 32 ];
+        %tmp.66 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.66 115 38 49 ];
+        %tmp.67 = as %tmp.66 { (String) };
+        symbol [ substring %tmp.68 115 50 59 ];
+        %tmp.68 = getv function %tmp.67 :substring;
+        %tmp.69 = lgetv %separatorIndex.3;
+        symbol [ separatorIndex %tmp.69 115 60 74 ];
+        %tmp.70 = as %tmp.69 { (!Null) };
+        %tmp.71 = 1;
+        %tmp.72 = add %tmp.70 %tmp.71;
+        %tmp.73 = lgetv %spaceIndex.4;
+        symbol [ spaceIndex %tmp.73 115 80 90 ];
+        %tmp.74 = as %tmp.73 { (!Null) };
+        %tmp.75 = invoke %tmp.67 %tmp.68(%tmp.72, %tmp.74);
+        %tmp.76 = 1;
+        aputv %tmp.65 %tmp.76 %tmp.75;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 116 24 ]
+        %tmp.77 = lgetv %defaults.2;
+        symbol [ defaults %tmp.77 116 24 32 ];
+        %tmp.78 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.78 116 38 49 ];
+        %tmp.79 = as %tmp.78 { (String) };
+        symbol [ substring %tmp.80 116 50 59 ];
+        %tmp.80 = getv function %tmp.79 :substring;
+        %tmp.81 = lgetv %spaceIndex.4;
+        symbol [ spaceIndex %tmp.81 116 60 70 ];
+        %tmp.82 = as %tmp.81 { (!Null) };
+        %tmp.83 = 1;
+        %tmp.84 = add %tmp.82 %tmp.83;
+        %tmp.85 = lgetv %storedValue.1;
+        symbol [ storedValue %tmp.85 116 76 87 ];
+        %tmp.86 = as %tmp.85 { (String) };
+        symbol [ length %tmp.87 116 88 94 ];
+        %tmp.87 = getv function %tmp.86 :length;
+        %tmp.88 = invoke %tmp.86 %tmp.87();
+        %tmp.89 = invoke %tmp.79 %tmp.80(%tmp.84, %tmp.88);
+        %tmp.90 = 2;
+        aputv %tmp.77 %tmp.90 %tmp.89;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_44_117_20_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_20_119_20_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_20_119_20_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_117_27_119_20_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 118 24 ]
+        %tmp.91 = null;
+        lputv %defaults.2 %tmp.91;
+        symbol [ defaults %defaults.2 118 24 32 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_117_27_119_20_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_114_20_119_20_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_112_23_120_16_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_110_16_120_16_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_40_121_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_12_123_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_12_123_12_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_121_19_123_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 122 16 ]
+        %tmp.92 = null;
+        lputv %defaults.2 %tmp.92;
+        symbol [ defaults %defaults.2 122 16 24 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_121_19_123_12_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_107_12_123_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_43_124_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_8_124_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_102_8_124_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 126 8 ]
+        %tmp.93 = lgetv %defaults.2;
+        symbol [ defaults %tmp.93 126 15 23 ];
+        ret %tmp.93;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_97_79_127_4_stop:
+    }
+}
+//! Responds to a time picker selection or cancellation
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 131; @symbol_classdef = [SecondTimePickerDelegate,131,6,30]; @symbol_extends<0> = [WatchUi,131,39,46]; @symbol_extends<1> = [PickerDelegate,131,47,61]; ]
+class SecondTimePickerDelegate extends WatchUi.PickerDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 131; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 131; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 134; @symbol_functiondef = [initialize,134,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_134_33_136_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 135 8 ]
+        symbol [ PickerDelegate %tmp.2 135 8 22 ];
+        %tmp.2 = getv ? :PickerDelegate;
+        symbol [ initialize %tmp.3 135 23 33 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_134_33_136_4_stop:
+    }
+    //! Handle a cancel event from the picker
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 140; @symbol_functiondef = [onCancel,140,20,28]; @symbol_return<0> = [Boolean,140,34,41]; ]
+    public
+    function onCancel() as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_140_42_143_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 141 8 ]
+        symbol [ WatchUi %tmp.1 141 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 141 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 141 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.4 141 32 47 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_IMMEDIATE;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 142 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_140_42_143_4_stop:
+    }
+    //! Handle a confirm event from the picker
+    //! @param values The values chosen in the picker
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 148; @symbol_functiondef = [onAccept,148,20,28]; @symbol_param<0> = [values,148,29,35]; @symbol_param<0>_type<0> = [Array,148,39,44]; @symbol_return<0> = [Boolean,148,49,56]; ]
+    public
+    function onAccept(values as Array) as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 149 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop" ]
+        %hour.1 = local;
+        symbol [ hour %hour.1 149 12 16 ];
+        %tmp.1 = lgetv %values;
+        symbol [ values %tmp.1 149 19 25 ];
+        %tmp.2 = 0;
+        %tmp.3 = agetv %tmp.1 %tmp.2;
+        %tmp.4 = as %tmp.3 Number;
+        symbol [ Number %tmp.4 149 32 38 ];
+        lputv %hour.1 %tmp.4;
+        symbol [ hour %hour.1 149 12 16 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 150 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop" ]
+        %min.2 = local;
+        symbol [ min %min.2 150 12 15 ];
+        %tmp.5 = lgetv %values;
+        symbol [ values %tmp.5 150 18 24 ];
+        %tmp.6 = 2;
+        %tmp.7 = agetv %tmp.5 %tmp.6;
+        %tmp.8 = as %tmp.7 Number;
+        symbol [ Number %tmp.8 150 31 37 ];
+        lputv %min.2 %tmp.8;
+        symbol [ min %min.2 150 12 15 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 152 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop" ]
+        %hourStr.3 = local;
+        symbol [ hourStr %hourStr.3 152 12 19 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_begin:
+        %tmp.9 = lgetv %hour.1;
+        symbol [ hour %tmp.9 152 23 27 ];
+        %tmp.10 = 10;
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_true:
+        %tmp.12 = "0";
+        %tmp.13 = lgetv %hour.1;
+        symbol [ hour %tmp.13 152 42 46 ];
+        %tmp.14 = add %tmp.12 %tmp.13;
+        push %tmp.14;
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_false:
+        %tmp.15 = lgetv %hour.1;
+        symbol [ hour %tmp.15 152 49 53 ];
+        %tmp.16 = "";
+        %tmp.17 = add %tmp.15 %tmp.16;
+        push %tmp.17;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_end:
+        %tmp.18 = phi [%tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_begin] [%tmp.14 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_true] [%tmp.17 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_false] [%tmp.18 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_152_22_152_56_end];
+        lputv %hourStr.3 %tmp.18;
+        symbol [ hourStr %hourStr.3 152 12 19 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 153 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop" ]
+        %minStr.4 = local;
+        symbol [ minStr %minStr.4 153 12 18 ];
+        %tmp.19 = lgetv %min.2;
+        symbol [ min %tmp.19 153 21 24 ];
+        symbol [ format %tmp.20 153 25 31 ];
+        %tmp.20 = getv function %tmp.19 :format;
+        symbol [ $ %tmp.21 153 32 33 ];
+        %tmp.21 = getm $;
+        symbol [ MINUTE_FORMAT %tmp.22 153 34 47 ];
+        %tmp.22 = getv %tmp.21 :MINUTE_FORMAT;
+        %tmp.23 = invoke %tmp.19 %tmp.20(%tmp.22);
+        lputv %minStr.4 %tmp.23;
+        symbol [ minStr %minStr.4 153 12 18 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 155 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop" ]
+        %time.5 = local;
+        symbol [ time %time.5 155 12 16 ];
+        %tmp.24 = lgetv %hourStr.3;
+        symbol [ hourStr %tmp.24 155 19 26 ];
+        symbol [ WatchUi %tmp.25 155 30 37 ];
+        %tmp.25 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.26 155 38 50 ];
+        %tmp.26 = getv function %tmp.25 :loadResource;
+        symbol [ $ %tmp.27 155 51 52 ];
+        %tmp.27 = getm $;
+        symbol [ Rez %tmp.28 155 53 56 ];
+        %tmp.28 = getv %tmp.27 :Rez;
+        symbol [ Strings %tmp.29 155 57 64 ];
+        %tmp.29 = getv %tmp.28 :Strings;
+        symbol [ timeSeparator %tmp.30 155 65 78 ];
+        %tmp.30 = getv %tmp.29 :timeSeparator;
+        %tmp.31 = invoke %tmp.25 %tmp.26(%tmp.30);
+        %tmp.32 = as %tmp.31 String;
+        symbol [ String %tmp.32 155 83 89 ];
+        %tmp.33 = add %tmp.24 %tmp.32;
+        %tmp.34 = lgetv %minStr.4;
+        symbol [ minStr %tmp.34 155 93 99 ];
+        %tmp.35 = add %tmp.33 %tmp.34;
+        lputv %time.5 %tmp.35;
+        symbol [ time %time.5 155 12 16 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 157 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_8_162_8_if_stmt:
+        %tmp.36 = lgetv %values;
+        symbol [ values %tmp.36 157 12 18 ];
+        symbol [ size %tmp.37 157 19 23 ];
+        %tmp.37 = getv function %tmp.36 :size;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        symbol [ $ %tmp.39 157 29 30 ];
+        %tmp.39 = getm $;
+        symbol [ FACTORY_COUNT_12_HOUR %tmp.40 157 31 52 ];
+        %tmp.40 = getv %tmp.39 :FACTORY_COUNT_12_HOUR;
+        %tmp.41 = eq %tmp.38 %tmp.40;
+        bf %tmp.41 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_8_162_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_8_162_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_54_162_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 158 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_54_162_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_54_162_8_stop" ]
+        %dayPart.6 = local;
+        symbol [ dayPart %dayPart.6 158 16 23 ];
+        %tmp.42 = lgetv %values;
+        symbol [ values %tmp.42 158 26 32 ];
+        %tmp.43 = 3;
+        %tmp.44 = agetv %tmp.42 %tmp.43;
+        lputv %dayPart.6 %tmp.44;
+        symbol [ dayPart %dayPart.6 158 16 23 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 159 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_12_161_12_if_stmt:
+        %tmp.45 = lgetv %dayPart.6;
+        symbol [ dayPart %tmp.45 159 16 23 ];
+        %tmp.46 = null;
+        %tmp.47 = ne %tmp.45 %tmp.46;
+        bf %tmp.47 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_12_161_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_12_161_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_33_161_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 160 16 ]
+        %tmp.48 = lgetv %time.5;
+        symbol [ time %tmp.48 160 16 20 ];
+        %tmp.49 = " ";
+        symbol [ WatchUi %tmp.50 160 30 37 ];
+        %tmp.50 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.51 160 38 50 ];
+        %tmp.51 = getv function %tmp.50 :loadResource;
+        %tmp.52 = lgetv %dayPart.6;
+        symbol [ dayPart %tmp.52 160 51 58 ];
+        %tmp.53 = as %tmp.52 { (!Null) };
+        %tmp.54 = as %tmp.53 ResourceId;
+        symbol [ ResourceId %tmp.54 160 62 72 ];
+        %tmp.55 = invoke %tmp.50 %tmp.51(%tmp.54);
+        %tmp.56 = add %tmp.49 %tmp.55;
+        %tmp.57 = add %tmp.48 %tmp.56;
+        lputv %time.5 %tmp.57;
+        symbol [ time %time.5 160 16 20 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_33_161_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_12_161_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_159_12_161_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_54_162_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_8_162_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_157_8_162_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 163 8 ]
+        symbol [ Storage %tmp.58 163 8 15 ];
+        %tmp.58 = getm $.Toybox.Application.Storage;
+        symbol [ setValue %tmp.59 163 16 24 ];
+        %tmp.59 = getv function %tmp.58 :setValue;
+        %tmp.60 = "time2";
+        %tmp.61 = lgetv %time.5;
+        symbol [ time %tmp.61 163 34 38 ];
+        invoke %tmp.58 %tmp.59(%tmp.60, %tmp.61);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 165 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop" ]
+        %menu.7 = local;
+        symbol [ menu %menu.7 165 12 16 ];
+        symbol [ WatchUi %tmp.64 165 23 30 ];
+        %tmp.64 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.65 165 31 36 ];
+        %tmp.65 = getv function ? %tmp.64 :Menu2;
+        %tmp.66 = newd 1;
+        %tmp.68 = const :title;
+        symbol [ title %tmp.68 166 13 18 const ];
+        %tmp.69 = "Wake Sequence";
+        %tmp.70 = dup %tmp.66;
+        %tmp.71 = aputv %tmp.70 %tmp.68 %tmp.69;
+        %tmp.62 = newc %tmp.65 (%tmp.71);
+        lputv %menu.7 %tmp.62;
+        symbol [ menu %menu.7 165 12 16 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 169 8 ]
+        %tmp.72 = lgetv %menu.7;
+        symbol [ menu %tmp.72 169 8 12 ];
+        symbol [ addItem %tmp.73 169 13 20 ];
+        %tmp.73 = getv function %tmp.72 :addItem;
+        symbol [ WatchUi %tmp.76 169 25 32 ];
+        %tmp.76 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.77 169 33 41 ];
+        %tmp.77 = getv function ? %tmp.76 :MenuItem;
+        %tmp.78 = "Sequence 1";
+        %tmp.79 = null;
+        %tmp.80 = "1";
+        %tmp.81 = null;
+        %tmp.74 = newc %tmp.77 (%tmp.78, %tmp.79, %tmp.80, %tmp.81);
+        invoke %tmp.72 %tmp.73(%tmp.74);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 170 8 ]
+        %tmp.82 = lgetv %menu.7;
+        symbol [ menu %tmp.82 170 8 12 ];
+        symbol [ addItem %tmp.83 170 13 20 ];
+        %tmp.83 = getv function %tmp.82 :addItem;
+        symbol [ WatchUi %tmp.86 170 25 32 ];
+        %tmp.86 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.87 170 33 41 ];
+        %tmp.87 = getv function ? %tmp.86 :MenuItem;
+        %tmp.88 = "Sequence 2";
+        %tmp.89 = null;
+        %tmp.90 = "2";
+        %tmp.91 = null;
+        %tmp.84 = newc %tmp.87 (%tmp.88, %tmp.89, %tmp.90, %tmp.91);
+        invoke %tmp.82 %tmp.83(%tmp.84);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 171 8 ]
+        %tmp.92 = lgetv %menu.7;
+        symbol [ menu %tmp.92 171 8 12 ];
+        symbol [ addItem %tmp.93 171 13 20 ];
+        %tmp.93 = getv function %tmp.92 :addItem;
+        symbol [ WatchUi %tmp.96 171 25 32 ];
+        %tmp.96 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.97 171 33 41 ];
+        %tmp.97 = getv function ? %tmp.96 :MenuItem;
+        %tmp.98 = "Sequence 3";
+        %tmp.99 = null;
+        %tmp.100 = "3";
+        %tmp.101 = null;
+        %tmp.94 = newc %tmp.97 (%tmp.98, %tmp.99, %tmp.100, %tmp.101);
+        invoke %tmp.92 %tmp.93(%tmp.94);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 173 8 ]
+        symbol [ WatchUi %tmp.102 173 8 15 ];
+        %tmp.102 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.103 173 16 24 ];
+        %tmp.103 = getv function %tmp.102 :pushView;
+        %tmp.104 = lgetv %menu.7;
+        symbol [ menu %tmp.104 173 25 29 ];
+        symbol [ $ %tmp.108 173 35 36 ];
+        %tmp.108 = getm $;
+        symbol [ Menu2TestDelegate %tmp.109 173 37 54 ];
+        %tmp.109 = getv %tmp.108 :Menu2TestDelegate;
+        %tmp.105 = newc %tmp.109 ();
+        symbol [ WatchUi %tmp.110 173 58 65 ];
+        %tmp.110 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.111 173 66 81 ];
+        %tmp.111 = getv %tmp.110 :SLIDE_IMMEDIATE;
+        invoke %tmp.102 %tmp.103(%tmp.104, %tmp.105, %tmp.111);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc" 174 8 ]
+        %tmp.112 = true;
+        ret %tmp.112;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_SecondTimePicker_mc_148_57_175_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/SecondTimePicker.mc"; @line = 7; ]
+<init> {
+}

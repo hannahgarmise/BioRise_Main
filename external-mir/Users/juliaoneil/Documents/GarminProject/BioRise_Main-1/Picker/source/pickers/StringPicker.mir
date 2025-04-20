@@ -1,0 +1,609 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Application,7,14,25]; @symbol_importdef<2> = [Storage,7,26,33]; ]
+import Toybox.Application.Storage;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Graphics,8,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Lang,9,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 10; @symbol_importdef<0> = [Toybox,10,7,13]; @symbol_importdef<1> = [WatchUi,10,14,21]; ]
+import Toybox.WatchUi;
+//! Picker that allows the user to choose a string
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 13; @symbol_classdef = [StringPicker,13,6,18]; @symbol_extends<0> = [WatchUi,13,27,34]; @symbol_extends<1> = [Picker,13,35,41]; ]
+class StringPicker extends WatchUi.Picker {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 14; @position = 18; @symbol_constdef = [_characterSet,14,18,31]; ]
+    private
+    const _characterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 15; @position = 16; @symbol_vardef = [_curString,15,16,26]; @symbol_type<0> = [String,15,30,36]; ]
+    private
+    var _curString as String;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 16; @position = 16; @symbol_vardef = [_title,16,16,22]; @symbol_type<0> = [Text,16,26,30]; ]
+    private
+    var _title as Text;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 17; @position = 16; @symbol_vardef = [_factory,17,16,24]; @symbol_type<0> = [CharacterFactory,17,28,44]; ]
+    private
+    var _factory as CharacterFactory;
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 20; @symbol_functiondef = [initialize,20,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 21 8 ]
+        symbol [ $ %tmp.4 21 23 24 ];
+        %tmp.4 = getm $;
+        symbol [ CharacterFactory %tmp.5 21 25 41 ];
+        %tmp.5 = getv %tmp.4 :CharacterFactory;
+        symbol [ _characterSet %tmp.7 21 42 55 ];
+        %tmp.7 = getv ? :_characterSet;
+        %tmp.8 = true;
+        %tmp.1 = newc %tmp.5 (%tmp.7, %tmp.8);
+        symbol [ _factory ? 21 8 16 ];
+        putv self :_factory %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 22 8 ]
+        %tmp.9 = "";
+        symbol [ _curString ? 22 8 18 ];
+        putv self :_curString %tmp.9;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 24 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_stop" ]
+        %lastString.1 = local;
+        symbol [ lastString %lastString.1 24 12 22 ];
+        symbol [ Storage %tmp.10 24 25 32 ];
+        %tmp.10 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.11 24 33 41 ];
+        %tmp.11 = getv function %tmp.10 :getValue;
+        %tmp.12 = "string";
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        lputv %lastString.1 %tmp.13;
+        symbol [ lastString %lastString.1 24 12 22 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 25 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_stop" ]
+        %titleText.2 = local;
+        symbol [ titleText %titleText.2 25 12 21 ];
+        symbol [ $ %tmp.14 25 24 25 ];
+        %tmp.14 = getm $;
+        symbol [ Rez %tmp.15 25 26 29 ];
+        %tmp.15 = getv %tmp.14 :Rez;
+        symbol [ Strings %tmp.16 25 30 37 ];
+        %tmp.16 = getv %tmp.15 :Strings;
+        symbol [ stringPickerTitle %tmp.17 25 38 55 ];
+        %tmp.17 = getv %tmp.16 :stringPickerTitle;
+        lputv %titleText.2 %tmp.17;
+        symbol [ titleText %titleText.2 25 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 26 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_stop" ]
+        %pickerOptions.3 = local;
+        symbol [ pickerOptions %pickerOptions.3 26 12 25 ];
+        %tmp.18 = newd 1;
+        %tmp.20 = const :pattern;
+        symbol [ pattern %tmp.20 26 30 37 const ];
+        %tmp.21 = newa 1;
+        symbol [ _factory %tmp.23 26 40 48 ];
+        %tmp.23 = getv ? :_factory;
+        %tmp.24 = dup %tmp.21;
+        %tmp.25 = aputv %tmp.24 0 %tmp.23;
+        %tmp.26 = dup %tmp.18;
+        %tmp.27 = aputv %tmp.26 %tmp.20 %tmp.25;
+        lputv %pickerOptions.3 %tmp.27;
+        symbol [ pickerOptions %pickerOptions.3 26 12 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 28 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_8_38_8_if_stmt:
+        %tmp.28 = lgetv %lastString.1;
+        symbol [ lastString %tmp.28 28 12 22 ];
+        symbol [ String %tmp.30 28 34 40 ];
+        %tmp.30 = getv ? :String;
+        %tmp.31 = isa %tmp.28 %tmp.30;
+        bf %tmp.31 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_8_38_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_8_38_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_42_38_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 29 12 ]
+        %tmp.32 = lgetv %lastString.1;
+        symbol [ lastString %tmp.32 29 25 35 ];
+        %tmp.33 = as %tmp.32 { (String) };
+        symbol [ _curString ? 29 12 22 ];
+        putv self :_curString %tmp.33;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 30 12 ]
+        %tmp.34 = lgetv %lastString.1;
+        symbol [ lastString %tmp.34 30 24 34 ];
+        %tmp.35 = as %tmp.34 { (String) };
+        lputv %titleText.2 %tmp.35;
+        symbol [ titleText %titleText.2 30 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 31 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_42_38_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_42_38_8_stop" ]
+        %startValue.4 = local;
+        symbol [ startValue %startValue.4 31 16 26 ];
+        %tmp.36 = lgetv %lastString.1;
+        symbol [ lastString %tmp.36 31 29 39 ];
+        %tmp.37 = as %tmp.36 { (String) };
+        symbol [ substring %tmp.38 31 40 49 ];
+        %tmp.38 = getv function %tmp.37 :substring;
+        %tmp.39 = lgetv %lastString.1;
+        symbol [ lastString %tmp.39 31 50 60 ];
+        %tmp.40 = as %tmp.39 { (String) };
+        symbol [ length %tmp.41 31 61 67 ];
+        %tmp.41 = getv function %tmp.40 :length;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        %tmp.43 = 1;
+        %tmp.44 = sub %tmp.42 %tmp.43;
+        %tmp.45 = lgetv %lastString.1;
+        symbol [ lastString %tmp.45 31 75 85 ];
+        %tmp.46 = as %tmp.45 { (String) };
+        symbol [ length %tmp.47 31 86 92 ];
+        %tmp.47 = getv function %tmp.46 :length;
+        %tmp.48 = invoke %tmp.46 %tmp.47();
+        %tmp.49 = invoke %tmp.37 %tmp.38(%tmp.44, %tmp.48);
+        lputv %startValue.4 %tmp.49;
+        symbol [ startValue %startValue.4 31 16 26 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 32 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_12_37_12_if_stmt:
+        %tmp.50 = lgetv %startValue.4;
+        symbol [ startValue %tmp.50 32 16 26 ];
+        %tmp.51 = null;
+        %tmp.52 = ne %tmp.50 %tmp.51;
+        bf %tmp.52 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_12_37_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_12_37_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_36_37_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 33 16 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_36_37_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_36_37_12_stop" ]
+        %index.5 = local;
+        symbol [ index %index.5 33 20 25 ];
+        symbol [ _factory %tmp.54 33 28 36 ];
+        %tmp.54 = getv ? :_factory;
+        symbol [ getIndex %tmp.55 33 37 45 ];
+        %tmp.55 = getv function %tmp.54 :getIndex;
+        %tmp.56 = lgetv %startValue.4;
+        symbol [ startValue %tmp.56 33 46 56 ];
+        %tmp.57 = as %tmp.56 { (!Null) };
+        %tmp.58 = invoke %tmp.54 %tmp.55(%tmp.57);
+        lputv %index.5 %tmp.58;
+        symbol [ index %index.5 33 20 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 34 16 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_16_36_16_if_stmt:
+        %tmp.59 = lgetv %index.5;
+        symbol [ index %tmp.59 34 20 25 ];
+        %tmp.60 = null;
+        %tmp.61 = ne %tmp.59 %tmp.60;
+        bf %tmp.61 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_16_36_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_16_36_16_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_35_36_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 35 20 ]
+        %tmp.62 = lgetv %pickerOptions.3;
+        symbol [ pickerOptions %tmp.62 35 20 33 ];
+        %tmp.63 = newa 1;
+        %tmp.64 = lgetv %index.5;
+        symbol [ index %tmp.64 35 48 53 ];
+        %tmp.65 = as %tmp.64 { (!Null) };
+        %tmp.66 = dup %tmp.63;
+        %tmp.67 = aputv %tmp.66 0 %tmp.65;
+        %tmp.69 = const :defaults;
+        symbol [ defaults %tmp.69 35 35 43 const ];
+        aputv %tmp.62 %tmp.69 %tmp.67;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_35_36_16_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_16_36_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_34_16_36_16_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_36_37_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_12_37_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_32_12_37_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_42_38_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_8_38_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_28_8_38_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 40 8 ]
+        symbol [ WatchUi %tmp.72 40 21 28 ];
+        %tmp.72 = getm $.Toybox.WatchUi;
+        symbol [ Text %tmp.73 40 29 33 ];
+        %tmp.73 = getv function ? %tmp.72 :Text;
+        %tmp.74 = newd 4;
+        %tmp.76 = const :text;
+        symbol [ text %tmp.76 40 36 40 const ];
+        %tmp.77 = lgetv %titleText.2;
+        symbol [ titleText %tmp.77 40 42 51 ];
+        %tmp.78 = dup %tmp.74;
+        %tmp.79 = aputv %tmp.78 %tmp.76 %tmp.77;
+        %tmp.81 = const :locX;
+        symbol [ locX %tmp.81 40 54 58 const ];
+        symbol [ WatchUi %tmp.82 40 60 67 ];
+        %tmp.82 = getm $.Toybox.WatchUi;
+        symbol [ LAYOUT_HALIGN_CENTER %tmp.83 40 68 88 ];
+        %tmp.83 = getv %tmp.82 :LAYOUT_HALIGN_CENTER;
+        %tmp.84 = dup %tmp.79;
+        %tmp.85 = aputv %tmp.84 %tmp.81 %tmp.83;
+        %tmp.87 = const :locY;
+        symbol [ locY %tmp.87 40 91 95 const ];
+        symbol [ WatchUi %tmp.88 40 97 104 ];
+        %tmp.88 = getm $.Toybox.WatchUi;
+        symbol [ LAYOUT_VALIGN_BOTTOM %tmp.89 40 105 125 ];
+        %tmp.89 = getv %tmp.88 :LAYOUT_VALIGN_BOTTOM;
+        %tmp.90 = dup %tmp.85;
+        %tmp.91 = aputv %tmp.90 %tmp.87 %tmp.89;
+        %tmp.93 = const :color;
+        symbol [ color %tmp.93 40 128 133 const ];
+        symbol [ Graphics %tmp.94 40 135 143 ];
+        %tmp.94 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.95 40 144 155 ];
+        %tmp.95 = getv %tmp.94 :COLOR_WHITE;
+        %tmp.96 = dup %tmp.91;
+        %tmp.97 = aputv %tmp.96 %tmp.93 %tmp.95;
+        %tmp.70 = newc %tmp.73 (%tmp.97);
+        symbol [ _title ? 40 8 14 ];
+        putv self :_title %tmp.70;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 41 8 ]
+        %tmp.98 = lgetv %pickerOptions.3;
+        symbol [ pickerOptions %tmp.98 41 8 21 ];
+        symbol [ _title %tmp.100 41 32 38 ];
+        %tmp.100 = getv ? :_title;
+        %tmp.102 = const :title;
+        symbol [ title %tmp.102 41 23 28 const ];
+        aputv %tmp.98 %tmp.102 %tmp.100;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 43 8 ]
+        symbol [ Picker %tmp.104 43 8 14 ];
+        %tmp.104 = getv ? :Picker;
+        symbol [ initialize %tmp.105 43 15 25 ];
+        %tmp.105 = getv function %tmp.104 :initialize;
+        %tmp.106 = lgetv %pickerOptions.3;
+        symbol [ pickerOptions %tmp.106 43 26 39 ];
+        invoke %tmp.104 %tmp.105(%tmp.106);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_20_33_44_4_stop:
+    }
+    //! Update the view
+    //! @param dc Device Context
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 48; @symbol_functiondef = [onUpdate,48,20,28]; @symbol_param<0> = [dc,48,29,31]; @symbol_param<0>_type<0> = [Dc,48,35,37]; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_48_47_52_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 49 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 49 8 10 ];
+        symbol [ setColor %tmp.2 49 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 49 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 49 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 49 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 49 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 50 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 50 8 10 ];
+        symbol [ clear %tmp.8 50 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 51 8 ]
+        symbol [ Picker %tmp.10 51 8 14 ];
+        %tmp.10 = getv ? :Picker;
+        symbol [ onUpdate %tmp.11 51 15 23 ];
+        %tmp.11 = getv function %tmp.10 :onUpdate;
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 51 24 26 ];
+        invoke %tmp.10 %tmp.11(%tmp.12);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_48_47_52_4_stop:
+    }
+    //! Add a character to the end of the title
+    //! @param character Character to add
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 56; @symbol_functiondef = [addCharacter,56,20,32]; @symbol_param<0> = [character,56,33,42]; @symbol_param<0>_type<0> = [String,56,46,52]; ]
+    public
+    function addCharacter(character as String) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_56_62_59_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 57 8 ]
+        symbol [ _curString %tmp.1 57 8 18 ];
+        %tmp.1 = getv self :_curString;
+        %tmp.2 = lgetv %character;
+        symbol [ character %tmp.2 57 22 31 ];
+        %tmp.3 = add %tmp.1 %tmp.2;
+        symbol [ _curString ? 57 8 18 ];
+        putv self :_curString dup %tmp.3;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 58 8 ]
+        symbol [ _title %tmp.5 58 8 14 ];
+        %tmp.5 = getv ? :_title;
+        symbol [ setText %tmp.6 58 15 22 ];
+        %tmp.6 = getv function %tmp.5 :setText;
+        symbol [ _curString %tmp.8 58 23 33 ];
+        %tmp.8 = getv ? :_curString;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_56_62_59_4_stop:
+    }
+    //! Remove the last character from the title
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 62; @symbol_functiondef = [removeCharacter,62,20,35]; ]
+    public
+    function removeCharacter() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_62_46_70_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 63 8 ]
+        symbol [ _curString %tmp.2 63 21 31 ];
+        %tmp.2 = getv ? :_curString;
+        symbol [ substring %tmp.3 63 32 41 ];
+        %tmp.3 = getv function %tmp.2 :substring;
+        %tmp.4 = 0;
+        symbol [ _curString %tmp.6 63 45 55 ];
+        %tmp.6 = getv ? :_curString;
+        symbol [ length %tmp.7 63 56 62 ];
+        %tmp.7 = getv function %tmp.6 :length;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = 1;
+        %tmp.10 = sub %tmp.8 %tmp.9;
+        %tmp.11 = invoke %tmp.2 %tmp.3(%tmp.4, %tmp.10);
+        %tmp.12 = as %tmp.11 String;
+        symbol [ String %tmp.12 63 73 79 ];
+        symbol [ _curString ? 63 8 18 ];
+        putv self :_curString %tmp.12;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 65 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_8_69_8_if_stmt:
+        %tmp.13 = 0;
+        symbol [ _curString %tmp.15 65 17 27 ];
+        %tmp.15 = getv ? :_curString;
+        symbol [ length %tmp.16 65 28 34 ];
+        %tmp.16 = getv function %tmp.15 :length;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        %tmp.18 = eq %tmp.13 %tmp.17;
+        bf %tmp.18 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_8_69_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_8_69_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_38_67_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 66 12 ]
+        symbol [ _title %tmp.20 66 12 18 ];
+        %tmp.20 = getv ? :_title;
+        symbol [ setText %tmp.21 66 19 26 ];
+        %tmp.21 = getv function %tmp.20 :setText;
+        symbol [ WatchUi %tmp.22 66 27 34 ];
+        %tmp.22 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.23 66 35 47 ];
+        %tmp.23 = getv function %tmp.22 :loadResource;
+        symbol [ $ %tmp.24 66 48 49 ];
+        %tmp.24 = getm $;
+        symbol [ Rez %tmp.25 66 50 53 ];
+        %tmp.25 = getv %tmp.24 :Rez;
+        symbol [ Strings %tmp.26 66 54 61 ];
+        %tmp.26 = getv %tmp.25 :Strings;
+        symbol [ stringPickerTitle %tmp.27 66 62 79 ];
+        %tmp.27 = getv %tmp.26 :stringPickerTitle;
+        %tmp.28 = invoke %tmp.22 %tmp.23(%tmp.27);
+        %tmp.29 = as %tmp.28 String;
+        symbol [ String %tmp.29 66 84 90 ];
+        invoke %tmp.20 %tmp.21(%tmp.29);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_38_67_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_8_69_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_67_15_69_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 68 12 ]
+        symbol [ _title %tmp.31 68 12 18 ];
+        %tmp.31 = getv ? :_title;
+        symbol [ setText %tmp.32 68 19 26 ];
+        %tmp.32 = getv function %tmp.31 :setText;
+        symbol [ _curString %tmp.34 68 27 37 ];
+        %tmp.34 = getv ? :_curString;
+        invoke %tmp.31 %tmp.32(%tmp.34);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_67_15_69_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_65_8_69_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_62_46_70_4_stop:
+    }
+    //! Get the title
+    //! @return Title string
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 74; @symbol_functiondef = [getTitle,74,20,28]; @symbol_return<0> = [String,74,34,40]; ]
+    public
+    function getTitle() as String {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_74_41_76_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 75 8 ]
+        symbol [ _curString %tmp.2 75 15 25 ];
+        %tmp.2 = getv ? :_curString;
+        ret %tmp.2;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_74_41_76_4_stop:
+    }
+    //! Get how long the title is
+    //! @return Length of title
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 80; @symbol_functiondef = [getTitleLength,80,20,34]; @symbol_return<0> = [Number,80,40,46]; ]
+    public
+    function getTitleLength() as Number {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_80_47_82_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 81 8 ]
+        symbol [ _curString %tmp.2 81 15 25 ];
+        %tmp.2 = getv ? :_curString;
+        symbol [ length %tmp.3 81 26 32 ];
+        %tmp.3 = getv function %tmp.2 :length;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        ret %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_80_47_82_4_stop:
+    }
+    //! Get whether the user is done picking
+    //! @param value Value user selected
+    //! @return true if user is done, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 87; @symbol_functiondef = [isDone,87,20,26]; @symbol_param<0> = [value,87,27,32]; @symbol_param<0>_type<0> = [String,87,36,42]; @symbol_param<0>_type<1> = [Number,87,46,52]; @symbol_return<0> = [Boolean,87,57,64]; ]
+    public
+    function isDone(value as String or Number) as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_87_65_89_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 88 8 ]
+        symbol [ _factory %tmp.2 88 15 23 ];
+        %tmp.2 = getv ? :_factory;
+        symbol [ isDone %tmp.3 88 24 30 ];
+        %tmp.3 = getv function %tmp.2 :isDone;
+        %tmp.4 = lgetv %value;
+        symbol [ value %tmp.4 88 31 36 ];
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        ret %tmp.5;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_87_65_89_4_stop:
+    }
+}
+//! Responds to a string picker selection or cancellation
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 93; @symbol_classdef = [StringPickerDelegate,93,6,26]; @symbol_extends<0> = [WatchUi,93,35,42]; @symbol_extends<1> = [PickerDelegate,93,43,57]; ]
+class StringPickerDelegate extends WatchUi.PickerDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 93; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 93; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 94; @position = 16; @symbol_vardef = [_picker,94,16,23]; @symbol_type<0> = [StringPicker,94,27,39]; ]
+    private
+    var _picker as StringPicker;
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 97; @symbol_functiondef = [initialize,97,20,30]; @symbol_param<0> = [picker,97,31,37]; @symbol_param<0>_type<0> = [StringPicker,97,41,53]; ]
+    public
+    function initialize(picker as StringPicker) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_97_55_100_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 98 8 ]
+        symbol [ PickerDelegate %tmp.2 98 8 22 ];
+        %tmp.2 = getv ? :PickerDelegate;
+        symbol [ initialize %tmp.3 98 23 33 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 99 8 ]
+        %tmp.4 = lgetv %picker;
+        symbol [ picker %tmp.4 99 18 24 ];
+        symbol [ _picker ? 99 8 15 ];
+        putv self :_picker %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_97_55_100_4_stop:
+    }
+    //! Handle a cancel event from the picker
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 104; @symbol_functiondef = [onCancel,104,20,28]; @symbol_return<0> = [Boolean,104,34,41]; ]
+    public
+    function onCancel() as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_104_42_111_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 105 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_8_109_8_if_stmt:
+        %tmp.1 = 0;
+        symbol [ _picker %tmp.3 105 17 24 ];
+        %tmp.3 = getv ? :_picker;
+        symbol [ getTitleLength %tmp.4 105 25 39 ];
+        %tmp.4 = getv function %tmp.3 :getTitleLength;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        %tmp.6 = eq %tmp.1 %tmp.5;
+        bf %tmp.6 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_8_109_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_8_109_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_43_107_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 106 12 ]
+        symbol [ WatchUi %tmp.7 106 12 19 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.8 106 20 27 ];
+        %tmp.8 = getv function %tmp.7 :popView;
+        symbol [ WatchUi %tmp.9 106 28 35 ];
+        %tmp.9 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.10 106 36 51 ];
+        %tmp.10 = getv %tmp.9 :SLIDE_IMMEDIATE;
+        invoke %tmp.7 %tmp.8(%tmp.10);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_43_107_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_8_109_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_8_109_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_107_15_109_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 108 12 ]
+        symbol [ _picker %tmp.12 108 12 19 ];
+        %tmp.12 = getv ? :_picker;
+        symbol [ removeCharacter %tmp.13 108 20 35 ];
+        %tmp.13 = getv function %tmp.12 :removeCharacter;
+        invoke %tmp.12 %tmp.13();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_107_15_109_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_105_8_109_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 110 8 ]
+        %tmp.14 = true;
+        ret %tmp.14;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_104_42_111_4_stop:
+    }
+    //! Handle a confirm event from the picker
+    //! @param values The values chosen in the picker
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 116; @symbol_functiondef = [onAccept,116,20,28]; @symbol_param<0> = [values,116,29,35]; @symbol_param<0>_type<0> = [Array,116,39,44]; @symbol_return<0> = [Boolean,116,49,56]; ]
+    public
+    function onAccept(values as Array) as Boolean {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_116_57_129_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 117 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_116_57_129_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_116_57_129_4_stop" ]
+        %chosenValue.1 = local;
+        symbol [ chosenValue %chosenValue.1 117 12 23 ];
+        %tmp.1 = lgetv %values;
+        symbol [ values %tmp.1 117 26 32 ];
+        %tmp.2 = 0;
+        %tmp.3 = agetv %tmp.1 %tmp.2;
+        %tmp.4 = as %tmp.3 String;
+        symbol [ String %tmp.4 117 39 45 ];
+        lputv %chosenValue.1 %tmp.4;
+        symbol [ chosenValue %chosenValue.1 117 12 23 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 118 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_8_127_8_if_stmt:
+        symbol [ _picker %tmp.6 118 13 20 ];
+        %tmp.6 = getv ? :_picker;
+        symbol [ isDone %tmp.7 118 21 27 ];
+        %tmp.7 = getv function %tmp.6 :isDone;
+        %tmp.8 = lgetv %chosenValue.1;
+        symbol [ chosenValue %tmp.8 118 28 39 ];
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        %tmp.10 = not %tmp.9;
+        bf %tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_8_127_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_8_127_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_42_120_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 119 12 ]
+        symbol [ _picker %tmp.12 119 12 19 ];
+        %tmp.12 = getv ? :_picker;
+        symbol [ addCharacter %tmp.13 119 20 32 ];
+        %tmp.13 = getv function %tmp.12 :addCharacter;
+        %tmp.14 = lgetv %chosenValue.1;
+        symbol [ chosenValue %tmp.14 119 33 44 ];
+        invoke %tmp.12 %tmp.13(%tmp.14);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_42_120_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_8_127_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_8_127_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_120_15_127_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 121 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_12_125_12_if_stmt:
+        symbol [ _picker %tmp.16 121 16 23 ];
+        %tmp.16 = getv ? :_picker;
+        symbol [ getTitle %tmp.17 121 24 32 ];
+        %tmp.17 = getv function %tmp.16 :getTitle;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        symbol [ length %tmp.19 121 35 41 ];
+        %tmp.19 = getv function %tmp.18 :length;
+        %tmp.20 = invoke %tmp.18 %tmp.19();
+        %tmp.21 = 0;
+        %tmp.22 = eq %tmp.20 %tmp.21;
+        bf %tmp.22 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_12_125_12_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_12_125_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_50_123_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 122 16 ]
+        symbol [ Storage %tmp.23 122 16 23 ];
+        %tmp.23 = getm $.Toybox.Application.Storage;
+        symbol [ deleteValue %tmp.24 122 24 35 ];
+        %tmp.24 = getv function %tmp.23 :deleteValue;
+        %tmp.25 = "string";
+        invoke %tmp.23 %tmp.24(%tmp.25);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_50_123_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_12_125_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_12_125_12_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_123_19_125_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 124 16 ]
+        symbol [ Storage %tmp.26 124 16 23 ];
+        %tmp.26 = getm $.Toybox.Application.Storage;
+        symbol [ setValue %tmp.27 124 24 32 ];
+        %tmp.27 = getv function %tmp.26 :setValue;
+        %tmp.28 = "string";
+        symbol [ _picker %tmp.30 124 43 50 ];
+        %tmp.30 = getv ? :_picker;
+        symbol [ getTitle %tmp.31 124 51 59 ];
+        %tmp.31 = getv function %tmp.30 :getTitle;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        invoke %tmp.26 %tmp.27(%tmp.28, %tmp.32);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_123_19_125_12_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_121_12_125_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 126 12 ]
+        symbol [ WatchUi %tmp.33 126 12 19 ];
+        %tmp.33 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.34 126 20 27 ];
+        %tmp.34 = getv function %tmp.33 :popView;
+        symbol [ WatchUi %tmp.35 126 28 35 ];
+        %tmp.35 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.36 126 36 51 ];
+        %tmp.36 = getv %tmp.35 :SLIDE_IMMEDIATE;
+        invoke %tmp.33 %tmp.34(%tmp.36);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_120_15_127_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_118_8_127_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc" 128 8 ]
+        %tmp.37 = true;
+        ret %tmp.37;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_Picker_source_pickers_StringPicker_mc_116_57_129_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/Picker/source/pickers/StringPicker.mc"; @line = 7; ]
+<init> {
+}

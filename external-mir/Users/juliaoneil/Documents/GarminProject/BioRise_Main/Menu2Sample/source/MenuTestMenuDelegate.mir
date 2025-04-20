@@ -1,0 +1,1278 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Graphics,7,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [WatchUi,9,14,21]; ]
+import Toybox.WatchUi;
+//! This is the menu input delegate for the main menu of the application
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 12; @symbol_classdef = [Menu2TestMenu2Delegate,12,6,28]; @symbol_extends<0> = [WatchUi,12,37,44]; @symbol_extends<1> = [Menu2InputDelegate,12,45,63]; ]
+class Menu2TestMenu2Delegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 15; @symbol_functiondef = [initialize,15,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_15_33_17_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 16 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 16 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 16 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_15_33_17_4_stop:
+    }
+    //! Handle an item being selected
+    //! @param item The selected menu item
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 21; @symbol_functiondef = [onSelect,21,20,28]; @symbol_param<0> = [item,21,29,33]; @symbol_param<0>_type<0> = [MenuItem,21,37,45]; ]
+    public
+    function onSelect(item as MenuItem) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_21_55_74_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 22 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_21_55_74_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_21_55_74_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 22 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 22 17 21 ];
+        symbol [ getId %tmp.2 22 22 27 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 String;
+        symbol [ String %tmp.4 22 33 39 ];
+        lputv %id.1 %tmp.4;
+        symbol [ id %id.1 22 12 14 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 23 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_21_55_74_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_21_55_74_4_stop" ]
+        %title.2 = local;
+        symbol [ title %title.2 23 12 17 ];
+        symbol [ $ %tmp.8 23 24 25 ];
+        %tmp.8 = getm $;
+        symbol [ DividerTitle %tmp.9 23 26 38 ];
+        %tmp.9 = getv %tmp.8 :DividerTitle;
+        %tmp.5 = newc %tmp.9 ();
+        lputv %title.2 %tmp.5;
+        symbol [ title %title.2 23 12 17 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 24 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_8_73_8_if_stmt:
+        %tmp.10 = lgetv %id.1;
+        symbol [ id %tmp.10 24 12 14 ];
+        symbol [ equals %tmp.11 24 15 21 ];
+        %tmp.11 = getv function %tmp.10 :equals;
+        %tmp.12 = "toggle";
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        bf %tmp.13 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_8_73_8_if_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_8_73_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_33_35_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 27 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_12_29_12_if_stmt:
+        symbol [ WatchUi %tmp.14 27 18 25 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.15 27 26 31 ];
+        %tmp.15 = getv %tmp.14 :Menu2;
+        %tmp.17 = const :setDividerType;
+        symbol [ setDividerType %tmp.17 27 37 51 const ];
+        %tmp.18 = canhazplz %tmp.15 %tmp.17;
+        %tmp.19 = not %tmp.18;
+        bf %tmp.19 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_12_29_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_12_29_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_54_29_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 28 16 ]
+        %tmp.20 = "Toggles";
+        lputv %title.2 %tmp.20;
+        symbol [ title %title.2 28 16 21 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_54_29_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_12_29_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_27_12_29_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 30 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_33_35_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_33_35_8_stop" ]
+        %toggleMenu.3 = local;
+        symbol [ toggleMenu %toggleMenu.3 30 16 26 ];
+        symbol [ WatchUi %tmp.23 30 33 40 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.24 30 41 46 ];
+        %tmp.24 = getv function ? %tmp.23 :Menu2;
+        %tmp.25 = newd 1;
+        %tmp.27 = const :title;
+        symbol [ title %tmp.27 30 49 54 const ];
+        %tmp.28 = lgetv %title.2;
+        symbol [ title %tmp.28 30 56 61 ];
+        %tmp.29 = dup %tmp.25;
+        %tmp.30 = aputv %tmp.29 %tmp.27 %tmp.28;
+        %tmp.21 = newc %tmp.24 (%tmp.30);
+        lputv %toggleMenu.3 %tmp.21;
+        symbol [ toggleMenu %toggleMenu.3 30 16 26 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 31 12 ]
+        %tmp.31 = lgetv %toggleMenu.3;
+        symbol [ toggleMenu %tmp.31 31 12 22 ];
+        symbol [ addItem %tmp.32 31 23 30 ];
+        %tmp.32 = getv function %tmp.31 :addItem;
+        symbol [ WatchUi %tmp.35 31 35 42 ];
+        %tmp.35 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.36 31 43 57 ];
+        %tmp.36 = getv function ? %tmp.35 :ToggleMenuItem;
+        %tmp.37 = "Item 1";
+        %tmp.38 = newd 2;
+        %tmp.40 = const :enabled;
+        symbol [ enabled %tmp.40 31 70 77 const ];
+        %tmp.41 = "Left Toggle: on";
+        %tmp.42 = dup %tmp.38;
+        %tmp.43 = aputv %tmp.42 %tmp.40 %tmp.41;
+        %tmp.45 = const :disabled;
+        symbol [ disabled %tmp.45 31 99 107 const ];
+        %tmp.46 = "Left Toggle: off";
+        %tmp.47 = dup %tmp.43;
+        %tmp.48 = aputv %tmp.47 %tmp.45 %tmp.46;
+        %tmp.49 = "left";
+        %tmp.50 = false;
+        %tmp.51 = newd 1;
+        %tmp.53 = const :alignment;
+        symbol [ alignment %tmp.53 31 147 156 const ];
+        symbol [ WatchUi %tmp.54 31 158 165 ];
+        %tmp.54 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.55 31 166 174 ];
+        %tmp.55 = getv %tmp.54 :MenuItem;
+        symbol [ MENU_ITEM_LABEL_ALIGN_LEFT %tmp.56 31 175 201 ];
+        %tmp.56 = getv %tmp.55 :MENU_ITEM_LABEL_ALIGN_LEFT;
+        %tmp.57 = dup %tmp.51;
+        %tmp.58 = aputv %tmp.57 %tmp.53 %tmp.56;
+        %tmp.33 = newc %tmp.36 (%tmp.37, %tmp.48, %tmp.49, %tmp.50, %tmp.58);
+        invoke %tmp.31 %tmp.32(%tmp.33);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 32 12 ]
+        %tmp.59 = lgetv %toggleMenu.3;
+        symbol [ toggleMenu %tmp.59 32 12 22 ];
+        symbol [ addItem %tmp.60 32 23 30 ];
+        %tmp.60 = getv function %tmp.59 :addItem;
+        symbol [ WatchUi %tmp.63 32 35 42 ];
+        %tmp.63 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.64 32 43 57 ];
+        %tmp.64 = getv function ? %tmp.63 :ToggleMenuItem;
+        %tmp.65 = "Item 2";
+        %tmp.66 = newd 2;
+        %tmp.68 = const :enabled;
+        symbol [ enabled %tmp.68 32 70 77 const ];
+        %tmp.69 = "Right Toggle: on";
+        %tmp.70 = dup %tmp.66;
+        %tmp.71 = aputv %tmp.70 %tmp.68 %tmp.69;
+        %tmp.73 = const :disabled;
+        symbol [ disabled %tmp.73 32 100 108 const ];
+        %tmp.74 = "Right Toggle: off";
+        %tmp.75 = dup %tmp.71;
+        %tmp.76 = aputv %tmp.75 %tmp.73 %tmp.74;
+        %tmp.77 = "right";
+        %tmp.78 = false;
+        %tmp.79 = newd 1;
+        %tmp.81 = const :alignment;
+        symbol [ alignment %tmp.81 32 150 159 const ];
+        symbol [ WatchUi %tmp.82 32 161 168 ];
+        %tmp.82 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.83 32 169 177 ];
+        %tmp.83 = getv %tmp.82 :MenuItem;
+        symbol [ MENU_ITEM_LABEL_ALIGN_RIGHT %tmp.84 32 178 205 ];
+        %tmp.84 = getv %tmp.83 :MENU_ITEM_LABEL_ALIGN_RIGHT;
+        %tmp.85 = dup %tmp.79;
+        %tmp.86 = aputv %tmp.85 %tmp.81 %tmp.84;
+        %tmp.61 = newc %tmp.64 (%tmp.65, %tmp.76, %tmp.77, %tmp.78, %tmp.86);
+        invoke %tmp.59 %tmp.60(%tmp.61);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 33 12 ]
+        %tmp.87 = lgetv %toggleMenu.3;
+        symbol [ toggleMenu %tmp.87 33 12 22 ];
+        symbol [ addItem %tmp.88 33 23 30 ];
+        %tmp.88 = getv function %tmp.87 :addItem;
+        symbol [ WatchUi %tmp.91 33 35 42 ];
+        %tmp.91 = getm $.Toybox.WatchUi;
+        symbol [ ToggleMenuItem %tmp.92 33 43 57 ];
+        %tmp.92 = getv function ? %tmp.91 :ToggleMenuItem;
+        %tmp.93 = "Item 3";
+        %tmp.94 = newd 2;
+        %tmp.96 = const :enabled;
+        symbol [ enabled %tmp.96 33 70 77 const ];
+        %tmp.97 = "Toggle: on";
+        %tmp.98 = dup %tmp.94;
+        %tmp.99 = aputv %tmp.98 %tmp.96 %tmp.97;
+        %tmp.101 = const :disabled;
+        symbol [ disabled %tmp.101 33 94 102 const ];
+        %tmp.102 = "Toggle: off";
+        %tmp.103 = dup %tmp.99;
+        %tmp.104 = aputv %tmp.103 %tmp.101 %tmp.102;
+        %tmp.105 = "default";
+        %tmp.106 = true;
+        %tmp.107 = null;
+        %tmp.89 = newc %tmp.92 (%tmp.93, %tmp.104, %tmp.105, %tmp.106, %tmp.107);
+        invoke %tmp.87 %tmp.88(%tmp.89);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 34 12 ]
+        symbol [ WatchUi %tmp.108 34 12 19 ];
+        %tmp.108 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.109 34 20 28 ];
+        %tmp.109 = getv function %tmp.108 :pushView;
+        %tmp.110 = lgetv %toggleMenu.3;
+        symbol [ toggleMenu %tmp.110 34 29 39 ];
+        symbol [ $ %tmp.114 34 45 46 ];
+        %tmp.114 = getm $;
+        symbol [ Menu2SampleSubMenuDelegate %tmp.115 34 47 73 ];
+        %tmp.115 = getv %tmp.114 :Menu2SampleSubMenuDelegate;
+        %tmp.116 = lgetv %toggleMenu.3;
+        symbol [ toggleMenu %tmp.116 34 74 84 ];
+        %tmp.111 = newc %tmp.115 (%tmp.116);
+        symbol [ WatchUi %tmp.117 34 87 94 ];
+        %tmp.117 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.118 34 95 103 ];
+        %tmp.118 = getv %tmp.117 :SLIDE_UP;
+        invoke %tmp.108 %tmp.109(%tmp.110, %tmp.111, %tmp.118);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_33_35_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_8_73_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_8_73_8_if_false:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 35 15 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_15_73_8_if_stmt:
+        %tmp.119 = lgetv %id.1;
+        symbol [ id %tmp.119 35 19 21 ];
+        symbol [ equals %tmp.120 35 22 28 ];
+        %tmp.120 = getv function %tmp.119 :equals;
+        %tmp.121 = "check";
+        %tmp.122 = invoke %tmp.119 %tmp.120(%tmp.121);
+        bf %tmp.122 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_15_73_8_if_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_15_73_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_39_46_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 38 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_12_40_12_if_stmt:
+        symbol [ WatchUi %tmp.123 38 18 25 ];
+        %tmp.123 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.124 38 26 31 ];
+        %tmp.124 = getv %tmp.123 :Menu2;
+        %tmp.126 = const :setDividerType;
+        symbol [ setDividerType %tmp.126 38 37 51 const ];
+        %tmp.127 = canhazplz %tmp.124 %tmp.126;
+        %tmp.128 = not %tmp.127;
+        bf %tmp.128 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_12_40_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_12_40_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_54_40_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 39 16 ]
+        %tmp.129 = "Checkboxes";
+        lputv %title.2 %tmp.129;
+        symbol [ title %title.2 39 16 21 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_54_40_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_12_40_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_38_12_40_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 41 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_39_46_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_39_46_8_stop" ]
+        %checkMenu.4 = local;
+        symbol [ checkMenu %checkMenu.4 41 16 25 ];
+        symbol [ WatchUi %tmp.132 41 32 39 ];
+        %tmp.132 = getm $.Toybox.WatchUi;
+        symbol [ CheckboxMenu %tmp.133 41 40 52 ];
+        %tmp.133 = getv function ? %tmp.132 :CheckboxMenu;
+        %tmp.134 = newd 1;
+        %tmp.136 = const :title;
+        symbol [ title %tmp.136 41 55 60 const ];
+        %tmp.137 = lgetv %title.2;
+        symbol [ title %tmp.137 41 62 67 ];
+        %tmp.138 = dup %tmp.134;
+        %tmp.139 = aputv %tmp.138 %tmp.136 %tmp.137;
+        %tmp.130 = newc %tmp.133 (%tmp.139);
+        lputv %checkMenu.4 %tmp.130;
+        symbol [ checkMenu %checkMenu.4 41 16 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 42 12 ]
+        %tmp.140 = lgetv %checkMenu.4;
+        symbol [ checkMenu %tmp.140 42 12 21 ];
+        symbol [ addItem %tmp.141 42 22 29 ];
+        %tmp.141 = getv function %tmp.140 :addItem;
+        symbol [ WatchUi %tmp.144 42 34 41 ];
+        %tmp.144 = getm $.Toybox.WatchUi;
+        symbol [ CheckboxMenuItem %tmp.145 42 42 58 ];
+        %tmp.145 = getv function ? %tmp.144 :CheckboxMenuItem;
+        %tmp.146 = "Item 1";
+        %tmp.147 = "Left Check";
+        %tmp.148 = "left";
+        %tmp.149 = false;
+        %tmp.150 = newd 1;
+        %tmp.152 = const :alignment;
+        symbol [ alignment %tmp.152 42 100 109 const ];
+        symbol [ WatchUi %tmp.153 42 111 118 ];
+        %tmp.153 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.154 42 119 127 ];
+        %tmp.154 = getv %tmp.153 :MenuItem;
+        symbol [ MENU_ITEM_LABEL_ALIGN_LEFT %tmp.155 42 128 154 ];
+        %tmp.155 = getv %tmp.154 :MENU_ITEM_LABEL_ALIGN_LEFT;
+        %tmp.156 = dup %tmp.150;
+        %tmp.157 = aputv %tmp.156 %tmp.152 %tmp.155;
+        %tmp.142 = newc %tmp.145 (%tmp.146, %tmp.147, %tmp.148, %tmp.149, %tmp.157);
+        invoke %tmp.140 %tmp.141(%tmp.142);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 43 12 ]
+        %tmp.158 = lgetv %checkMenu.4;
+        symbol [ checkMenu %tmp.158 43 12 21 ];
+        symbol [ addItem %tmp.159 43 22 29 ];
+        %tmp.159 = getv function %tmp.158 :addItem;
+        symbol [ WatchUi %tmp.162 43 34 41 ];
+        %tmp.162 = getm $.Toybox.WatchUi;
+        symbol [ CheckboxMenuItem %tmp.163 43 42 58 ];
+        %tmp.163 = getv function ? %tmp.162 :CheckboxMenuItem;
+        %tmp.164 = "Item 2";
+        %tmp.165 = "Right Check";
+        %tmp.166 = "right";
+        %tmp.167 = false;
+        %tmp.168 = newd 1;
+        %tmp.170 = const :alignment;
+        symbol [ alignment %tmp.170 43 102 111 const ];
+        symbol [ WatchUi %tmp.171 43 113 120 ];
+        %tmp.171 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.172 43 121 129 ];
+        %tmp.172 = getv %tmp.171 :MenuItem;
+        symbol [ MENU_ITEM_LABEL_ALIGN_RIGHT %tmp.173 43 130 157 ];
+        %tmp.173 = getv %tmp.172 :MENU_ITEM_LABEL_ALIGN_RIGHT;
+        %tmp.174 = dup %tmp.168;
+        %tmp.175 = aputv %tmp.174 %tmp.170 %tmp.173;
+        %tmp.160 = newc %tmp.163 (%tmp.164, %tmp.165, %tmp.166, %tmp.167, %tmp.175);
+        invoke %tmp.158 %tmp.159(%tmp.160);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 44 12 ]
+        %tmp.176 = lgetv %checkMenu.4;
+        symbol [ checkMenu %tmp.176 44 12 21 ];
+        symbol [ addItem %tmp.177 44 22 29 ];
+        %tmp.177 = getv function %tmp.176 :addItem;
+        symbol [ WatchUi %tmp.180 44 34 41 ];
+        %tmp.180 = getm $.Toybox.WatchUi;
+        symbol [ CheckboxMenuItem %tmp.181 44 42 58 ];
+        %tmp.181 = getv function ? %tmp.180 :CheckboxMenuItem;
+        %tmp.182 = "Item 3";
+        %tmp.183 = "Check";
+        %tmp.184 = "default";
+        %tmp.185 = true;
+        %tmp.186 = null;
+        %tmp.178 = newc %tmp.181 (%tmp.182, %tmp.183, %tmp.184, %tmp.185, %tmp.186);
+        invoke %tmp.176 %tmp.177(%tmp.178);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 45 12 ]
+        symbol [ WatchUi %tmp.187 45 12 19 ];
+        %tmp.187 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.188 45 20 28 ];
+        %tmp.188 = getv function %tmp.187 :pushView;
+        %tmp.189 = lgetv %checkMenu.4;
+        symbol [ checkMenu %tmp.189 45 29 38 ];
+        symbol [ $ %tmp.193 45 44 45 ];
+        %tmp.193 = getm $;
+        symbol [ Menu2SampleSubMenuDelegate %tmp.194 45 46 72 ];
+        %tmp.194 = getv %tmp.193 :Menu2SampleSubMenuDelegate;
+        %tmp.195 = lgetv %checkMenu.4;
+        symbol [ checkMenu %tmp.195 45 73 82 ];
+        %tmp.190 = newc %tmp.194 (%tmp.195);
+        symbol [ WatchUi %tmp.196 45 85 92 ];
+        %tmp.196 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.197 45 93 101 ];
+        %tmp.197 = getv %tmp.196 :SLIDE_UP;
+        invoke %tmp.187 %tmp.188(%tmp.189, %tmp.190, %tmp.197);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_39_46_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_15_73_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_15_73_8_if_false:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 46 15 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_15_73_8_if_stmt:
+        %tmp.198 = lgetv %id.1;
+        symbol [ id %tmp.198 46 19 21 ];
+        symbol [ equals %tmp.199 46 22 28 ];
+        %tmp.199 = getv function %tmp.198 :equals;
+        %tmp.200 = "icon";
+        %tmp.201 = invoke %tmp.198 %tmp.199(%tmp.200);
+        bf %tmp.201 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_15_73_8_if_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_15_73_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 49 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_12_51_12_if_stmt:
+        symbol [ WatchUi %tmp.202 49 18 25 ];
+        %tmp.202 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.203 49 26 31 ];
+        %tmp.203 = getv %tmp.202 :Menu2;
+        %tmp.205 = const :setDividerType;
+        symbol [ setDividerType %tmp.205 49 37 51 const ];
+        %tmp.206 = canhazplz %tmp.203 %tmp.205;
+        %tmp.207 = not %tmp.206;
+        bf %tmp.207 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_12_51_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_12_51_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_54_51_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 50 16 ]
+        %tmp.208 = "Icons";
+        lputv %title.2 %tmp.208;
+        symbol [ title %title.2 50 16 21 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_54_51_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_12_51_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_49_12_51_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 52 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_stop" ]
+        %iconMenu.5 = local;
+        symbol [ iconMenu %iconMenu.5 52 16 24 ];
+        symbol [ WatchUi %tmp.211 52 31 38 ];
+        %tmp.211 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.212 52 39 44 ];
+        %tmp.212 = getv function ? %tmp.211 :Menu2;
+        %tmp.213 = newd 1;
+        %tmp.215 = const :title;
+        symbol [ title %tmp.215 52 47 52 const ];
+        %tmp.216 = lgetv %title.2;
+        symbol [ title %tmp.216 52 54 59 ];
+        %tmp.217 = dup %tmp.213;
+        %tmp.218 = aputv %tmp.217 %tmp.215 %tmp.216;
+        %tmp.209 = newc %tmp.212 (%tmp.218);
+        lputv %iconMenu.5 %tmp.209;
+        symbol [ iconMenu %iconMenu.5 52 16 24 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 53 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_stop" ]
+        %drawable1.6 = local;
+        symbol [ drawable1 %drawable1.6 53 16 25 ];
+        symbol [ $ %tmp.222 53 32 33 ];
+        %tmp.222 = getm $;
+        symbol [ CustomIcon %tmp.223 53 34 44 ];
+        %tmp.223 = getv %tmp.222 :CustomIcon;
+        %tmp.219 = newc %tmp.223 ();
+        lputv %drawable1.6 %tmp.219;
+        symbol [ drawable1 %drawable1.6 53 16 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 54 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_stop" ]
+        %drawable2.7 = local;
+        symbol [ drawable2 %drawable2.7 54 16 25 ];
+        symbol [ $ %tmp.227 54 32 33 ];
+        %tmp.227 = getm $;
+        symbol [ CustomIcon %tmp.228 54 34 44 ];
+        %tmp.228 = getv %tmp.227 :CustomIcon;
+        %tmp.224 = newc %tmp.228 ();
+        lputv %drawable2.7 %tmp.224;
+        symbol [ drawable2 %drawable2.7 54 16 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 55 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_stop" ]
+        %drawable3.8 = local;
+        symbol [ drawable3 %drawable3.8 55 16 25 ];
+        symbol [ $ %tmp.232 55 32 33 ];
+        %tmp.232 = getm $;
+        symbol [ CustomIcon %tmp.233 55 34 44 ];
+        %tmp.233 = getv %tmp.232 :CustomIcon;
+        %tmp.229 = newc %tmp.233 ();
+        lputv %drawable3.8 %tmp.229;
+        symbol [ drawable3 %drawable3.8 55 16 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 56 12 ]
+        %tmp.234 = lgetv %iconMenu.5;
+        symbol [ iconMenu %tmp.234 56 12 20 ];
+        symbol [ addItem %tmp.235 56 21 28 ];
+        %tmp.235 = getv function %tmp.234 :addItem;
+        symbol [ WatchUi %tmp.238 56 33 40 ];
+        %tmp.238 = getm $.Toybox.WatchUi;
+        symbol [ IconMenuItem %tmp.239 56 41 53 ];
+        %tmp.239 = getv function ? %tmp.238 :IconMenuItem;
+        %tmp.240 = "Icon 1";
+        %tmp.241 = lgetv %drawable1.6;
+        symbol [ drawable1 %tmp.241 56 64 73 ];
+        symbol [ getString %tmp.242 56 74 83 ];
+        %tmp.242 = getv function %tmp.241 :getString;
+        %tmp.243 = invoke %tmp.241 %tmp.242();
+        %tmp.244 = "left";
+        %tmp.245 = lgetv %drawable1.6;
+        symbol [ drawable1 %tmp.245 56 95 104 ];
+        %tmp.246 = newd 1;
+        %tmp.248 = const :alignment;
+        symbol [ alignment %tmp.248 56 108 117 const ];
+        symbol [ WatchUi %tmp.249 56 119 126 ];
+        %tmp.249 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.250 56 127 135 ];
+        %tmp.250 = getv %tmp.249 :MenuItem;
+        symbol [ MENU_ITEM_LABEL_ALIGN_LEFT %tmp.251 56 136 162 ];
+        %tmp.251 = getv %tmp.250 :MENU_ITEM_LABEL_ALIGN_LEFT;
+        %tmp.252 = dup %tmp.246;
+        %tmp.253 = aputv %tmp.252 %tmp.248 %tmp.251;
+        %tmp.236 = newc %tmp.239 (%tmp.240, %tmp.243, %tmp.244, %tmp.245, %tmp.253);
+        invoke %tmp.234 %tmp.235(%tmp.236);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 57 12 ]
+        %tmp.254 = lgetv %iconMenu.5;
+        symbol [ iconMenu %tmp.254 57 12 20 ];
+        symbol [ addItem %tmp.255 57 21 28 ];
+        %tmp.255 = getv function %tmp.254 :addItem;
+        symbol [ WatchUi %tmp.258 57 33 40 ];
+        %tmp.258 = getm $.Toybox.WatchUi;
+        symbol [ IconMenuItem %tmp.259 57 41 53 ];
+        %tmp.259 = getv function ? %tmp.258 :IconMenuItem;
+        %tmp.260 = "Icon 2";
+        %tmp.261 = lgetv %drawable2.7;
+        symbol [ drawable2 %tmp.261 57 64 73 ];
+        symbol [ getString %tmp.262 57 74 83 ];
+        %tmp.262 = getv function %tmp.261 :getString;
+        %tmp.263 = invoke %tmp.261 %tmp.262();
+        %tmp.264 = "right";
+        %tmp.265 = lgetv %drawable2.7;
+        symbol [ drawable2 %tmp.265 57 96 105 ];
+        %tmp.266 = newd 1;
+        %tmp.268 = const :alignment;
+        symbol [ alignment %tmp.268 57 109 118 const ];
+        symbol [ WatchUi %tmp.269 57 120 127 ];
+        %tmp.269 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.270 57 128 136 ];
+        %tmp.270 = getv %tmp.269 :MenuItem;
+        symbol [ MENU_ITEM_LABEL_ALIGN_RIGHT %tmp.271 57 137 164 ];
+        %tmp.271 = getv %tmp.270 :MENU_ITEM_LABEL_ALIGN_RIGHT;
+        %tmp.272 = dup %tmp.266;
+        %tmp.273 = aputv %tmp.272 %tmp.268 %tmp.271;
+        %tmp.256 = newc %tmp.259 (%tmp.260, %tmp.263, %tmp.264, %tmp.265, %tmp.273);
+        invoke %tmp.254 %tmp.255(%tmp.256);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 58 12 ]
+        %tmp.274 = lgetv %iconMenu.5;
+        symbol [ iconMenu %tmp.274 58 12 20 ];
+        symbol [ addItem %tmp.275 58 21 28 ];
+        %tmp.275 = getv function %tmp.274 :addItem;
+        symbol [ WatchUi %tmp.278 58 33 40 ];
+        %tmp.278 = getm $.Toybox.WatchUi;
+        symbol [ IconMenuItem %tmp.279 58 41 53 ];
+        %tmp.279 = getv function ? %tmp.278 :IconMenuItem;
+        %tmp.280 = "Icon 3";
+        %tmp.281 = lgetv %drawable3.8;
+        symbol [ drawable3 %tmp.281 58 64 73 ];
+        symbol [ getString %tmp.282 58 74 83 ];
+        %tmp.282 = getv function %tmp.281 :getString;
+        %tmp.283 = invoke %tmp.281 %tmp.282();
+        %tmp.284 = "default";
+        %tmp.285 = lgetv %drawable3.8;
+        symbol [ drawable3 %tmp.285 58 98 107 ];
+        %tmp.286 = null;
+        %tmp.276 = newc %tmp.279 (%tmp.280, %tmp.283, %tmp.284, %tmp.285, %tmp.286);
+        invoke %tmp.274 %tmp.275(%tmp.276);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 59 12 ]
+        symbol [ WatchUi %tmp.287 59 12 19 ];
+        %tmp.287 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.288 59 20 28 ];
+        %tmp.288 = getv function %tmp.287 :pushView;
+        %tmp.289 = lgetv %iconMenu.5;
+        symbol [ iconMenu %tmp.289 59 29 37 ];
+        symbol [ $ %tmp.293 59 43 44 ];
+        %tmp.293 = getm $;
+        symbol [ Menu2SampleSubMenuDelegate %tmp.294 59 45 71 ];
+        %tmp.294 = getv %tmp.293 :Menu2SampleSubMenuDelegate;
+        %tmp.295 = lgetv %iconMenu.5;
+        symbol [ iconMenu %tmp.295 59 72 80 ];
+        %tmp.290 = newc %tmp.294 (%tmp.295);
+        symbol [ WatchUi %tmp.296 59 83 90 ];
+        %tmp.296 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.297 59 91 99 ];
+        %tmp.297 = getv %tmp.296 :SLIDE_UP;
+        invoke %tmp.287 %tmp.288(%tmp.289, %tmp.290, %tmp.297);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_38_60_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_15_73_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_15_73_8_if_false:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 60 15 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_15_73_8_if_stmt:
+        %tmp.298 = lgetv %id.1;
+        symbol [ id %tmp.298 60 19 21 ];
+        symbol [ equals %tmp.299 60 22 28 ];
+        %tmp.299 = getv function %tmp.298 :equals;
+        %tmp.300 = "custom";
+        %tmp.301 = invoke %tmp.298 %tmp.299(%tmp.300);
+        bf %tmp.301 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_15_73_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_15_73_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_40_71_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 63 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_40_71_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_40_71_8_stop" ]
+        %customMenu.9 = local;
+        symbol [ customMenu %customMenu.9 63 16 26 ];
+        symbol [ WatchUi %tmp.304 63 33 40 ];
+        %tmp.304 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.305 63 41 46 ];
+        %tmp.305 = getv function ? %tmp.304 :Menu2;
+        %tmp.306 = newd 1;
+        %tmp.308 = const :title;
+        symbol [ title %tmp.308 63 49 54 const ];
+        %tmp.309 = "Custom Menus";
+        %tmp.310 = dup %tmp.306;
+        %tmp.311 = aputv %tmp.310 %tmp.308 %tmp.309;
+        %tmp.302 = newc %tmp.305 (%tmp.311);
+        lputv %customMenu.9 %tmp.302;
+        symbol [ customMenu %customMenu.9 63 16 26 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 64 12 ]
+        %tmp.312 = lgetv %customMenu.9;
+        symbol [ customMenu %tmp.312 64 12 22 ];
+        symbol [ addItem %tmp.313 64 23 30 ];
+        %tmp.313 = getv function %tmp.312 :addItem;
+        symbol [ WatchUi %tmp.316 64 35 42 ];
+        %tmp.316 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.317 64 43 51 ];
+        %tmp.317 = getv function ? %tmp.316 :MenuItem;
+        %tmp.318 = "Basic Drawables";
+        %tmp.319 = null;
+        %tmp.321 = const :basic;
+        symbol [ basic %tmp.321 64 78 83 const ];
+        %tmp.322 = null;
+        %tmp.314 = newc %tmp.317 (%tmp.318, %tmp.319, %tmp.321, %tmp.322);
+        invoke %tmp.312 %tmp.313(%tmp.314);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 65 12 ]
+        %tmp.323 = lgetv %customMenu.9;
+        symbol [ customMenu %tmp.323 65 12 22 ];
+        symbol [ addItem %tmp.324 65 23 30 ];
+        %tmp.324 = getv function %tmp.323 :addItem;
+        symbol [ WatchUi %tmp.327 65 35 42 ];
+        %tmp.327 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.328 65 43 51 ];
+        %tmp.328 = getv function ? %tmp.327 :MenuItem;
+        %tmp.329 = "Images";
+        %tmp.330 = null;
+        %tmp.332 = const :images;
+        symbol [ images %tmp.332 65 69 75 const ];
+        %tmp.333 = null;
+        %tmp.325 = newc %tmp.328 (%tmp.329, %tmp.330, %tmp.332, %tmp.333);
+        invoke %tmp.323 %tmp.324(%tmp.325);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 66 12 ]
+        %tmp.334 = lgetv %customMenu.9;
+        symbol [ customMenu %tmp.334 66 12 22 ];
+        symbol [ addItem %tmp.335 66 23 30 ];
+        %tmp.335 = getv function %tmp.334 :addItem;
+        symbol [ WatchUi %tmp.338 66 35 42 ];
+        %tmp.338 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.339 66 43 51 ];
+        %tmp.339 = getv function ? %tmp.338 :MenuItem;
+        %tmp.340 = "Wrap Out";
+        %tmp.341 = null;
+        %tmp.343 = const :wrap;
+        symbol [ wrap %tmp.343 66 71 75 const ];
+        %tmp.344 = null;
+        %tmp.336 = newc %tmp.339 (%tmp.340, %tmp.341, %tmp.343, %tmp.344);
+        invoke %tmp.334 %tmp.335(%tmp.336);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 67 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_12_69_12_if_stmt:
+        symbol [ Menu2 %tmp.346 67 16 21 ];
+        %tmp.346 = getv ? :Menu2;
+        %tmp.348 = const :setDividerType;
+        symbol [ setDividerType %tmp.348 67 27 41 const ];
+        %tmp.349 = canhazplz %tmp.346 %tmp.348;
+        bf %tmp.349 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_12_69_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_12_69_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_43_69_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 68 16 ]
+        %tmp.350 = lgetv %customMenu.9;
+        symbol [ customMenu %tmp.350 68 16 26 ];
+        symbol [ addItem %tmp.351 68 27 34 ];
+        %tmp.351 = getv function %tmp.350 :addItem;
+        symbol [ WatchUi %tmp.354 68 39 46 ];
+        %tmp.354 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.355 68 47 55 ];
+        %tmp.355 = getv function ? %tmp.354 :MenuItem;
+        %tmp.356 = "Divider";
+        %tmp.357 = null;
+        %tmp.359 = const :divider;
+        symbol [ divider %tmp.359 68 74 81 const ];
+        %tmp.360 = null;
+        %tmp.352 = newc %tmp.355 (%tmp.356, %tmp.357, %tmp.359, %tmp.360);
+        invoke %tmp.350 %tmp.351(%tmp.352);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_43_69_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_12_69_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_67_12_69_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 70 12 ]
+        symbol [ WatchUi %tmp.361 70 12 19 ];
+        %tmp.361 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.362 70 20 28 ];
+        %tmp.362 = getv function %tmp.361 :pushView;
+        %tmp.363 = lgetv %customMenu.9;
+        symbol [ customMenu %tmp.363 70 29 39 ];
+        symbol [ $ %tmp.367 70 45 46 ];
+        %tmp.367 = getm $;
+        symbol [ Menu2SampleCustomDelegate %tmp.368 70 47 72 ];
+        %tmp.368 = getv %tmp.367 :Menu2SampleCustomDelegate;
+        %tmp.364 = newc %tmp.368 ();
+        symbol [ WatchUi %tmp.369 70 76 83 ];
+        %tmp.369 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.370 70 84 92 ];
+        %tmp.370 = getv %tmp.369 :SLIDE_UP;
+        invoke %tmp.361 %tmp.362(%tmp.363, %tmp.364, %tmp.370);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_40_71_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_15_73_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_15_73_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_71_15_73_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 72 12 ]
+        symbol [ WatchUi %tmp.371 72 12 19 ];
+        %tmp.371 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.372 72 20 33 ];
+        %tmp.372 = getv function %tmp.371 :requestUpdate;
+        invoke %tmp.371 %tmp.372();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_71_15_73_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_60_15_73_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_46_15_73_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_35_15_73_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_24_8_73_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_21_55_74_4_stop:
+    }
+    //! Handle the back key being pressed
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 77; @symbol_functiondef = [onBack,77,20,26]; ]
+    public
+    function onBack() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_77_37_79_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 78 8 ]
+        symbol [ WatchUi %tmp.1 78 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 78 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 78 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 78 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_77_37_79_4_stop:
+    }
+}
+//! This is the menu input delegate shared by all the basic sub-menus in the application
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 83; @symbol_classdef = [Menu2SampleSubMenuDelegate,83,6,32]; @symbol_extends<0> = [WatchUi,83,41,48]; @symbol_extends<1> = [Menu2InputDelegate,83,49,67]; ]
+class Menu2SampleSubMenuDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 83; ]
+    <init> {
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 85 16 ]
+        symbol [ WatchUi %tmp.5 85 61 68 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.6 85 69 74 ];
+        %tmp.6 = getv %tmp.5 :Menu2;
+        symbol [ DIVIDER_TYPE_DEFAULT %tmp.7 85 75 95 ];
+        %tmp.7 = getv %tmp.6 :DIVIDER_TYPE_DEFAULT;
+        putv self :_dividerType %tmp.7;
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 83; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 84; @position = 16; @symbol_vardef = [_menu,84,16,21]; @symbol_type<0> = [WatchUi,84,25,32]; @symbol_type<1> = [Menu2,84,33,38]; ]
+    private
+    var _menu as WatchUi.Menu2;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 85; @position = 16; @symbol_vardef = [_dividerType,85,16,28]; @symbol_type<0> = [WatchUi,85,32,39]; @symbol_type<1> = [Menu2,85,40,45]; @symbol_type<2> = [DividerType,85,46,57]; ]
+    private
+    var _dividerType as WatchUi.Menu2.DividerType or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 86; @position = 16; @symbol_vardef = [_count,86,16,22]; @symbol_type<0> = [Number,86,26,32]; ]
+    private
+    var _count as Number = 0;
+    //! Constructor
+    //! @param menu The menu to be used
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 90; @symbol_functiondef = [initialize,90,20,30]; @symbol_param<0> = [menu,90,31,35]; @symbol_param<0>_type<0> = [WatchUi,90,39,46]; @symbol_param<0>_type<1> = [Menu2,90,47,52]; ]
+    public
+    function initialize(menu as WatchUi.Menu2) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_90_54_93_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 91 8 ]
+        %tmp.1 = lgetv %menu;
+        symbol [ menu %tmp.1 91 16 20 ];
+        symbol [ _menu ? 91 8 13 ];
+        putv self :_menu %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 92 8 ]
+        symbol [ Menu2InputDelegate %tmp.3 92 8 26 ];
+        %tmp.3 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.4 92 27 37 ];
+        %tmp.4 = getv function %tmp.3 :initialize;
+        invoke %tmp.3 %tmp.4();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_90_54_93_4_stop:
+    }
+    //! Handle an item being selected
+    //! @param item The selected menu item
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 97; @symbol_functiondef = [onSelect,97,20,28]; @symbol_param<0> = [item,97,29,33]; @symbol_param<0>_type<0> = [MenuItem,97,37,45]; ]
+    public
+    function onSelect(item as MenuItem) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_97_55_105_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 101 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_8_103_8_if_stmt:
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 101 12 16 ];
+        symbol [ WatchUi %tmp.2 101 28 35 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ IconMenuItem %tmp.3 101 36 48 ];
+        %tmp.3 = getv %tmp.2 :IconMenuItem;
+        %tmp.4 = isa %tmp.1 %tmp.3;
+        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_8_103_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_8_103_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_50_103_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 102 12 ]
+        %tmp.5 = lgetv %item;
+        symbol [ item %tmp.5 102 12 16 ];
+        %tmp.6 = as %tmp.5 { (WatchUi.IconMenuItem) };
+        symbol [ setSubLabel %tmp.7 102 17 28 ];
+        %tmp.7 = getv function %tmp.6 :setSubLabel;
+        %tmp.8 = lgetv %item;
+        symbol [ item %tmp.8 102 30 34 ];
+        %tmp.9 = as %tmp.8 { (WatchUi.IconMenuItem) };
+        symbol [ getIcon %tmp.10 102 35 42 ];
+        %tmp.10 = getv function %tmp.9 :getIcon;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = as %tmp.11 CustomIcon;
+        symbol [ CustomIcon %tmp.12 102 48 58 ];
+        symbol [ nextState %tmp.13 102 60 69 ];
+        %tmp.13 = getv function %tmp.12 :nextState;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        invoke %tmp.6 %tmp.7(%tmp.14);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_50_103_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_8_103_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_101_8_103_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 104 8 ]
+        symbol [ WatchUi %tmp.15 104 8 15 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.16 104 16 29 ];
+        %tmp.16 = getv function %tmp.15 :requestUpdate;
+        invoke %tmp.15 %tmp.16();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_97_55_105_4_stop:
+    }
+    //! Handle the back key being pressed
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 108; @symbol_functiondef = [onBack,108,20,26]; ]
+    public
+    function onBack() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_108_37_124_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 109 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_8_123_8_if_stmt:
+        symbol [ WatchUi %tmp.1 109 12 19 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.2 109 20 25 ];
+        %tmp.2 = getv %tmp.1 :Menu2;
+        %tmp.4 = const :setDividerType;
+        symbol [ setDividerType %tmp.4 109 31 45 const ];
+        %tmp.5 = canhazplz %tmp.2 %tmp.4;
+        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_8_123_8_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_8_123_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_47_121_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 110 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_12_120_12_if_stmt:
+        symbol [ _count %tmp.7 110 16 22 ];
+        %tmp.7 = getv ? :_count;
+        %tmp.8 = 2;
+        %tmp.9 = mod %tmp.7 %tmp.8;
+        %tmp.10 = 0;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_12_120_12_if_else_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_12_120_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_33_118_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 111 16 ]
+        symbol [ _count %tmp.14 111 16 22 ];
+        %tmp.14 = getv ? :_count;
+        %tmp.15 = add %tmp.14 1;
+        symbol [ _count ? 111 16 22 ];
+        putv self :_count dup %tmp.15;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 112 16 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_16_116_16_if_stmt:
+        symbol [ _dividerType %tmp.17 112 20 32 ];
+        %tmp.17 = getv ? :_dividerType;
+        symbol [ WatchUi %tmp.18 112 36 43 ];
+        %tmp.18 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.19 112 44 49 ];
+        %tmp.19 = getv %tmp.18 :Menu2;
+        symbol [ DIVIDER_TYPE_DEFAULT %tmp.20 112 50 70 ];
+        %tmp.20 = getv %tmp.19 :DIVIDER_TYPE_DEFAULT;
+        %tmp.21 = eq %tmp.17 %tmp.20;
+        bf %tmp.21 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_16_116_16_if_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_16_116_16_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_72_114_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 113 20 ]
+        symbol [ WatchUi %tmp.22 113 35 42 ];
+        %tmp.22 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.23 113 43 48 ];
+        %tmp.23 = getv %tmp.22 :Menu2;
+        symbol [ DIVIDER_TYPE_ICON %tmp.24 113 49 66 ];
+        %tmp.24 = getv %tmp.23 :DIVIDER_TYPE_ICON;
+        symbol [ _dividerType ? 113 20 32 ];
+        putv self :_dividerType %tmp.24;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_72_114_16_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_16_116_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_16_116_16_if_false:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 114 23 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_23_116_16_if_stmt:
+        symbol [ _dividerType %tmp.26 114 27 39 ];
+        %tmp.26 = getv ? :_dividerType;
+        symbol [ WatchUi %tmp.27 114 43 50 ];
+        %tmp.27 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.28 114 51 56 ];
+        %tmp.28 = getv %tmp.27 :Menu2;
+        symbol [ DIVIDER_TYPE_ICON %tmp.29 114 57 74 ];
+        %tmp.29 = getv %tmp.28 :DIVIDER_TYPE_ICON;
+        %tmp.30 = eq %tmp.26 %tmp.29;
+        bf %tmp.30 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_23_116_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_23_116_16_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_75_116_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 115 20 ]
+        symbol [ WatchUi %tmp.31 115 35 42 ];
+        %tmp.31 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.32 115 43 48 ];
+        %tmp.32 = getv %tmp.31 :Menu2;
+        symbol [ DIVIDER_TYPE_DEFAULT %tmp.33 115 49 69 ];
+        %tmp.33 = getv %tmp.32 :DIVIDER_TYPE_DEFAULT;
+        symbol [ _dividerType ? 115 20 32 ];
+        putv self :_dividerType %tmp.33;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_75_116_16_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_23_116_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_114_23_116_16_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_112_16_116_16_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 117 16 ]
+        symbol [ _menu %tmp.35 117 16 21 ];
+        %tmp.35 = getv ? :_menu;
+        symbol [ setDividerType %tmp.36 117 22 36 ];
+        %tmp.36 = getv function %tmp.35 :setDividerType;
+        symbol [ _dividerType %tmp.38 117 37 49 ];
+        %tmp.38 = getv ? :_dividerType;
+        invoke %tmp.35 %tmp.36(%tmp.38);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_33_118_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_12_120_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_12_120_12_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_118_19_120_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 119 16 ]
+        symbol [ WatchUi %tmp.39 119 16 23 ];
+        %tmp.39 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.40 119 24 31 ];
+        %tmp.40 = getv function %tmp.39 :popView;
+        symbol [ WatchUi %tmp.41 119 32 39 ];
+        %tmp.41 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.42 119 40 50 ];
+        %tmp.42 = getv %tmp.41 :SLIDE_DOWN;
+        invoke %tmp.39 %tmp.40(%tmp.42);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_118_19_120_12_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_110_12_120_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_47_121_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_8_123_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_8_123_8_if_else_false:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_121_15_123_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 122 12 ]
+        symbol [ WatchUi %tmp.43 122 12 19 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.44 122 20 27 ];
+        %tmp.44 = getv function %tmp.43 :popView;
+        symbol [ WatchUi %tmp.45 122 28 35 ];
+        %tmp.45 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.46 122 36 46 ];
+        %tmp.46 = getv %tmp.45 :SLIDE_DOWN;
+        invoke %tmp.43 %tmp.44(%tmp.46);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_121_15_123_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_109_8_123_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_108_37_124_4_stop:
+    }
+    //! Handle the done item being selected
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 127; @symbol_functiondef = [onDone,127,20,26]; ]
+    public
+    function onDone() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_127_37_129_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 128 8 ]
+        symbol [ WatchUi %tmp.1 128 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 128 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 128 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 128 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_127_37_129_4_stop:
+    }
+}
+//! This is the menu input delegate for the custom sub-menu
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 134; @symbol_classdef = [Menu2SampleCustomDelegate,134,6,31]; @symbol_extends<0> = [WatchUi,134,40,47]; @symbol_extends<1> = [Menu2InputDelegate,134,48,66]; ]
+class Menu2SampleCustomDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 134; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 134; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 135; @position = 10; @symbol_constdef = [ITEM_HEIGHT,135,10,21]; ]
+    const ITEM_HEIGHT = 30;
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 138; @symbol_functiondef = [initialize,138,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_138_33_140_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 139 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 139 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 139 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_138_33_140_4_stop:
+    }
+    //! Handle an item being selected
+    //! @param item The selected menu item
+    //! Handle the back key being pressed
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 145; @symbol_functiondef = [onBack,145,20,26]; ]
+    public
+    function onBack() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_145_37_147_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 146 8 ]
+        symbol [ WatchUi %tmp.1 146 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 146 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 146 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 146 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_145_37_147_4_stop:
+    }
+}
+//! This is the custom Icon drawable. It fills the icon space with a color
+//! to demonstrate its extents. It changes color each time the next state is
+//! triggered, which is done when the item is selected in this application.
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 153; @symbol_classdef = [CustomIcon,153,6,16]; @symbol_extends<0> = [WatchUi,153,25,32]; @symbol_extends<1> = [Drawable,153,33,41]; ]
+class CustomIcon extends WatchUi.Drawable {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 153; ]
+    <init> {
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 155 18 ]
+        %tmp.5 = newa 6;
+        symbol [ Graphics %tmp.6 155 29 37 ];
+        %tmp.6 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.7 155 38 47 ];
+        %tmp.7 = getv %tmp.6 :COLOR_RED;
+        %tmp.8 = dup %tmp.5;
+        %tmp.9 = aputv %tmp.8 0 %tmp.7;
+        symbol [ Graphics %tmp.10 155 49 57 ];
+        %tmp.10 = getm $.Toybox.Graphics;
+        symbol [ COLOR_ORANGE %tmp.11 155 58 70 ];
+        %tmp.11 = getv %tmp.10 :COLOR_ORANGE;
+        %tmp.12 = dup %tmp.9;
+        %tmp.13 = aputv %tmp.12 1 %tmp.11;
+        symbol [ Graphics %tmp.14 155 72 80 ];
+        %tmp.14 = getm $.Toybox.Graphics;
+        symbol [ COLOR_YELLOW %tmp.15 155 81 93 ];
+        %tmp.15 = getv %tmp.14 :COLOR_YELLOW;
+        %tmp.16 = dup %tmp.13;
+        %tmp.17 = aputv %tmp.16 2 %tmp.15;
+        symbol [ Graphics %tmp.18 155 95 103 ];
+        %tmp.18 = getm $.Toybox.Graphics;
+        symbol [ COLOR_GREEN %tmp.19 155 104 115 ];
+        %tmp.19 = getv %tmp.18 :COLOR_GREEN;
+        %tmp.20 = dup %tmp.17;
+        %tmp.21 = aputv %tmp.20 3 %tmp.19;
+        symbol [ Graphics %tmp.22 156 29 37 ];
+        %tmp.22 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLUE %tmp.23 156 38 48 ];
+        %tmp.23 = getv %tmp.22 :COLOR_BLUE;
+        %tmp.24 = dup %tmp.21;
+        %tmp.25 = aputv %tmp.24 4 %tmp.23;
+        symbol [ Graphics %tmp.26 156 50 58 ];
+        %tmp.26 = getm $.Toybox.Graphics;
+        symbol [ COLOR_PURPLE %tmp.27 156 59 71 ];
+        %tmp.27 = getv %tmp.26 :COLOR_PURPLE;
+        %tmp.28 = dup %tmp.25;
+        %tmp.29 = aputv %tmp.28 5 %tmp.27;
+        putv self :_colors %tmp.29;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 157 18 ]
+        %tmp.30 = newa 6;
+        %tmp.31 = "Red";
+        %tmp.32 = dup %tmp.30;
+        %tmp.33 = aputv %tmp.32 0 %tmp.31;
+        %tmp.34 = "Orange";
+        %tmp.35 = dup %tmp.33;
+        %tmp.36 = aputv %tmp.35 1 %tmp.34;
+        %tmp.37 = "Yellow";
+        %tmp.38 = dup %tmp.36;
+        %tmp.39 = aputv %tmp.38 2 %tmp.37;
+        %tmp.40 = "Green";
+        %tmp.41 = dup %tmp.39;
+        %tmp.42 = aputv %tmp.41 3 %tmp.40;
+        %tmp.43 = "Blue";
+        %tmp.44 = dup %tmp.42;
+        %tmp.45 = aputv %tmp.44 4 %tmp.43;
+        %tmp.46 = "Violet";
+        %tmp.47 = dup %tmp.45;
+        %tmp.48 = aputv %tmp.47 5 %tmp.46;
+        putv self :_colorStrings %tmp.48;
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 153; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 155; @position = 18; @symbol_constdef = [_colors,155,18,25]; ]
+    private
+    const _colors;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 157; @position = 18; @symbol_constdef = [_colorStrings,157,18,31]; ]
+    private
+    const _colorStrings;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 158; @position = 16; @symbol_vardef = [_index,158,16,22]; @symbol_type<0> = [Number,158,26,32]; ]
+    private
+    var _index as Number;
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 161; @symbol_functiondef = [initialize,161,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_161_33_164_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 162 8 ]
+        symbol [ Drawable %tmp.2 162 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 162 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 0;
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 163 8 ]
+        %tmp.5 = 0;
+        symbol [ _index ? 163 8 14 ];
+        putv self :_index %tmp.5;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_161_33_164_4_stop:
+    }
+    //! Advance to the next color state for the drawable
+    //! @return The new color state
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 168; @symbol_functiondef = [nextState,168,20,29]; @symbol_return<0> = [String,168,35,41]; ]
+    public
+    function nextState() as String {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_168_42_175_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 169 8 ]
+        symbol [ _index %tmp.3 169 8 14 ];
+        %tmp.3 = getv ? :_index;
+        %tmp.4 = add %tmp.3 1;
+        symbol [ _index ? 169 8 14 ];
+        putv self :_index dup %tmp.4;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 170 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_8_172_8_if_stmt:
+        symbol [ _index %tmp.6 170 12 18 ];
+        %tmp.6 = getv ? :_index;
+        symbol [ _colors %tmp.8 170 22 29 ];
+        %tmp.8 = getv ? :_colors;
+        symbol [ size %tmp.9 170 30 34 ];
+        %tmp.9 = getv function %tmp.8 :size;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = gte %tmp.6 %tmp.10;
+        bf %tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_8_172_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_8_172_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_38_172_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 171 12 ]
+        %tmp.12 = 0;
+        symbol [ _index ? 171 12 18 ];
+        putv self :_index %tmp.12;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_38_172_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_8_172_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_170_8_172_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 174 8 ]
+        symbol [ _colorStrings %tmp.14 174 15 28 ];
+        %tmp.14 = getv ? :_colorStrings;
+        symbol [ _index %tmp.16 174 29 35 ];
+        %tmp.16 = getv ? :_index;
+        %tmp.17 = agetv %tmp.14 %tmp.16;
+        ret %tmp.17;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_168_42_175_4_stop:
+    }
+    //! Return the color string for the menu to use as its sublabel
+    //! @return The current color
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 179; @symbol_functiondef = [getString,179,20,29]; @symbol_return<0> = [String,179,35,41]; ]
+    public
+    function getString() as String {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_179_42_181_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 180 8 ]
+        symbol [ _colorStrings %tmp.2 180 15 28 ];
+        %tmp.2 = getv ? :_colorStrings;
+        symbol [ _index %tmp.4 180 29 35 ];
+        %tmp.4 = getv ? :_index;
+        %tmp.5 = agetv %tmp.2 %tmp.4;
+        ret %tmp.5;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_179_42_181_4_stop:
+    }
+    //! Set the color for the current state and use dc.clear() to fill
+    //! the drawable area with that color
+    //! @param dc Device Context
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 186; @symbol_functiondef = [draw,186,20,24]; @symbol_param<0> = [dc,186,25,27]; @symbol_param<0>_type<0> = [Dc,186,31,33]; ]
+    public
+    function draw(dc as Dc) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_186_43_190_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 187 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_186_43_190_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_186_43_190_4_stop" ]
+        %color.1 = local;
+        symbol [ color %color.1 187 12 17 ];
+        symbol [ _colors %tmp.2 187 20 27 ];
+        %tmp.2 = getv ? :_colors;
+        symbol [ _index %tmp.4 187 28 34 ];
+        %tmp.4 = getv ? :_index;
+        %tmp.5 = agetv %tmp.2 %tmp.4;
+        lputv %color.1 %tmp.5;
+        symbol [ color %color.1 187 12 17 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 188 8 ]
+        %tmp.6 = lgetv %dc;
+        symbol [ dc %tmp.6 188 8 10 ];
+        symbol [ setColor %tmp.7 188 11 19 ];
+        %tmp.7 = getv function %tmp.6 :setColor;
+        %tmp.8 = lgetv %color.1;
+        symbol [ color %tmp.8 188 20 25 ];
+        %tmp.9 = lgetv %color.1;
+        symbol [ color %tmp.9 188 27 32 ];
+        invoke %tmp.6 %tmp.7(%tmp.8, %tmp.9);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 189 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 189 8 10 ];
+        symbol [ clear %tmp.11 189 11 16 ];
+        %tmp.11 = getv function %tmp.10 :clear;
+        invoke %tmp.10 %tmp.11();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_186_43_190_4_stop:
+    }
+}
+//! This is the drawable for the Menu2 title with instructions to change the divider type
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 194; @symbol_classdef = [DividerTitle,194,6,18]; @symbol_extends<0> = [WatchUi,194,27,34]; @symbol_extends<1> = [Drawable,194,35,43]; ]
+class DividerTitle extends WatchUi.Drawable {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 194; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 194; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 197; @symbol_functiondef = [initialize,197,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_197_33_199_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 198 8 ]
+        symbol [ Drawable %tmp.2 198 8 16 ];
+        %tmp.2 = getv ? :Drawable;
+        symbol [ initialize %tmp.3 198 17 27 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        %tmp.4 = newd 0;
+        invoke %tmp.2 %tmp.3(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_197_33_199_4_stop:
+    }
+    //! Draw the title with instructions to change the divider type
+    //! @param dc Device context
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 203; @symbol_functiondef = [draw,203,20,24]; @symbol_param<0> = [dc,203,25,27]; @symbol_param<0>_type<0> = [Dc,203,31,33]; ]
+    public
+    function draw(dc as Dc) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_203_43_208_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 204 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 204 8 10 ];
+        symbol [ setColor %tmp.2 204 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 204 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 204 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 204 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLUE %tmp.6 204 51 61 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLUE;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 205 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 205 8 10 ];
+        symbol [ clear %tmp.8 205 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc" 207 8 ]
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 207 8 10 ];
+        symbol [ drawText %tmp.10 207 11 19 ];
+        %tmp.10 = getv function %tmp.9 :drawText;
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 207 20 22 ];
+        symbol [ getWidth %tmp.12 207 23 31 ];
+        %tmp.12 = getv function %tmp.11 :getWidth;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = 2;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 207 39 41 ];
+        symbol [ getHeight %tmp.17 207 42 51 ];
+        %tmp.17 = getv function %tmp.16 :getHeight;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = 2;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        symbol [ Graphics %tmp.21 207 59 67 ];
+        %tmp.21 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.22 207 68 78 ];
+        %tmp.22 = getv %tmp.21 :FONT_XTINY;
+        %tmp.23 = "Press the back\nbutton to change\ndivider type";
+        symbol [ Graphics %tmp.24 207 130 138 ];
+        %tmp.24 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.25 207 139 158 ];
+        %tmp.25 = getv %tmp.24 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.26 207 161 169 ];
+        %tmp.26 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.27 207 170 190 ];
+        %tmp.27 = getv %tmp.26 :TEXT_JUSTIFY_VCENTER;
+        %tmp.28 = bitor %tmp.25 %tmp.27;
+        invoke %tmp.9 %tmp.10(%tmp.15, %tmp.20, %tmp.22, %tmp.23, %tmp.28);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_Menu2Sample_source_MenuTestMenuDelegate_mc_203_43_208_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/Menu2Sample/source/MenuTestMenuDelegate.mc"; @line = 7; ]
+<init> {
+}

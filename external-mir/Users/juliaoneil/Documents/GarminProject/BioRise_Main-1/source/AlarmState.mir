@@ -1,0 +1,13 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/AlarmState.mc"; @line = 1; @symbol_moduledef = [AlarmState,1,7,17]; ]
+module AlarmState {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/AlarmState.mc"; @line = 1; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/AlarmState.mc"; @line = 3; @position = 8; @symbol_vardef = [lowerHour,3,8,17]; ]
+    var lowerHour = 7;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/AlarmState.mc"; @line = 4; @position = 8; @symbol_vardef = [lowerMinute,4,8,19]; ]
+    var lowerMinute = 0;
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/AlarmState.mc"; @line = 1; ]
+<init> {
+}

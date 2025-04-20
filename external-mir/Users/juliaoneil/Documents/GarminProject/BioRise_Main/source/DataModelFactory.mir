@@ -1,0 +1,395 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,1,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 5; @symbol_classdef = [DataModelFactory,5,6,22]; ]
+class DataModelFactory {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 7; @position = 16; @symbol_vardef = [_delegate,7,16,25]; @symbol_type<0> = [BluetoothDelegate,7,29,46]; ]
+    private
+    var _delegate as BluetoothDelegate;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 8; @position = 16; @symbol_vardef = [_profileManager,8,16,31]; @symbol_type<0> = [ProfileManager,8,35,49]; ]
+    private
+    var _profileManager as ProfileManager;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 9; @position = 16; @symbol_vardef = [_phoneCommunication,9,16,35]; @symbol_type<0> = [PhoneCommunication,9,39,57]; ]
+    private
+    var _phoneCommunication as PhoneCommunication;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 10; @position = 16; @symbol_vardef = [_viewController,10,16,31]; @symbol_type<0> = [ViewController,10,35,49]; ]
+    private
+    var _viewController as ViewController or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 13; @position = 16; @symbol_vardef = [_scanDataModel,13,16,30]; @symbol_type<0> = [WeakReference,13,34,47]; ]
+    private
+    var _scanDataModel as WeakReference or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 14; @position = 16; @symbol_vardef = [_deviceDataModel,14,16,32]; @symbol_type<0> = [WeakReference,14,36,49]; ]
+    private
+    var _deviceDataModel as WeakReference or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 15; @position = 16; @symbol_vardef = [_envModel,15,16,25]; @symbol_type<0> = [WeakReference,15,29,42]; ]
+    private
+    var _envModel as WeakReference or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 16; @position = 16; @symbol_vardef = [_alarmDataModel,16,16,31]; @symbol_type<0> = [WeakReference,16,35,48]; ]
+    private
+    var _alarmDataModel as WeakReference or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 18; @symbol_functiondef = [initialize,18,20,30]; @symbol_param<0> = [delegate,18,31,39]; @symbol_param<0>_type<0> = [BluetoothDelegate,18,43,60]; @symbol_param<1> = [profileManager,18,62,76]; @symbol_param<1>_type<0> = [ProfileManager,18,80,94]; @symbol_param<2> = [phoneComm,18,96,105]; @symbol_param<2>_type<0> = [PhoneCommunication,18,109,127]; ]
+    public
+    function initialize(delegate as BluetoothDelegate, profileManager as ProfileManager, phoneComm as PhoneCommunication) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_18_129_22_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 19 8 ]
+        %tmp.1 = lgetv %delegate;
+        symbol [ delegate %tmp.1 19 20 28 ];
+        symbol [ _delegate ? 19 8 17 ];
+        putv self :_delegate %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 20 8 ]
+        %tmp.2 = lgetv %profileManager;
+        symbol [ profileManager %tmp.2 20 26 40 ];
+        symbol [ _profileManager ? 20 8 23 ];
+        putv self :_profileManager %tmp.2;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 21 8 ]
+        %tmp.3 = lgetv %phoneComm;
+        symbol [ phoneComm %tmp.3 21 30 39 ];
+        symbol [ _phoneCommunication ? 21 8 27 ];
+        putv self :_phoneCommunication %tmp.3;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_18_129_22_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 24; @symbol_functiondef = [setViewController,24,20,37]; @symbol_param<0> = [viewController,24,38,52]; @symbol_param<0>_type<0> = [ViewController,24,56,70]; ]
+    public
+    function setViewController(viewController as ViewController) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_24_80_26_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 25 8 ]
+        %tmp.1 = lgetv %viewController;
+        symbol [ viewController %tmp.1 25 26 40 ];
+        symbol [ _viewController ? 25 8 23 ];
+        putv self :_viewController %tmp.1;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_24_80_26_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 28; @symbol_functiondef = [getViewController,28,20,37]; @symbol_return<0> = [ViewController,28,43,57]; ]
+    public
+    function getViewController() as ViewController {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_28_58_30_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 29 8 ]
+        symbol [ _viewController %tmp.2 29 15 30 ];
+        %tmp.2 = getv ? :_viewController;
+        ret %tmp.2;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_28_58_30_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 32; @symbol_functiondef = [getScanDataModel,32,20,36]; @symbol_return<0> = [ScanDataModel,32,42,55]; ]
+    public
+    function getScanDataModel() as ScanDataModel {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_32_56_41_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 33 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_32_56_41_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_32_56_41_4_stop" ]
+        %scanDataModel.1 = local;
+        symbol [ scanDataModel %scanDataModel.1 33 12 25 ];
+        symbol [ _scanDataModel %tmp.2 33 28 42 ];
+        %tmp.2 = getv ? :_scanDataModel;
+        lputv %scanDataModel.1 %tmp.2;
+        symbol [ scanDataModel %scanDataModel.1 33 12 25 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 34 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_8_36_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_12_34_62_begin:
+        %tmp.3 = lgetv %scanDataModel.1;
+        symbol [ scanDataModel %tmp.3 34 12 25 ];
+        %tmp.4 = null;
+        %tmp.5 = ne %tmp.3 %tmp.4;
+        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_8_36_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_37_34_62_true:
+        %tmp.6 = lgetv %scanDataModel.1;
+        symbol [ scanDataModel %tmp.6 34 37 50 ];
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stillAlive %tmp.8 34 51 61 ];
+        %tmp.8 = getv function %tmp.7 :stillAlive;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        push %tmp.9;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_37_34_62_end:
+        %tmp.10 = phi [%tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_12_34_62_begin] [%tmp.9 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_37_34_62_true] [%tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_37_34_62_end];
+        bf %tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_8_36_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_8_36_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_65_36_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 35 12 ]
+        %tmp.11 = lgetv %scanDataModel.1;
+        symbol [ scanDataModel %tmp.11 35 20 33 ];
+        %tmp.12 = as %tmp.11 { (!Null) };
+        symbol [ get %tmp.13 35 34 37 ];
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 ScanDataModel;
+        symbol [ ScanDataModel %tmp.15 35 43 56 ];
+        ret %tmp.15;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_65_36_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_8_36_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_34_8_36_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 38 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_32_56_41_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_32_56_41_4_stop" ]
+        %dataModel.2 = local;
+        symbol [ dataModel %dataModel.2 38 12 21 ];
+        symbol [ $ %tmp.19 38 28 29 ];
+        %tmp.19 = getm $;
+        symbol [ ScanDataModel %tmp.20 38 30 43 ];
+        %tmp.20 = getv %tmp.19 :ScanDataModel;
+        symbol [ _delegate %tmp.22 38 44 53 ];
+        %tmp.22 = getv ? :_delegate;
+        %tmp.16 = newc %tmp.20 (%tmp.22);
+        lputv %dataModel.2 %tmp.16;
+        symbol [ dataModel %dataModel.2 38 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 39 8 ]
+        %tmp.23 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.23 39 25 34 ];
+        symbol [ weak %tmp.24 39 35 39 ];
+        %tmp.24 = getv function %tmp.23 :weak;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        symbol [ _scanDataModel ? 39 8 22 ];
+        putv self :_scanDataModel %tmp.25;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 40 8 ]
+        %tmp.26 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.26 40 15 24 ];
+        ret %tmp.26;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_32_56_41_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 43; @symbol_functiondef = [getAlarmDataModel,43,20,37]; @symbol_return<0> = [AlarmDataModel,43,43,57]; ]
+    public
+    function getAlarmDataModel() as AlarmDataModel {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_43_58_52_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 44 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_43_58_52_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_43_58_52_4_stop" ]
+        %alarmDataModel.1 = local;
+        symbol [ alarmDataModel %alarmDataModel.1 44 12 26 ];
+        symbol [ _alarmDataModel %tmp.2 44 29 44 ];
+        %tmp.2 = getv ? :_alarmDataModel;
+        lputv %alarmDataModel.1 %tmp.2;
+        symbol [ alarmDataModel %alarmDataModel.1 44 12 26 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 45 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_8_47_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_12_45_64_begin:
+        %tmp.3 = lgetv %alarmDataModel.1;
+        symbol [ alarmDataModel %tmp.3 45 12 26 ];
+        %tmp.4 = null;
+        %tmp.5 = ne %tmp.3 %tmp.4;
+        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_8_47_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_38_45_64_true:
+        %tmp.6 = lgetv %alarmDataModel.1;
+        symbol [ alarmDataModel %tmp.6 45 38 52 ];
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stillAlive %tmp.8 45 53 63 ];
+        %tmp.8 = getv function %tmp.7 :stillAlive;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        push %tmp.9;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_38_45_64_end:
+        %tmp.10 = phi [%tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_12_45_64_begin] [%tmp.9 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_38_45_64_true] [%tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_38_45_64_end];
+        bf %tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_8_47_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_8_47_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_67_47_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 46 12 ]
+        %tmp.11 = lgetv %alarmDataModel.1;
+        symbol [ alarmDataModel %tmp.11 46 20 34 ];
+        %tmp.12 = as %tmp.11 { (!Null) };
+        symbol [ get %tmp.13 46 35 38 ];
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 AlarmDataModel;
+        symbol [ AlarmDataModel %tmp.15 46 44 58 ];
+        ret %tmp.15;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_67_47_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_8_47_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_45_8_47_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 49 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_43_58_52_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_43_58_52_4_stop" ]
+        %dataModel.2 = local;
+        symbol [ dataModel %dataModel.2 49 12 21 ];
+        symbol [ $ %tmp.19 49 28 29 ];
+        %tmp.19 = getm $;
+        symbol [ AlarmDataModel %tmp.20 49 30 44 ];
+        %tmp.20 = getv %tmp.19 :AlarmDataModel;
+        %tmp.16 = newc %tmp.20 ();
+        lputv %dataModel.2 %tmp.16;
+        symbol [ dataModel %dataModel.2 49 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 50 8 ]
+        %tmp.21 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.21 50 26 35 ];
+        symbol [ weak %tmp.22 50 36 40 ];
+        %tmp.22 = getv function %tmp.21 :weak;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        symbol [ _alarmDataModel ? 50 8 23 ];
+        putv self :_alarmDataModel %tmp.23;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 51 8 ]
+        %tmp.24 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.24 51 15 24 ];
+        ret %tmp.24;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_43_58_52_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 54; @symbol_functiondef = [getDeviceDataModel,54,20,38]; @symbol_param<0> = [scanResult,54,39,49]; @symbol_param<0>_type<0> = [ScanResult,54,53,63]; @symbol_return<0> = [DeviceDataModel,54,68,83]; ]
+    public
+    function getDeviceDataModel(scanResult as ScanResult) as DeviceDataModel {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_54_84_63_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 55 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_54_84_63_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_54_84_63_4_stop" ]
+        %deviceDataModel.1 = local;
+        symbol [ deviceDataModel %deviceDataModel.1 55 12 27 ];
+        symbol [ _deviceDataModel %tmp.2 55 30 46 ];
+        %tmp.2 = getv ? :_deviceDataModel;
+        lputv %deviceDataModel.1 %tmp.2;
+        symbol [ deviceDataModel %deviceDataModel.1 55 12 27 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 56 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_8_58_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_12_56_66_begin:
+        %tmp.3 = lgetv %deviceDataModel.1;
+        symbol [ deviceDataModel %tmp.3 56 12 27 ];
+        %tmp.4 = null;
+        %tmp.5 = ne %tmp.3 %tmp.4;
+        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_8_58_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_39_56_66_true:
+        %tmp.6 = lgetv %deviceDataModel.1;
+        symbol [ deviceDataModel %tmp.6 56 39 54 ];
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stillAlive %tmp.8 56 55 65 ];
+        %tmp.8 = getv function %tmp.7 :stillAlive;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        push %tmp.9;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_39_56_66_end:
+        %tmp.10 = phi [%tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_12_56_66_begin] [%tmp.9 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_39_56_66_true] [%tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_39_56_66_end];
+        bf %tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_8_58_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_8_58_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_69_58_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 57 12 ]
+        %tmp.11 = lgetv %deviceDataModel.1;
+        symbol [ deviceDataModel %tmp.11 57 20 35 ];
+        %tmp.12 = as %tmp.11 { (!Null) };
+        symbol [ get %tmp.13 57 36 39 ];
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 DeviceDataModel;
+        symbol [ DeviceDataModel %tmp.15 57 45 60 ];
+        ret %tmp.15;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_69_58_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_8_58_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_56_8_58_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 60 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_54_84_63_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_54_84_63_4_stop" ]
+        %dataModel.2 = local;
+        symbol [ dataModel %dataModel.2 60 12 21 ];
+        symbol [ $ %tmp.19 60 28 29 ];
+        %tmp.19 = getm $;
+        symbol [ DeviceDataModel %tmp.20 60 30 45 ];
+        %tmp.20 = getv %tmp.19 :DeviceDataModel;
+        symbol [ _delegate %tmp.22 60 46 55 ];
+        %tmp.22 = getv ? :_delegate;
+        %tmp.23 = self;
+        symbol [ self %tmp.23 60 57 61 ];
+        %tmp.24 = lgetv %scanResult;
+        symbol [ scanResult %tmp.24 60 63 73 ];
+        %tmp.16 = newc %tmp.20 (%tmp.22, %tmp.23, %tmp.24);
+        lputv %dataModel.2 %tmp.16;
+        symbol [ dataModel %dataModel.2 60 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 61 8 ]
+        %tmp.25 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.25 61 27 36 ];
+        symbol [ weak %tmp.26 61 37 41 ];
+        %tmp.26 = getv function %tmp.25 :weak;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        symbol [ _deviceDataModel ? 61 8 24 ];
+        putv self :_deviceDataModel %tmp.27;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 62 8 ]
+        %tmp.28 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.28 62 15 24 ];
+        ret %tmp.28;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_54_84_63_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 65; @symbol_functiondef = [getEnvironmentModel,65,20,39]; @symbol_param<0> = [device,65,40,46]; @symbol_param<0>_type<0> = [Device,65,50,56]; @symbol_return<0> = [EnvironmentProfileModel,65,61,84]; ]
+    public
+    function getEnvironmentModel(device as Device) as EnvironmentProfileModel {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_65_85_74_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 66 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_65_85_74_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_65_85_74_4_stop" ]
+        %envModel.1 = local;
+        symbol [ envModel %envModel.1 66 12 20 ];
+        symbol [ _envModel %tmp.2 66 23 32 ];
+        %tmp.2 = getv ? :_envModel;
+        lputv %envModel.1 %tmp.2;
+        symbol [ envModel %envModel.1 66 12 20 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 67 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_8_69_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_12_67_52_begin:
+        %tmp.3 = lgetv %envModel.1;
+        symbol [ envModel %tmp.3 67 12 20 ];
+        %tmp.4 = null;
+        %tmp.5 = ne %tmp.3 %tmp.4;
+        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_32_67_52_true:
+        %tmp.6 = lgetv %envModel.1;
+        symbol [ envModel %tmp.6 67 32 40 ];
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stillAlive %tmp.8 67 41 51 ];
+        %tmp.8 = getv function %tmp.7 :stillAlive;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        push %tmp.9;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_32_67_52_end:
+        %tmp.10 = phi [%tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_12_67_52_begin] [%tmp.9 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_32_67_52_true] [%tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_32_67_52_end];
+        bf %tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_8_69_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_55_69_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 68 12 ]
+        %tmp.11 = lgetv %envModel.1;
+        symbol [ envModel %tmp.11 68 20 28 ];
+        %tmp.12 = as %tmp.11 { (!Null) };
+        symbol [ get %tmp.13 68 29 32 ];
+        %tmp.13 = getv function %tmp.12 :get;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 EnvironmentProfileModel;
+        symbol [ EnvironmentProfileModel %tmp.15 68 38 61 ];
+        ret %tmp.15;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_55_69_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_67_8_69_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 71 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_65_85_74_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_65_85_74_4_stop" ]
+        %dataModel.2 = local;
+        symbol [ dataModel %dataModel.2 71 12 21 ];
+        symbol [ $ %tmp.19 71 28 29 ];
+        %tmp.19 = getm $;
+        symbol [ EnvironmentProfileModel %tmp.20 71 30 53 ];
+        %tmp.20 = getv %tmp.19 :EnvironmentProfileModel;
+        symbol [ _delegate %tmp.22 71 54 63 ];
+        %tmp.22 = getv ? :_delegate;
+        symbol [ _profileManager %tmp.24 71 65 80 ];
+        %tmp.24 = getv ? :_profileManager;
+        %tmp.25 = lgetv %device;
+        symbol [ device %tmp.25 71 82 88 ];
+        symbol [ _phoneCommunication %tmp.27 71 90 109 ];
+        %tmp.27 = getv ? :_phoneCommunication;
+        %tmp.16 = newc %tmp.20 (%tmp.22, %tmp.24, %tmp.25, %tmp.27);
+        lputv %dataModel.2 %tmp.16;
+        symbol [ dataModel %dataModel.2 71 12 21 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 72 8 ]
+        %tmp.28 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.28 72 20 29 ];
+        symbol [ weak %tmp.29 72 30 34 ];
+        %tmp.29 = getv function %tmp.28 :weak;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        symbol [ _envModel ? 72 8 17 ];
+        putv self :_envModel %tmp.30;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 73 8 ]
+        %tmp.31 = lgetv %dataModel.2;
+        symbol [ dataModel %tmp.31 73 15 24 ];
+        ret %tmp.31;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_65_85_74_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 76; @symbol_functiondef = [GetPhoneCommunication,76,20,41]; @symbol_return<0> = [PhoneCommunication,76,47,65]; ]
+    public
+    function GetPhoneCommunication() as PhoneCommunication {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_76_66_78_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc" 77 8 ]
+        symbol [ _phoneCommunication %tmp.2 77 15 34 ];
+        %tmp.2 = getv ? :_phoneCommunication;
+        ret %tmp.2;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DataModelFactory_mc_76_66_78_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DataModelFactory.mc"; @line = 1; ]
+<init> {
+}

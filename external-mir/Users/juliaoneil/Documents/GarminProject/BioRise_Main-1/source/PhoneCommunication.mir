@@ -1,0 +1,452 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 7; @symbol_usingdef<0> = [Toybox,7,6,12]; @symbol_usingdef<1> = [WatchUi,7,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 8; @symbol_usingdef<0> = [Toybox,8,6,12]; @symbol_usingdef<1> = [System,8,13,19]; ]
+using Toybox.System;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 9; @symbol_usingdef<0> = [Toybox,9,6,12]; @symbol_usingdef<1> = [Communications,9,13,27]; ]
+using Toybox.Communications;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 12; @symbol_classdef = [CommListener,12,6,18]; @symbol_extends<0> = [Communications,12,27,41]; @symbol_extends<1> = [ConnectionListener,12,42,60]; ]
+class CommListener extends Communications.ConnectionListener {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 13; @symbol_functiondef = [initialize,13,13,23]; ]
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_13_26_15_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 14 8 ]
+        symbol [ Communications %tmp.1 14 8 22 ];
+        %tmp.1 = getm $.Toybox.Communications;
+        symbol [ ConnectionListener %tmp.2 14 23 41 ];
+        %tmp.2 = getv %tmp.1 :ConnectionListener;
+        symbol [ initialize %tmp.3 14 42 52 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_13_26_15_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 17; @symbol_functiondef = [onComplete,17,13,23]; ]
+    function onComplete() {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_17_26_19_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 18 8 ]
+        symbol [ System %tmp.1 18 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 18 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "CommListener: Transmit Complete";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_17_26_19_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 21; @symbol_functiondef = [onError,21,13,20]; ]
+    function onError() {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_21_23_23_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 22 8 ]
+        symbol [ System %tmp.1 22 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 22 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "CommListener: Transmit Failed";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_21_23_23_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 26; @symbol_classdef = [PhoneCommunication,26,6,24]; ]
+class PhoneCommunication {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 26; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 26; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 28; @position = 16; @symbol_vardef = [_deviceView,28,16,27]; @symbol_type<0> = [DeviceView,28,31,41]; ]
+    private
+    var _deviceView as DeviceView or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 29; @position = 16; @symbol_vardef = [_isSimulator,29,16,28]; ]
+    private
+    var _isSimulator = false;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 30; @position = 16; @symbol_vardef = [msgFromPhoneMethod,30,16,34]; ]
+    private
+    var msgFromPhoneMethod;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 32; @symbol_functiondef = [initialize,32,13,23]; ]
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_32_26_50_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 38 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_32_26_50_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_32_26_50_4_stop" ]
+        %systemStats.1 = local;
+        symbol [ systemStats %systemStats.1 38 12 23 ];
+        symbol [ System %tmp.1 38 26 32 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getSystemStats %tmp.2 38 33 47 ];
+        %tmp.2 = getv function %tmp.1 :getSystemStats;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %systemStats.1 %tmp.3;
+        symbol [ systemStats %systemStats.1 38 12 23 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 39 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_41_54_begin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_40_81_begin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_40_43_begin:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_39_67_begin:
+        %tmp.4 = lgetv %systemStats.1;
+        symbol [ systemStats %tmp.4 39 24 35 ];
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        %tmp.7 = dup %tmp.6;
+        bf %tmp.7 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_47_39_67_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_47_39_67_true:
+        %tmp.8 = 50.0;
+        %tmp.9 = lgetv %systemStats.1;
+        symbol [ systemStats %tmp.9 39 55 66 ];
+        %tmp.10 = as %tmp.9 { (!Null) };
+        symbol [ battery %tmp.11 39 67 74 ];
+        %tmp.11 = getv %tmp.10 :battery;
+        %tmp.12 = eq %tmp.8 %tmp.11;
+        %tmp.13 = and %tmp.6 %tmp.12;
+        push %tmp.13;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_47_39_67_end:
+        %tmp.14 = phi [%tmp.7 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_39_67_begin] [%tmp.13 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_47_39_67_true] [%tmp.14 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_47_39_67_end];
+        %tmp.15 = dup %tmp.14;
+        bf %tmp.15 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_24_40_43_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_24_40_43_true:
+        %tmp.16 = 5.0;
+        %tmp.17 = lgetv %systemStats.1;
+        symbol [ systemStats %tmp.17 40 31 42 ];
+        %tmp.18 = as %tmp.17 { (!Null) };
+        symbol [ batteryInDays %tmp.19 40 43 56 ];
+        %tmp.19 = getv %tmp.18 :batteryInDays;
+        %tmp.20 = eq %tmp.16 %tmp.19;
+        %tmp.21 = and %tmp.14 %tmp.20;
+        push %tmp.21;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_24_40_43_end:
+        %tmp.22 = phi [%tmp.15 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_40_43_begin] [%tmp.21 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_24_40_43_true] [%tmp.22 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_24_40_43_end];
+        %tmp.23 = dup %tmp.22;
+        bf %tmp.23 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_60_40_81_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_60_40_81_true:
+        %tmp.24 = false;
+        %tmp.25 = lgetv %systemStats.1;
+        symbol [ systemStats %tmp.25 40 69 80 ];
+        %tmp.26 = as %tmp.25 { (!Null) };
+        symbol [ charging %tmp.27 40 81 89 ];
+        %tmp.27 = getv %tmp.26 :charging;
+        %tmp.28 = eq %tmp.24 %tmp.27;
+        %tmp.29 = and %tmp.22 %tmp.28;
+        push %tmp.29;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_60_40_81_end:
+        %tmp.30 = phi [%tmp.23 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_40_81_begin] [%tmp.29 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_60_40_81_true] [%tmp.30 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_40_60_40_81_end];
+        %tmp.31 = dup %tmp.30;
+        bf %tmp.31 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_41_24_41_54_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_41_24_41_54_true:
+        %tmp.32 = lgetv %systemStats.1;
+        symbol [ systemStats %tmp.32 41 24 35 ];
+        %tmp.33 = as %tmp.32 { (!Null) };
+        symbol [ solarIntensity %tmp.34 41 36 50 ];
+        %tmp.34 = getv %tmp.33 :solarIntensity;
+        %tmp.35 = null;
+        %tmp.36 = eq %tmp.34 %tmp.35;
+        %tmp.37 = and %tmp.30 %tmp.36;
+        push %tmp.37;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_41_24_41_54_end:
+        %tmp.38 = phi [%tmp.31 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_39_24_41_54_begin] [%tmp.37 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_41_24_41_54_true] [%tmp.38 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_41_24_41_54_end];
+        symbol [ _isSimulator ? 39 8 20 ];
+        putv self :_isSimulator %tmp.38;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 44 8 ]
+        %tmp.39 = self;
+        symbol [ self %tmp.39 44 29 33 ];
+        symbol [ method %tmp.40 44 34 40 ];
+        %tmp.40 = getv function %tmp.39 :method;
+        %tmp.42 = const :handleMessageFromPhone;
+        symbol [ handleMessageFromPhone %tmp.42 44 42 64 const ];
+        %tmp.43 = invoke %tmp.39 %tmp.40(%tmp.42);
+        symbol [ msgFromPhoneMethod ? 44 8 26 ];
+        putv self :msgFromPhoneMethod %tmp.43;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 45 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_8_49_8_if_stmt:
+        symbol [ Communications %tmp.44 45 11 25 ];
+        %tmp.44 = getm $.Toybox.Communications;
+        %tmp.46 = const :registerForPhoneAppMessages;
+        symbol [ registerForPhoneAppMessages %tmp.46 45 31 58 const ];
+        %tmp.47 = canhazplz %tmp.44 %tmp.46;
+        bf %tmp.47 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_8_49_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_8_49_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_60_49_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 46 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_12_48_12_if_stmt:
+        symbol [ _isSimulator %tmp.49 46 17 29 ];
+        %tmp.49 = getv ? :_isSimulator;
+        %tmp.50 = not %tmp.49;
+        bf %tmp.50 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_12_48_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_12_48_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_31_48_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 47 16 ]
+        symbol [ Communications %tmp.51 47 16 30 ];
+        %tmp.51 = getm $.Toybox.Communications;
+        symbol [ registerForPhoneAppMessages %tmp.52 47 31 58 ];
+        %tmp.52 = getv function %tmp.51 :registerForPhoneAppMessages;
+        symbol [ msgFromPhoneMethod %tmp.54 47 59 77 ];
+        %tmp.54 = getv ? :msgFromPhoneMethod;
+        invoke %tmp.51 %tmp.52(%tmp.54);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_31_48_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_12_48_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_46_12_48_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_60_49_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_8_49_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_45_8_49_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_32_26_50_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 53; @symbol_functiondef = [handleMessageFromPhone,53,13,35]; @symbol_param<0> = [msg,53,36,39]; ]
+    function handleMessageFromPhone(msg) {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_53_41_73_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 54 8 ]
+        symbol [ System %tmp.1 54 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 54 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "PhoneComm::handleMessageFromPhone";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 58 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_8_69_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_12_58_59_begin:
+        %tmp.4 = lgetv %msg;
+        symbol [ msg %tmp.4 58 12 15 ];
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_27_58_59_true:
+        %tmp.7 = lgetv %msg;
+        symbol [ msg %tmp.7 58 27 30 ];
+        %tmp.8 = as %tmp.7 { (!Null) };
+        symbol [ data %tmp.9 58 31 35 ];
+        %tmp.9 = getv %tmp.8 :data;
+        symbol [ Toybox %tmp.11 58 47 53 ];
+        %tmp.11 = getv ? :Toybox;
+        symbol [ Lang %tmp.12 58 54 58 ];
+        %tmp.12 = getv %tmp.11 :Lang;
+        symbol [ String %tmp.13 58 59 65 ];
+        %tmp.13 = getv %tmp.12 :String;
+        %tmp.14 = isa %tmp.9 %tmp.13;
+        push %tmp.14;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_27_58_59_end:
+        %tmp.15 = phi [%tmp.6 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_12_58_59_begin] [%tmp.14 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_27_58_59_true] [%tmp.15 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_27_58_59_end];
+        bf %tmp.15 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_8_69_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_67_69_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 59 12 ]
+        symbol [ System %tmp.16 59 12 18 ];
+        %tmp.16 = getm $.Toybox.System;
+        symbol [ println %tmp.17 59 19 26 ];
+        %tmp.17 = getv function %tmp.16 :println;
+        %tmp.18 = "PhoneComm::handleMessageFromPhone( ";
+        %tmp.19 = lgetv %msg;
+        symbol [ msg %tmp.19 59 67 70 ];
+        %tmp.20 = as %tmp.19 { (!Null) };
+        symbol [ data %tmp.21 59 71 75 ];
+        %tmp.21 = getv %tmp.20 :data;
+        %tmp.22 = add %tmp.18 %tmp.21;
+        %tmp.23 = " ) called";
+        %tmp.24 = add %tmp.22 %tmp.23;
+        invoke %tmp.16 %tmp.17(%tmp.24);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 60 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_12_68_12_if_stmt:
+        %tmp.25 = lgetv %msg;
+        symbol [ msg %tmp.25 60 16 19 ];
+        %tmp.26 = as %tmp.25 { (!Null) };
+        symbol [ data %tmp.27 60 20 24 ];
+        %tmp.27 = getv %tmp.26 :data;
+        symbol [ find %tmp.28 60 25 29 ];
+        %tmp.28 = getv function %tmp.27 :find;
+        %tmp.29 = "LED4:set:on";
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        %tmp.31 = null;
+        %tmp.32 = ne %tmp.30 %tmp.31;
+        bf %tmp.32 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_12_68_12_if_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_12_68_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_54_64_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 61 16 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_16_63_16_if_stmt:
+        symbol [ _deviceView %tmp.34 61 20 31 ];
+        %tmp.34 = getv ? :_deviceView;
+        %tmp.35 = null;
+        %tmp.36 = ne %tmp.34 %tmp.35;
+        bf %tmp.36 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_16_63_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_16_63_16_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_41_63_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 62 20 ]
+        symbol [ _deviceView %tmp.38 62 20 31 ];
+        %tmp.38 = getv ? :_deviceView;
+        %tmp.39 = as %tmp.38 { (!Null) };
+        symbol [ setGpioState %tmp.40 62 32 44 ];
+        %tmp.40 = getv function %tmp.39 :setGpioState;
+        symbol [ DeviceView %tmp.42 62 45 55 ];
+        %tmp.42 = getv ? :DeviceView;
+        symbol [ GPIO_PAYLOAD_INDEX_LED4 %tmp.43 62 56 79 ];
+        %tmp.43 = getv %tmp.42 :GPIO_PAYLOAD_INDEX_LED4;
+        %tmp.44 = true;
+        invoke %tmp.39 %tmp.40(%tmp.43, %tmp.44);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_41_63_16_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_16_63_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_61_16_63_16_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_54_64_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_12_68_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_12_68_12_if_false:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 64 19 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_19_68_12_if_stmt:
+        %tmp.45 = lgetv %msg;
+        symbol [ msg %tmp.45 64 23 26 ];
+        %tmp.46 = as %tmp.45 { (!Null) };
+        symbol [ data %tmp.47 64 27 31 ];
+        %tmp.47 = getv %tmp.46 :data;
+        symbol [ find %tmp.48 64 32 36 ];
+        %tmp.48 = getv function %tmp.47 :find;
+        %tmp.49 = "LED4:set:off";
+        %tmp.50 = invoke %tmp.47 %tmp.48(%tmp.49);
+        %tmp.51 = null;
+        %tmp.52 = ne %tmp.50 %tmp.51;
+        bf %tmp.52 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_19_68_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_19_68_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_62_68_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 65 16 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_16_67_16_if_stmt:
+        symbol [ _deviceView %tmp.54 65 20 31 ];
+        %tmp.54 = getv ? :_deviceView;
+        %tmp.55 = null;
+        %tmp.56 = ne %tmp.54 %tmp.55;
+        bf %tmp.56 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_16_67_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_16_67_16_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_41_67_16_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 66 20 ]
+        symbol [ _deviceView %tmp.58 66 20 31 ];
+        %tmp.58 = getv ? :_deviceView;
+        %tmp.59 = as %tmp.58 { (!Null) };
+        symbol [ setGpioState %tmp.60 66 32 44 ];
+        %tmp.60 = getv function %tmp.59 :setGpioState;
+        symbol [ DeviceView %tmp.62 66 45 55 ];
+        %tmp.62 = getv ? :DeviceView;
+        symbol [ GPIO_PAYLOAD_INDEX_LED4 %tmp.63 66 56 79 ];
+        %tmp.63 = getv %tmp.62 :GPIO_PAYLOAD_INDEX_LED4;
+        %tmp.64 = false;
+        invoke %tmp.59 %tmp.60(%tmp.63, %tmp.64);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_41_67_16_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_16_67_16_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_65_16_67_16_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_62_68_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_19_68_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_64_19_68_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_60_12_68_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_67_69_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_8_69_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_58_8_69_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_53_41_73_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 75; @symbol_functiondef = [setDeviceView,75,13,26]; @symbol_param<0> = [dv,75,27,29]; @symbol_param<0>_type<0> = [DeviceView,75,33,43]; ]
+    function setDeviceView(dv as DeviceView) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_75_53_78_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 76 8 ]
+        symbol [ System %tmp.1 76 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 76 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "PhoneCommunication::setDeviceView";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 77 8 ]
+        %tmp.4 = lgetv %dv;
+        symbol [ dv %tmp.4 77 22 24 ];
+        symbol [ _deviceView ? 77 8 19 ];
+        putv self :_deviceView %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_75_53_78_4_stop:
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 81; @symbol_functiondef = [transmitMessageToPhone,81,13,35]; @symbol_param<0> = [message,81,36,43]; @symbol_param<0>_type<0> = [Toybox,81,47,53]; @symbol_param<0>_type<1> = [Lang,81,54,58]; @symbol_param<0>_type<2> = [String,81,59,65]; ]
+    function transmitMessageToPhone(message as Toybox.Lang.String) {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_81_67_92_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 82 8 ]
+        symbol [ System %tmp.1 82 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 82 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "PhoneCommunication::transmitMessageToPhone(";
+        %tmp.4 = lgetv %message;
+        symbol [ message %tmp.4 82 71 78 ];
+        %tmp.5 = add %tmp.3 %tmp.4;
+        %tmp.6 = ")";
+        %tmp.7 = add %tmp.5 %tmp.6;
+        invoke %tmp.1 %tmp.2(%tmp.7);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 83 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_81_67_92_4_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_81_67_92_4_stop" ]
+        %listener.1 = local;
+        symbol [ listener %listener.1 83 12 20 ];
+        symbol [ CommListener %tmp.11 83 27 39 ];
+        %tmp.11 = getv ? :CommListener;
+        %tmp.8 = newc %tmp.11 ();
+        lputv %listener.1 %tmp.8;
+        symbol [ listener %listener.1 83 12 20 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 84 8 ]
+        try @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_beginTry @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_endTry @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_catch @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_finally;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_beginTry:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_12_88_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 85 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_12_87_12_if_stmt:
+        symbol [ _isSimulator %tmp.13 85 17 29 ];
+        %tmp.13 = getv ? :_isSimulator;
+        %tmp.14 = not %tmp.13;
+        bf %tmp.14 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_12_87_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_12_87_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_31_87_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 86 16 ]
+        symbol [ Communications %tmp.15 86 16 30 ];
+        %tmp.15 = getm $.Toybox.Communications;
+        symbol [ transmit %tmp.16 86 31 39 ];
+        %tmp.16 = getv function %tmp.15 :transmit;
+        %tmp.17 = lgetv %message;
+        symbol [ message %tmp.17 86 40 47 ];
+        %tmp.18 = null;
+        %tmp.19 = lgetv %listener.1;
+        symbol [ listener %tmp.19 86 55 63 ];
+        invoke %tmp.15 %tmp.16(%tmp.17, %tmp.18, %tmp.19);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_31_87_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_12_87_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_85_12_87_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_12_88_8_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_endTry:
+        jsr @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_finally;
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_catch:
+        %tmp.20 = exception;
+        push %tmp.20;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 89 8 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_catch" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_89_8_91_8_end" ]
+        %ex.2 = local;
+        symbol [ ex %ex.2 89 15 17 ];
+        %tmp.21 = dup %tmp.20;
+        lputv %ex.2 %tmp.21;
+        symbol [ ex %ex.2 89 15 17 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_89_19_91_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc" 90 12 ]
+        symbol [ System %tmp.22 90 12 18 ];
+        %tmp.22 = getm $.Toybox.System;
+        symbol [ println %tmp.23 90 19 26 ];
+        %tmp.23 = getv function %tmp.22 :println;
+        %tmp.24 = "PhoneCommunication::transmitMessageToPhone() exception: ";
+        %tmp.25 = lgetv %ex.2;
+        symbol [ ex %tmp.25 90 88 90 ];
+        symbol [ getErrorMessage %tmp.26 90 91 106 ];
+        %tmp.26 = getv function %tmp.25 :getErrorMessage;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        %tmp.28 = add %tmp.24 %tmp.27;
+        invoke %tmp.22 %tmp.23(%tmp.28);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_89_19_91_8_stop:
+        jsr @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_finally;
+        pop;
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_89_8_91_8_end:
+        try @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_catch @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_89_8_91_8_end @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_89_8_91_8_end @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_finally;
+        jsr @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_finally;
+        throw %tmp.20;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_finally:
+        jsrret;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_84_8_91_8_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_PhoneCommunication_mc_81_67_92_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/PhoneCommunication.mc"; @line = 7; ]
+<init> {
+}

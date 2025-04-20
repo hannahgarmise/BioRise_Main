@@ -10,15 +10,13 @@ import Toybox.WatchUi;
 class ScanDelegate extends WatchUi.BehaviorDelegate {
     private var _scanDataModel as ScanDataModel;
     private var _viewController as ViewController;
+    private var _modelFactory as DataModelFactory;
 
-    //! Constructor
-    //! @param scanDataModel The model containing the scan results
-    //! @param viewController Object that controls pushing new views
-    public function initialize(scanDataModel as ScanDataModel, viewController as ViewController) {
+    public function initialize(scanDataModel as ScanDataModel, viewController as ViewController, modelFactory as DataModelFactory) {
         BehaviorDelegate.initialize();
-
         _scanDataModel = scanDataModel;
         _viewController = viewController;
+        _modelFactory = modelFactory;
     }
 
     //! Handle menu button press
@@ -32,8 +30,10 @@ class ScanDelegate extends WatchUi.BehaviorDelegate {
     //! @return true if handled, false otherwise
     public function onSelect() as Boolean {
         var displayResult = _scanDataModel.getDisplayResult();
-        if (null != displayResult) {
-            _viewController.pushDeviceView(displayResult);
+        if (displayResult != null) {
+            var deviceDataModel = _modelFactory.getDeviceDataModel(displayResult);
+            deviceDataModel.pair(); // starts pairing
+            _viewController.getInitialView(); // push alarm view after pairing
         }
         return true;
     }

@@ -1,0 +1,87 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,7,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [WatchUi,9,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 11; @symbol_classdef = [ScanMenuDelegate,11,6,22]; @symbol_extends<0> = [WatchUi,11,31,38]; @symbol_extends<1> = [MenuInputDelegate,11,39,56]; ]
+class ScanMenuDelegate extends WatchUi.MenuInputDelegate {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 14; @symbol_functiondef = [initialize,14,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_14_33_16_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc" 15 8 ]
+        symbol [ MenuInputDelegate %tmp.2 15 8 25 ];
+        %tmp.2 = getv ? :MenuInputDelegate;
+        symbol [ initialize %tmp.3 15 26 36 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_14_33_16_4_stop:
+    }
+    //! Handle a menu item being chosen
+    //! @param item The identifier of the chosen item
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 20; @symbol_functiondef = [onMenuItem,20,20,30]; @symbol_param<0> = [item,20,31,35]; @symbol_param<0>_type<0> = [Symbol,20,39,45]; ]
+    public
+    function onMenuItem(item as Symbol) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_20_55_26_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc" 21 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_8_25_8_if_stmt:
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 21 12 16 ];
+        %tmp.3 = const :item_1;
+        symbol [ item_1 %tmp.3 21 21 27 const ];
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_8_25_8_if_false;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_8_25_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_29_23_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc" 22 12 ]
+        symbol [ BluetoothLowEnergy %tmp.5 22 12 30 ];
+        %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ setScanState %tmp.6 22 31 43 ];
+        %tmp.6 = getv function %tmp.5 :setScanState;
+        symbol [ BluetoothLowEnergy %tmp.7 22 44 62 ];
+        %tmp.7 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ SCAN_STATE_SCANNING %tmp.8 22 63 82 ];
+        %tmp.8 = getv %tmp.7 :SCAN_STATE_SCANNING;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_29_23_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_8_25_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_8_25_8_if_false:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc" 23 15 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_15_25_8_if_stmt:
+        %tmp.9 = lgetv %item;
+        symbol [ item %tmp.9 23 19 23 ];
+        %tmp.11 = const :item_2;
+        symbol [ item_2 %tmp.11 23 28 34 const ];
+        %tmp.12 = eq %tmp.9 %tmp.11;
+        bf %tmp.12 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_15_25_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_15_25_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_36_25_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc" 24 12 ]
+        symbol [ BluetoothLowEnergy %tmp.13 24 12 30 ];
+        %tmp.13 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ setScanState %tmp.14 24 31 43 ];
+        %tmp.14 = getv function %tmp.13 :setScanState;
+        symbol [ BluetoothLowEnergy %tmp.15 24 44 62 ];
+        %tmp.15 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ SCAN_STATE_OFF %tmp.16 24 63 77 ];
+        %tmp.16 = getv %tmp.15 :SCAN_STATE_OFF;
+        invoke %tmp.13 %tmp.14(%tmp.16);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_36_25_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_15_25_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_23_15_25_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_21_8_25_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ScanMenuDelegate_mc_20_55_26_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ScanMenuDelegate.mc"; @line = 7; ]
+<init> {
+}

@@ -1,0 +1,42 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,1,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 5; @symbol_classdef = [AlarmDataModel,5,6,20]; ]
+class AlarmDataModel {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 6; @position = 8; @symbol_vardef = [lowerHour,6,8,17]; ]
+    var lowerHour = 7;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 7; @position = 8; @symbol_vardef = [lowerMinute,7,8,19]; ]
+    var lowerMinute = 0;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 8; @position = 8; @symbol_vardef = [upperHour,8,8,17]; ]
+    var upperHour = 7;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 9; @position = 8; @symbol_vardef = [upperMinute,9,8,19]; ]
+    var upperMinute = 30;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 10; @position = 8; @symbol_vardef = [selectedSequence,10,8,24]; ]
+    var selectedSequence = 1;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 12; @symbol_functiondef = [initialize,12,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_AlarmDataModel_mc_12_33_14_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc" 13 8 ]
+        symbol [ System %tmp.2 13 8 14 ];
+        %tmp.2 = getv ? :System;
+        symbol [ println %tmp.3 13 15 22 ];
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "AlarmDataModel::initialize";
+        invoke %tmp.2 %tmp.3(%tmp.4);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_AlarmDataModel_mc_12_33_14_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/AlarmDataModel.mc"; @line = 1; ]
+<init> {
+}

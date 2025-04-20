@@ -156,4 +156,29 @@ class EnvironmentProfileModel {
 
         WatchUi.requestUpdate();
     }
+
+    public function sendAlarmSettings(alarmTime as String, sequence as String) as Void {
+        System.println("[DEBUG] Sending alarmTime=" + alarmTime + ", sequence=" + sequence);
+
+        // Send time first
+        writeStringToArduino(alarmTime);
+
+        // Then send the sequence string
+        writeStringToArduino(sequence);
+    }
+
+    // Helper function
+    private function writeStringToArduino(str as String) as Void {
+        if (_GpioCharacteristic != null) {
+            var data = StringUtil.convertEncodedString(str, {
+                :fromRepresentation => StringUtil.REPRESENTATION_STRING_PLAIN_TEXT,
+                :toRepresentation => StringUtil.REPRESENTATION_BYTE_ARRAY,
+                :encoding => StringUtil.CHAR_ENCODING_UTF8
+            });
+            _BluetoothDelegate.queueCharacteristicWrite(_GpioCharacteristic, data);
+        } else {
+        System.println("[DEBUG] Cannot write; _GpioCharacteristic is null.");
+        }
+    }
+
 }

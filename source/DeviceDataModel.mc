@@ -1,9 +1,3 @@
-//
-// Copyright 2019-2021 by Garmin Ltd. or its subsidiaries.
-// Subject to Garmin SDK License Agreement and Wearables
-// Application Developer Agreement.
-//
-
 import Toybox.BluetoothLowEnergy;
 import Toybox.Lang;
 import Toybox.WatchUi;
@@ -14,10 +8,6 @@ class DeviceDataModel {
     private var _environmentProfile as EnvironmentProfileModel?;
     private var _dataModelFactory as DataModelFactory;
 
-    //! Constructor
-    //! @param bleDelegate The BLE delegate for the model
-    //! @param dataModelFactory The factory to create models
-    //! @param scanResult The device scan result
     public function initialize(bleDelegate as BluetoothDelegate, dataModelFactory as DataModelFactory, scanResult as ScanResult) {
         _scanResult = scanResult;
         _dataModelFactory = dataModelFactory;
@@ -28,11 +18,8 @@ class DeviceDataModel {
         _environmentProfile = null;
     }
 
-    //! Process a new device connection
-    //! @param device The device that was connected
     public function procConnection(device as Device) as Void {
         if (device != _device) {
-            // Not our device
             return;
         }
 
@@ -43,13 +30,11 @@ class DeviceDataModel {
         WatchUi.requestUpdate();
     }
 
-    //! Pair the device associated with the current scan result
     public function pair() as Void {
         BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
         _device = BluetoothLowEnergy.pairDevice(_scanResult);
     }
 
-    //! Unpair the current device
     public function unpair() as Void {
         if (_device != null) {
             BluetoothLowEnergy.unpairDevice(_device);
@@ -57,31 +42,43 @@ class DeviceDataModel {
         _device = null;
     }
 
-    //! Get the active profile
-    //! @return The current profile, or null if no device connected
     public function getActiveProfile() as EnvironmentProfileModel? {
-        if (_device != null) {
-            if (!_device.isConnected()) {
-                return null;
-            }
+        if (_device != null && !_device.isConnected()) {
+            return null;
         }
-
         return _environmentProfile;
     }
 
-    //! Get whether a device is connected
-    //! @return true if connected, false otherwise
     public function isConnected() as Boolean {
-        if (_device != null) {
-            return _device.isConnected();
-        }
-        return false;
+        return (_device != null) && _device.isConnected();
     }
 
-    //! Update the profile after a is device connected
     private function procDeviceConnected() as Void {
         if (_device != null) {
             _environmentProfile = _dataModelFactory.getEnvironmentModel(_device);
+
+            // Send 7 (as an integer) and "warm" (as a string) to Arduino
+            if (_environmentProfile != null) {
+                System.println("[BLE] Sending data to Arduino after connection");
+
+                var intData = [7]b;
+                _environmentProfile.writeGpioDataByteArray(intData);
+
+                var strData = "warm";
+                var strByteArray = StringUtil.convertEncodedString(strData, {
+                    :fromRepresentation => StringUtil.REPRESENTATION_STRING_PLAIN_TEXT,
+                    :toRepresentation => StringUtil.REPRESENTATION_BYTE_ARRAY,
+                    :encoding => StringUtil.CHAR_ENCODING_UTF8
+                });
+                _environmentProfile.writeGpioDataByteArray(strByteArray);
+
+            
+            }
+
+            var vc = _dataModelFactory.getViewController();
+            if (vc != null) {
+                vc.pushAlarmFlow();
+            }
         }
     }
 }

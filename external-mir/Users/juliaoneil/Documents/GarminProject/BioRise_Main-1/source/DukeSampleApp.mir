@@ -1,0 +1,183 @@
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Application,7,14,25]; ]
+import Toybox.Application;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [BluetoothLowEnergy,8,14,32]; ]
+import Toybox.BluetoothLowEnergy;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Lang,9,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 10; @symbol_importdef<0> = [Toybox,10,7,13]; @symbol_importdef<1> = [WatchUi,10,14,21]; ]
+import Toybox.WatchUi;
+//! This app uses the Bluetooth Low Energy API to pair with devices.
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 13; @symbol_classdef = [DukeSampleApp,13,6,19]; @symbol_extends<0> = [Application,13,28,39]; @symbol_extends<1> = [AppBase,13,40,47]; ]
+class DukeSampleApp extends Application.AppBase {
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 14; @position = 16; @symbol_vardef = [_bleDelegate,14,16,28]; @symbol_type<0> = [BluetoothDelegate,14,32,49]; ]
+    private
+    var _bleDelegate as BluetoothDelegate or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 15; @position = 16; @symbol_vardef = [_profileManager,15,16,31]; @symbol_type<0> = [ProfileManager,15,35,49]; ]
+    private
+    var _profileManager as ProfileManager or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 16; @position = 16; @symbol_vardef = [_modelFactory,16,16,29]; @symbol_type<0> = [DataModelFactory,16,33,49]; ]
+    private
+    var _modelFactory as DataModelFactory or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 17; @position = 16; @symbol_vardef = [_viewController,17,16,31]; @symbol_type<0> = [ViewController,17,35,49]; ]
+    private
+    var _viewController as ViewController or Null;
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 18; @position = 8; @symbol_vardef = [_phoneCommunication,18,8,27]; @symbol_type<0> = [PhoneCommunication,18,31,49]; ]
+    var _phoneCommunication as PhoneCommunication;
+    //! Constructor
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 21; @symbol_functiondef = [initialize,21,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_21_33_24_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 22 8 ]
+        symbol [ AppBase %tmp.2 22 8 15 ];
+        %tmp.2 = getv ? :AppBase;
+        symbol [ initialize %tmp.3 22 16 26 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 23 8 ]
+        symbol [ PhoneCommunication %tmp.7 23 34 52 ];
+        %tmp.7 = getv ? :PhoneCommunication;
+        %tmp.4 = newc %tmp.7 ();
+        symbol [ _phoneCommunication ? 23 8 27 ];
+        putv self :_phoneCommunication %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_21_33_24_4_stop:
+    }
+    //! Handle app startup
+    //! @param state Startup arguments
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 28; @symbol_functiondef = [onStart,28,20,27]; @symbol_param<0> = [state,28,28,33]; @symbol_param<0>_type<0> = [Dictionary,28,37,47]; ]
+    public
+    function onStart(state as Dictionary or Null) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_28_58_38_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 29 8 ]
+        symbol [ $ %tmp.4 29 30 31 ];
+        %tmp.4 = getm $;
+        symbol [ ProfileManager %tmp.5 29 32 46 ];
+        %tmp.5 = getv %tmp.4 :ProfileManager;
+        %tmp.1 = newc %tmp.5 ();
+        symbol [ _profileManager ? 29 8 23 ];
+        putv self :_profileManager %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 30 8 ]
+        symbol [ $ %tmp.9 30 27 28 ];
+        %tmp.9 = getm $;
+        symbol [ BluetoothDelegate %tmp.10 30 29 46 ];
+        %tmp.10 = getv %tmp.9 :BluetoothDelegate;
+        symbol [ _profileManager %tmp.12 30 47 62 ];
+        %tmp.12 = getv ? :_profileManager;
+        %tmp.13 = as %tmp.12 ProfileManager;
+        symbol [ ProfileManager %tmp.13 30 66 80 ];
+        %tmp.6 = newc %tmp.10 (%tmp.13);
+        symbol [ _bleDelegate ? 30 8 20 ];
+        putv self :_bleDelegate %tmp.6;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 31 8 ]
+        symbol [ $ %tmp.17 31 28 29 ];
+        %tmp.17 = getm $;
+        symbol [ DataModelFactory %tmp.18 31 30 46 ];
+        %tmp.18 = getv %tmp.17 :DataModelFactory;
+        symbol [ _bleDelegate %tmp.20 31 47 59 ];
+        %tmp.20 = getv ? :_bleDelegate;
+        %tmp.21 = as %tmp.20 BluetoothDelegate;
+        symbol [ BluetoothDelegate %tmp.21 31 63 80 ];
+        symbol [ _profileManager %tmp.23 31 82 97 ];
+        %tmp.23 = getv ? :_profileManager;
+        %tmp.24 = as %tmp.23 ProfileManager;
+        symbol [ ProfileManager %tmp.24 31 101 115 ];
+        symbol [ _phoneCommunication %tmp.26 31 117 136 ];
+        %tmp.26 = getv ? :_phoneCommunication;
+        %tmp.27 = as %tmp.26 PhoneCommunication;
+        symbol [ PhoneCommunication %tmp.27 31 140 158 ];
+        %tmp.14 = newc %tmp.18 (%tmp.21, %tmp.24, %tmp.27);
+        symbol [ _modelFactory ? 31 8 21 ];
+        putv self :_modelFactory %tmp.14;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 32 8 ]
+        symbol [ $ %tmp.31 32 30 31 ];
+        %tmp.31 = getm $;
+        symbol [ ViewController %tmp.32 32 32 46 ];
+        %tmp.32 = getv %tmp.31 :ViewController;
+        symbol [ _modelFactory %tmp.34 32 47 60 ];
+        %tmp.34 = getv ? :_modelFactory;
+        %tmp.35 = as %tmp.34 DataModelFactory;
+        symbol [ DataModelFactory %tmp.35 32 64 80 ];
+        %tmp.28 = newc %tmp.32 (%tmp.35);
+        symbol [ _viewController ? 32 8 23 ];
+        putv self :_viewController %tmp.28;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 34 8 ]
+        symbol [ BluetoothLowEnergy %tmp.36 34 8 26 ];
+        %tmp.36 = getm $.Toybox.BluetoothLowEnergy;
+        symbol [ setDelegate %tmp.37 34 27 38 ];
+        %tmp.37 = getv function %tmp.36 :setDelegate;
+        symbol [ _bleDelegate %tmp.39 34 39 51 ];
+        %tmp.39 = getv ? :_bleDelegate;
+        %tmp.40 = as %tmp.39 BluetoothDelegate;
+        symbol [ BluetoothDelegate %tmp.40 34 55 72 ];
+        invoke %tmp.36 %tmp.37(%tmp.40);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 35 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_8_37_8_if_stmt:
+        symbol [ _profileManager %tmp.42 35 12 27 ];
+        %tmp.42 = getv ? :_profileManager;
+        %tmp.43 = null;
+        %tmp.44 = ne %tmp.42 %tmp.43;
+        bf %tmp.44 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_8_37_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_37_37_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 36 12 ]
+        symbol [ _profileManager %tmp.46 36 12 27 ];
+        %tmp.46 = getv ? :_profileManager;
+        %tmp.47 = as %tmp.46 { (!Null) };
+        symbol [ registerProfiles %tmp.48 36 28 44 ];
+        %tmp.48 = getv function %tmp.47 :registerProfiles;
+        invoke %tmp.47 %tmp.48();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_37_37_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_35_8_37_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_28_58_38_4_stop:
+    }
+    //! Handle app shutdown
+    //! @param state Shutdown arguments
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 42; @symbol_functiondef = [onStop,42,20,26]; @symbol_param<0> = [state,42,27,32]; @symbol_param<0>_type<0> = [Dictionary,42,36,46]; ]
+    public
+    function onStop(state as Dictionary or Null) as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_42_57_47_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 43 8 ]
+        %tmp.1 = null;
+        symbol [ _viewController ? 43 8 23 ];
+        putv self :_viewController %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 44 8 ]
+        %tmp.2 = null;
+        symbol [ _modelFactory ? 44 8 21 ];
+        putv self :_modelFactory %tmp.2;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 45 8 ]
+        %tmp.3 = null;
+        symbol [ _profileManager ? 45 8 23 ];
+        putv self :_profileManager %tmp.3;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 46 8 ]
+        %tmp.4 = null;
+        symbol [ _bleDelegate ? 46 8 20 ];
+        putv self :_bleDelegate %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_42_57_47_4_stop:
+    }
+    //! Return the initial views for the app
+    //! @return Array Pair [View, InputDelegate]
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 60; @symbol_functiondef = [getInitialView,60,20,34]; @symbol_return<0> = [Views,60,41,46]; @symbol_return<1> = [Views,60,52,57]; @symbol_return<2> = [InputDelegates,60,59,73]; ]
+    public
+    function getInitialView() as [Views] or [Views, InputDelegates] {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_60_75_67_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc" 66 8 ]
+        symbol [ _viewController %tmp.2 66 15 30 ];
+        %tmp.2 = getv ? :_viewController;
+        symbol [ getInitialView %tmp.3 66 31 45 ];
+        %tmp.3 = getv function %tmp.2 :getInitialView;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        ret %tmp.4;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_1_source_DukeSampleApp_mc_60_75_67_4_stop:
+    }
+}
+[ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main-1/source/DukeSampleApp.mc"; @line = 7; ]
+<init> {
+}

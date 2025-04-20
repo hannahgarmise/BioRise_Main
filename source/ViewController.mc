@@ -50,4 +50,11 @@ class ViewController {
 
         WatchUi.pushView(deviceView, new $.DeviceDelegate(deviceDataModel, deviceView), WatchUi.SLIDE_UP);
     }
+
+    public function pushAlarmFlow() as Void {
+        var alarmModel = _modelFactory.getAlarmDataModel();
+        var alarmView = new AlarmFlowView(alarmModel);
+        var alarmDelegate = new AlarmDelegate(alarmView, alarmModel, self);
+        WatchUi.pushView(alarmView, alarmDelegate, WatchUi.SLIDE_UP);
+    }
 }
