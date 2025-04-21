@@ -18,12 +18,16 @@ class DeviceDataModel {
         _environmentProfile = null;
     }
 
+    public function getDataModelFactory() as DataModelFactory{
+        return _dataModelFactory;
+    }
+
     public function procConnection(device as Device) as Void {
         _device = device;
 
-        if (device.isConnected()) {
-            procDeviceConnected();
-        }
+        //if (device.isConnected()) {
+        procDeviceConnected();
+        //}
 
         WatchUi.requestUpdate();
     }

@@ -59,7 +59,10 @@ class DataModelFactory {
             return (deviceDataModel.get() as DeviceDataModel);
         }
 
-        var dataModel = new $.DeviceDataModel(_delegate, self, scanResult);
+        // FIXED VERSION BELOW:
+        var dataModel = new $.DeviceDataModel(_delegate, self, scanResult); 
+        dataModel.initialize(_delegate, self, scanResult); 
+
         _deviceDataModel = dataModel.weak();
         return dataModel;
     }
