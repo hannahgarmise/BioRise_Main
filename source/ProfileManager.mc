@@ -2,7 +2,7 @@
 // Copyright 2019-2021 by Garmin Ltd. or its subsidiaries.
 // Subject to Garmin SDK License Agreement and Wearables
 // Application Developer Agreement.
-//
+// manages profile of device
 
 import Toybox.BluetoothLowEnergy;
 

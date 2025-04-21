@@ -78,4 +78,8 @@ class DataModelFactory {
     public function GetPhoneCommunication() as PhoneCommunication {
         return _phoneCommunication;
     }
+
+    public function getDelegate() as BluetoothDelegate{
+        return _delegate;
+    }
 }

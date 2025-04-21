@@ -32,9 +32,10 @@ class ScanDelegate extends WatchUi.BehaviorDelegate {
         var displayResult = _scanDataModel.getDisplayResult();
         if (displayResult != null) {
             var deviceDataModel = _modelFactory.getDeviceDataModel(displayResult);
+            _modelFactory.getDelegate().notifyConnection(deviceDataModel);
             deviceDataModel.pair(); // starts pairing
             //TO DO: change this to see if this changes next view
-            _viewController.pushTimePicker(); // push alarm view after pairing
+            //_viewController.pushTimePicker(); // push alarm view after pairing
         }
         return true;
     }

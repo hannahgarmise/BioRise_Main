@@ -12,4 +12,6 @@ class AlarmDataModel {
     public function initialize() {
         System.println("AlarmDataModel::initialize");
     }
+
+    
 }
