@@ -69,8 +69,17 @@ class DeviceDataModel {
             if (_environmentProfile != null) {
                 System.println("[BLE] Sending data to Arduino after connection");
 
+                /*
                 var intData = [7]b;
                 _environmentProfile.writeGpioDataByteArray(intData);
+                */
+                var intDataStr = "7";
+                var intDataByteArray = StringUtil.convertEncodedString(intDataStr, {
+                    :fromRepresentation => StringUtil.REPRESENTATION_STRING_PLAIN_TEXT,
+                    :toRepresentation => StringUtil.REPRESENTATION_BYTE_ARRAY,
+                    :encoding => StringUtil.CHAR_ENCODING_UTF8
+                    });
+                _environmentProfile.writeGpioDataByteArray(intDataByteArray);
 
                 var strData = "warm";
                 var strByteArray = StringUtil.convertEncodedString(strData, {
