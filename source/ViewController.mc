@@ -4,6 +4,8 @@
 // Application Developer Agreement.
 //
 
+//controls the view on the watch
+
 import Toybox.BluetoothLowEnergy;
 import Toybox.Lang;
 import Toybox.WatchUi;
@@ -56,5 +58,9 @@ class ViewController {
         var alarmView = new AlarmFlowView(alarmModel);
         var alarmDelegate = new AlarmDelegate(alarmView, alarmModel, self);
         WatchUi.pushView(alarmView, alarmDelegate, WatchUi.SLIDE_UP);
+    }
+
+    public function pushTimePicker() as Void {
+        WatchUi.pushView(new TimePicker(), new TimePickerDelegate(), WatchUi.SLIDE_UP);
     }
 }

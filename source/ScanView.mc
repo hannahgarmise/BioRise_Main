@@ -42,7 +42,8 @@ class ScanView extends WatchUi.View {
 
         if(!_scanDataModel.isScanning()) {
             // Update the next line of code to modify what is displayed on the watch
-            subtext = "\nPlease set alarm and\nwake up window.";
+            //subtext = "\nPlease set alarm and\nwake up window.";
+            WatchUi.pushView(new $.TimePicker(), new $.TimePickerDelegate(), WatchUi.SLIDE_IMMEDIATE);
         } else if (null != displayResult) {
             subtext = "Tap to Connect\nDevice: " + _scanDataModel.getDisplayIndex() + "/" + _scanDataModel.getResultCount() + "\nName:" + displayResult.getDeviceName() + "\nRSSI: " + displayResult.getRssi() + " dbm";
         } else {

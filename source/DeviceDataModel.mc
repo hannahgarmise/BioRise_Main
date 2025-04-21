@@ -19,9 +19,7 @@ class DeviceDataModel {
     }
 
     public function procConnection(device as Device) as Void {
-        if (device != _device) {
-            return;
-        }
+        _device = device;
 
         if (device.isConnected()) {
             procDeviceConnected();
@@ -33,6 +31,10 @@ class DeviceDataModel {
     public function pair() as Void {
         BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
         _device = BluetoothLowEnergy.pairDevice(_scanResult);
+
+        if (_device != null && _device.isConnected()) {
+            procDeviceConnected(); // direct trigger
+        }
     }
 
     public function unpair() as Void {
@@ -54,8 +56,10 @@ class DeviceDataModel {
     }
 
     private function procDeviceConnected() as Void {
+        
         if (_device != null) {
             _environmentProfile = _dataModelFactory.getEnvironmentModel(_device);
+            System.println("CONNECTED! GOING THROUGH PROCESS");
 
             // Send 7 (as an integer) and "warm" (as a string) to Arduino
             if (_environmentProfile != null) {
@@ -76,9 +80,8 @@ class DeviceDataModel {
             }
 
             var vc = _dataModelFactory.getViewController();
-            if (vc != null) {
-                vc.pushAlarmFlow();
-            }
+            vc.pushTimePicker();
+        
         }
     }
 }

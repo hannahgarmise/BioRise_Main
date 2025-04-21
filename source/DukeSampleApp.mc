@@ -17,23 +17,27 @@ class DukeSampleApp extends Application.AppBase {
 
     public function onStart(state as Dictionary?) as Void {
         _profileManager = new $.ProfileManager();
-        _bleDelegate = new $.BluetoothDelegate(_profileManager as ProfileManager);
-        _modelFactory = new $.DataModelFactory(_bleDelegate as BluetoothDelegate, _profileManager as ProfileManager, _phoneCommunication as PhoneCommunication);
-        _viewController = new $.ViewController(_modelFactory as DataModelFactory);
+        _bleDelegate = new $.BluetoothDelegate(_profileManager);
+        _phoneCommunication = new PhoneCommunication();
 
-        // NEW: Let modelFactory access view controller
+        // Step 1: Temporarily skip ViewController
+        _modelFactory = new $.DataModelFactory(_bleDelegate, _profileManager, _phoneCommunication, null);
+
+        // Step 2: Now create ViewController
+        _viewController = new $.ViewController(_modelFactory);
+
+        // Step 3: Link them together
         _modelFactory.setViewController(_viewController);
 
-        BluetoothLowEnergy.setDelegate(_bleDelegate as BluetoothDelegate);
+        // Continue BLE setup
+        BluetoothLowEnergy.setDelegate(_bleDelegate);
+        _profileManager.registerProfiles();
 
-        if (_profileManager != null) {
-            _profileManager.registerProfiles();
-        }
-
-        // Start scanning
         BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_SCANNING);
         System.println("[BLE] Scan started using setScanState");
     }
+
+
 
     public function onStop(state as Dictionary?) as Void {
         _viewController = null;

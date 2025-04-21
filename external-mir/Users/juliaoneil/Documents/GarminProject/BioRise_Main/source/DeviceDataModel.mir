@@ -60,317 +60,343 @@ _Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc
     [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 21; @symbol_functiondef = [procConnection,21,20,34]; @symbol_param<0> = [device,21,35,41]; @symbol_param<0>_type<0> = [Device,21,45,51]; ]
     public
     function procConnection(device as Device) as Void {
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_21_61_31_4_start:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_21_61_29_4_start:
 [ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 22 8 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_8_24_8_if_stmt:
         %tmp.1 = lgetv %device;
-        symbol [ device %tmp.1 22 12 18 ];
-        symbol [ _device %tmp.3 22 22 29 ];
-        %tmp.3 = getv ? :_device;
-        %tmp.4 = ne %tmp.1 %tmp.3;
-        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_8_24_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_8_24_8_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_31_24_8_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 23 12 ]
-        ret ?;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_31_24_8_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_8_24_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_22_8_24_8_if_end:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 26 8 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_8_28_8_if_stmt:
-        %tmp.5 = lgetv %device;
-        symbol [ device %tmp.5 26 12 18 ];
-        symbol [ isConnected %tmp.6 26 19 30 ];
-        %tmp.6 = getv function %tmp.5 :isConnected;
-        %tmp.7 = invoke %tmp.5 %tmp.6();
-        bf %tmp.7 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_8_28_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_8_28_8_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_34_28_8_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 27 12 ]
-        %tmp.8 = self;
-        symbol [ procDeviceConnected %tmp.9 27 12 31 ];
-        %tmp.9 = getv function %tmp.8 :procDeviceConnected;
-        invoke %tmp.8 %tmp.9();
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_34_28_8_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_8_28_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_26_8_28_8_if_end:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 30 8 ]
-        symbol [ WatchUi %tmp.10 30 8 15 ];
-        %tmp.10 = getm $.Toybox.WatchUi;
-        symbol [ requestUpdate %tmp.11 30 16 29 ];
-        %tmp.11 = getv function %tmp.10 :requestUpdate;
-        invoke %tmp.10 %tmp.11();
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_21_61_31_4_stop:
+        symbol [ device %tmp.1 22 18 24 ];
+        symbol [ _device ? 22 8 15 ];
+        putv self :_device %tmp.1;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 24 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_8_26_8_if_stmt:
+        %tmp.2 = lgetv %device;
+        symbol [ device %tmp.2 24 12 18 ];
+        symbol [ isConnected %tmp.3 24 19 30 ];
+        %tmp.3 = getv function %tmp.2 :isConnected;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_8_26_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_8_26_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_34_26_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 25 12 ]
+        %tmp.5 = self;
+        symbol [ procDeviceConnected %tmp.6 25 12 31 ];
+        %tmp.6 = getv function %tmp.5 :procDeviceConnected;
+        invoke %tmp.5 %tmp.6();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_34_26_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_8_26_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_24_8_26_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 28 8 ]
+        symbol [ WatchUi %tmp.7 28 8 15 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.8 28 16 29 ];
+        %tmp.8 = getv function %tmp.7 :requestUpdate;
+        invoke %tmp.7 %tmp.8();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_21_61_29_4_stop:
     }
-    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 33; @symbol_functiondef = [pair,33,20,24]; ]
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 31; @symbol_functiondef = [pair,31,20,24]; ]
     public
     function pair() as Void {
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_33_35_36_4_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 34 8 ]
-        symbol [ BluetoothLowEnergy %tmp.1 34 8 26 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_31_35_38_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 32 8 ]
+        symbol [ BluetoothLowEnergy %tmp.1 32 8 26 ];
         %tmp.1 = getm $.Toybox.BluetoothLowEnergy;
-        symbol [ setScanState %tmp.2 34 27 39 ];
+        symbol [ setScanState %tmp.2 32 27 39 ];
         %tmp.2 = getv function %tmp.1 :setScanState;
-        symbol [ BluetoothLowEnergy %tmp.3 34 40 58 ];
+        symbol [ BluetoothLowEnergy %tmp.3 32 40 58 ];
         %tmp.3 = getm $.Toybox.BluetoothLowEnergy;
-        symbol [ SCAN_STATE_OFF %tmp.4 34 59 73 ];
+        symbol [ SCAN_STATE_OFF %tmp.4 32 59 73 ];
         %tmp.4 = getv %tmp.3 :SCAN_STATE_OFF;
         invoke %tmp.1 %tmp.2(%tmp.4);
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 35 8 ]
-        symbol [ BluetoothLowEnergy %tmp.5 35 18 36 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 33 8 ]
+        symbol [ BluetoothLowEnergy %tmp.5 33 18 36 ];
         %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
-        symbol [ pairDevice %tmp.6 35 37 47 ];
+        symbol [ pairDevice %tmp.6 33 37 47 ];
         %tmp.6 = getv function %tmp.5 :pairDevice;
-        symbol [ _scanResult %tmp.8 35 48 59 ];
+        symbol [ _scanResult %tmp.8 33 48 59 ];
         %tmp.8 = getv ? :_scanResult;
         %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
-        symbol [ _device ? 35 8 15 ];
+        symbol [ _device ? 33 8 15 ];
         putv self :_device %tmp.9;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_33_35_36_4_stop:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 35 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_8_37_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_12_35_51_begin:
+        symbol [ _device %tmp.11 35 12 19 ];
+        %tmp.11 = getv ? :_device;
+        %tmp.12 = null;
+        %tmp.13 = ne %tmp.11 %tmp.12;
+        bf %tmp.13 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_31_35_51_true:
+        symbol [ _device %tmp.15 35 31 38 ];
+        %tmp.15 = getv ? :_device;
+        %tmp.16 = as %tmp.15 { (!Null) };
+        symbol [ isConnected %tmp.17 35 39 50 ];
+        %tmp.17 = getv function %tmp.16 :isConnected;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        push %tmp.18;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_31_35_51_end:
+        %tmp.19 = phi [%tmp.13 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_12_35_51_begin] [%tmp.18 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_31_35_51_true] [%tmp.19 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_31_35_51_end];
+        bf %tmp.19 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_8_37_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_54_37_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 36 12 ]
+        %tmp.20 = self;
+        symbol [ procDeviceConnected %tmp.21 36 12 31 ];
+        %tmp.21 = getv function %tmp.20 :procDeviceConnected;
+        invoke %tmp.20 %tmp.21();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_54_37_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_8_37_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_35_8_37_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_31_35_38_4_stop:
     }
-    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 38; @symbol_functiondef = [unpair,38,20,26]; ]
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 40; @symbol_functiondef = [unpair,40,20,26]; ]
     public
     function unpair() as Void {
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_38_37_43_4_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 39 8 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_8_41_8_if_stmt:
-        symbol [ _device %tmp.2 39 12 19 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_40_37_45_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 41 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_8_43_8_if_stmt:
+        symbol [ _device %tmp.2 41 12 19 ];
         %tmp.2 = getv ? :_device;
         %tmp.3 = null;
         %tmp.4 = ne %tmp.2 %tmp.3;
-        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_8_41_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_8_41_8_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_29_41_8_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 40 12 ]
-        symbol [ BluetoothLowEnergy %tmp.5 40 12 30 ];
+        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_8_43_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_8_43_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_29_43_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 42 12 ]
+        symbol [ BluetoothLowEnergy %tmp.5 42 12 30 ];
         %tmp.5 = getm $.Toybox.BluetoothLowEnergy;
-        symbol [ unpairDevice %tmp.6 40 31 43 ];
+        symbol [ unpairDevice %tmp.6 42 31 43 ];
         %tmp.6 = getv function %tmp.5 :unpairDevice;
-        symbol [ _device %tmp.8 40 44 51 ];
+        symbol [ _device %tmp.8 42 44 51 ];
         %tmp.8 = getv ? :_device;
         %tmp.9 = as %tmp.8 { (!Null) };
         invoke %tmp.5 %tmp.6(%tmp.9);
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_29_41_8_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_8_41_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_39_8_41_8_if_end:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 42 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_29_43_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_8_43_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_41_8_43_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 44 8 ]
         %tmp.10 = null;
-        symbol [ _device ? 42 8 15 ];
+        symbol [ _device ? 44 8 15 ];
         putv self :_device %tmp.10;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_38_37_43_4_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_40_37_45_4_stop:
     }
-    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 45; @symbol_functiondef = [getActiveProfile,45,20,36]; @symbol_return<0> = [EnvironmentProfileModel,45,42,65]; ]
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 47; @symbol_functiondef = [getActiveProfile,47,20,36]; @symbol_return<0> = [EnvironmentProfileModel,47,42,65]; ]
     public
     function getActiveProfile() as EnvironmentProfileModel or Null {
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_45_67_50_4_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 46 8 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_8_48_8_if_stmt:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_12_46_52_begin:
-        symbol [ _device %tmp.2 46 12 19 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_47_67_52_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 48 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_8_50_8_if_stmt:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_12_48_52_begin:
+        symbol [ _device %tmp.2 48 12 19 ];
         %tmp.2 = getv ? :_device;
         %tmp.3 = null;
         %tmp.4 = ne %tmp.2 %tmp.3;
-        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_8_48_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_31_46_52_true:
-        symbol [ _device %tmp.6 46 32 39 ];
+        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_8_50_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_31_48_52_true:
+        symbol [ _device %tmp.6 48 32 39 ];
         %tmp.6 = getv ? :_device;
         %tmp.7 = as %tmp.6 { (!Null) };
-        symbol [ isConnected %tmp.8 46 40 51 ];
+        symbol [ isConnected %tmp.8 48 40 51 ];
         %tmp.8 = getv function %tmp.7 :isConnected;
         %tmp.9 = invoke %tmp.7 %tmp.8();
         %tmp.10 = not %tmp.9;
         push %tmp.10;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_31_46_52_end:
-        %tmp.11 = phi [%tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_12_46_52_begin] [%tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_31_46_52_true] [%tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_31_46_52_end];
-        bf %tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_8_48_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_8_48_8_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_55_48_8_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 47 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_31_48_52_end:
+        %tmp.11 = phi [%tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_12_48_52_begin] [%tmp.10 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_31_48_52_true] [%tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_31_48_52_end];
+        bf %tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_8_50_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_8_50_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_55_50_8_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 49 12 ]
         %tmp.12 = null;
         ret %tmp.12;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_55_48_8_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_8_48_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_46_8_48_8_if_end:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 49 8 ]
-        symbol [ _environmentProfile %tmp.14 49 15 34 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_55_50_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_8_50_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_48_8_50_8_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 51 8 ]
+        symbol [ _environmentProfile %tmp.14 51 15 34 ];
         %tmp.14 = getv ? :_environmentProfile;
         ret %tmp.14;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_45_67_50_4_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_47_67_52_4_stop:
     }
-    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 52; @symbol_functiondef = [isConnected,52,20,31]; @symbol_return<0> = [Boolean,52,37,44]; ]
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 54; @symbol_functiondef = [isConnected,54,20,31]; @symbol_return<0> = [Boolean,54,37,44]; ]
     public
     function isConnected() as Boolean {
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_52_45_54_4_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 53 8 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_15_53_56_begin:
-        symbol [ _device %tmp.2 53 16 23 ];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_54_45_56_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 55 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_15_55_56_begin:
+        symbol [ _device %tmp.2 55 16 23 ];
         %tmp.2 = getv ? :_device;
         %tmp.3 = null;
         %tmp.4 = ne %tmp.2 %tmp.3;
         %tmp.5 = dup %tmp.4;
-        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_36_53_56_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_36_53_56_true:
-        symbol [ _device %tmp.7 53 36 43 ];
+        bf %tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_36_55_56_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_36_55_56_true:
+        symbol [ _device %tmp.7 55 36 43 ];
         %tmp.7 = getv ? :_device;
         %tmp.8 = as %tmp.7 { (!Null) };
-        symbol [ isConnected %tmp.9 53 44 55 ];
+        symbol [ isConnected %tmp.9 55 44 55 ];
         %tmp.9 = getv function %tmp.8 :isConnected;
         %tmp.10 = invoke %tmp.8 %tmp.9();
         %tmp.11 = and %tmp.4 %tmp.10;
         push %tmp.11;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_36_53_56_end:
-        %tmp.12 = phi [%tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_15_53_56_begin] [%tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_36_53_56_true] [%tmp.12 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_53_36_53_56_end];
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_36_55_56_end:
+        %tmp.12 = phi [%tmp.5 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_15_55_56_begin] [%tmp.11 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_36_55_56_true] [%tmp.12 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_55_36_55_56_end];
         ret %tmp.12;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_52_45_54_4_stop:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_54_45_56_4_stop:
     }
-    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 56; @symbol_functiondef = [procDeviceConnected,56,21,40]; ]
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 58; @symbol_functiondef = [procDeviceConnected,58,21,40]; ]
     private
     function procDeviceConnected() as Void {
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_56_51_83_4_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 57 8 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_8_82_8_if_stmt:
-        symbol [ _device %tmp.2 57 12 19 ];
-        %tmp.2 = getv ? :_device;
-        %tmp.3 = null;
-        %tmp.4 = ne %tmp.2 %tmp.3;
-        bf %tmp.4 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_8_82_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_8_82_8_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_29_82_8_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 58 12 ]
-        symbol [ _dataModelFactory %tmp.6 58 34 51 ];
-        %tmp.6 = getv ? :_dataModelFactory;
-        symbol [ getEnvironmentModel %tmp.7 58 52 71 ];
-        %tmp.7 = getv function %tmp.6 :getEnvironmentModel;
-        symbol [ _device %tmp.9 58 72 79 ];
-        %tmp.9 = getv ? :_device;
-        %tmp.10 = as %tmp.9 { (!Null) };
-        %tmp.11 = invoke %tmp.6 %tmp.7(%tmp.10);
-        symbol [ _environmentProfile ? 58 12 31 ];
-        putv self :_environmentProfile %tmp.11;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_58_51_86_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 59 8 ]
+        symbol [ System %tmp.2 59 8 14 ];
+        %tmp.2 = getv ? :System;
+        symbol [ println %tmp.3 59 15 22 ];
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "CONNECTED! GOING THROUGH PROCESS";
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 60 8 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_8_85_8_if_stmt:
+        symbol [ _device %tmp.6 60 12 19 ];
+        %tmp.6 = getv ? :_device;
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_8_85_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_8_85_8_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_29_85_8_start:
 [ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 61 12 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_12_76_12_if_stmt:
-        symbol [ _environmentProfile %tmp.13 61 16 35 ];
-        %tmp.13 = getv ? :_environmentProfile;
-        %tmp.14 = null;
-        %tmp.15 = ne %tmp.13 %tmp.14;
-        bf %tmp.15 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_12_76_12_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_12_76_12_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 62 16 ]
-        symbol [ System %tmp.17 62 16 22 ];
-        %tmp.17 = getv ? :System;
-        symbol [ println %tmp.18 62 23 30 ];
-        %tmp.18 = getv function %tmp.17 :println;
-        %tmp.19 = "[BLE] Sending data to Arduino after connection";
-        invoke %tmp.17 %tmp.18(%tmp.19);
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 64 16 ]
-        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_stop" ]
-        %intData.1 = local;
-        symbol [ intData %intData.1 64 20 27 ];
-        %tmp.20 = newba 1;
-        %tmp.21 = 7;
-        %tmp.22 = dup %tmp.20;
-        %tmp.23 = aputv %tmp.22 0 %tmp.21;
-        lputv %intData.1 %tmp.23;
-        symbol [ intData %intData.1 64 20 27 ];
+        symbol [ _dataModelFactory %tmp.10 61 34 51 ];
+        %tmp.10 = getv ? :_dataModelFactory;
+        symbol [ getEnvironmentModel %tmp.11 61 52 71 ];
+        %tmp.11 = getv function %tmp.10 :getEnvironmentModel;
+        symbol [ _device %tmp.13 61 72 79 ];
+        %tmp.13 = getv ? :_device;
+        %tmp.14 = as %tmp.13 { (!Null) };
+        %tmp.15 = invoke %tmp.10 %tmp.11(%tmp.14);
+        symbol [ _environmentProfile ? 61 12 31 ];
+        putv self :_environmentProfile %tmp.15;
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 64 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_12_79_12_if_stmt:
+        symbol [ _environmentProfile %tmp.17 64 16 35 ];
+        %tmp.17 = getv ? :_environmentProfile;
+        %tmp.18 = null;
+        %tmp.19 = ne %tmp.17 %tmp.18;
+        bf %tmp.19 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_12_79_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_12_79_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_start:
 [ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 65 16 ]
-        symbol [ _environmentProfile %tmp.25 65 16 35 ];
-        %tmp.25 = getv ? :_environmentProfile;
-        symbol [ writeGpioDataByteArray %tmp.26 65 36 58 ];
-        %tmp.26 = getv function %tmp.25 :writeGpioDataByteArray;
-        %tmp.27 = lgetv %intData.1;
-        symbol [ intData %tmp.27 65 59 66 ];
-        invoke %tmp.25 %tmp.26(%tmp.27);
+        symbol [ System %tmp.21 65 16 22 ];
+        %tmp.21 = getv ? :System;
+        symbol [ println %tmp.22 65 23 30 ];
+        %tmp.22 = getv function %tmp.21 :println;
+        %tmp.23 = "[BLE] Sending data to Arduino after connection";
+        invoke %tmp.21 %tmp.22(%tmp.23);
 [ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 67 16 ]
-        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_stop" ]
-        %strData.2 = local;
-        symbol [ strData %strData.2 67 20 27 ];
-        %tmp.28 = "warm";
-        lputv %strData.2 %tmp.28;
-        symbol [ strData %strData.2 67 20 27 ];
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_stop" ]
+        %intData.1 = local;
+        symbol [ intData %intData.1 67 20 27 ];
+        %tmp.24 = newba 1;
+        %tmp.25 = 7;
+        %tmp.26 = dup %tmp.24;
+        %tmp.27 = aputv %tmp.26 0 %tmp.25;
+        lputv %intData.1 %tmp.27;
+        symbol [ intData %intData.1 67 20 27 ];
 [ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 68 16 ]
-        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_stop" ]
+        symbol [ _environmentProfile %tmp.29 68 16 35 ];
+        %tmp.29 = getv ? :_environmentProfile;
+        symbol [ writeGpioDataByteArray %tmp.30 68 36 58 ];
+        %tmp.30 = getv function %tmp.29 :writeGpioDataByteArray;
+        %tmp.31 = lgetv %intData.1;
+        symbol [ intData %tmp.31 68 59 66 ];
+        invoke %tmp.29 %tmp.30(%tmp.31);
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 70 16 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_stop" ]
+        %strData.2 = local;
+        symbol [ strData %strData.2 70 20 27 ];
+        %tmp.32 = "warm";
+        lputv %strData.2 %tmp.32;
+        symbol [ strData %strData.2 70 20 27 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 71 16 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_stop" ]
         %strByteArray.3 = local;
-        symbol [ strByteArray %strByteArray.3 68 20 32 ];
-        symbol [ StringUtil %tmp.30 68 35 45 ];
-        %tmp.30 = getv ? :StringUtil;
-        symbol [ convertEncodedString %tmp.31 68 46 66 ];
-        %tmp.31 = getv function %tmp.30 :convertEncodedString;
-        %tmp.32 = lgetv %strData.2;
-        symbol [ strData %tmp.32 68 67 74 ];
-        %tmp.33 = newd 3;
-        %tmp.35 = const :fromRepresentation;
-        symbol [ fromRepresentation %tmp.35 69 21 39 const ];
-        symbol [ StringUtil %tmp.37 69 43 53 ];
-        %tmp.37 = getv ? :StringUtil;
-        symbol [ REPRESENTATION_STRING_PLAIN_TEXT %tmp.38 69 54 86 ];
-        %tmp.38 = getv %tmp.37 :REPRESENTATION_STRING_PLAIN_TEXT;
-        %tmp.39 = dup %tmp.33;
-        %tmp.40 = aputv %tmp.39 %tmp.35 %tmp.38;
-        %tmp.42 = const :toRepresentation;
-        symbol [ toRepresentation %tmp.42 70 21 37 const ];
-        symbol [ StringUtil %tmp.44 70 41 51 ];
-        %tmp.44 = getv ? :StringUtil;
-        symbol [ REPRESENTATION_BYTE_ARRAY %tmp.45 70 52 77 ];
-        %tmp.45 = getv %tmp.44 :REPRESENTATION_BYTE_ARRAY;
-        %tmp.46 = dup %tmp.40;
-        %tmp.47 = aputv %tmp.46 %tmp.42 %tmp.45;
-        %tmp.49 = const :encoding;
-        symbol [ encoding %tmp.49 71 21 29 const ];
-        symbol [ StringUtil %tmp.51 71 33 43 ];
-        %tmp.51 = getv ? :StringUtil;
-        symbol [ CHAR_ENCODING_UTF8 %tmp.52 71 44 62 ];
-        %tmp.52 = getv %tmp.51 :CHAR_ENCODING_UTF8;
-        %tmp.53 = dup %tmp.47;
-        %tmp.54 = aputv %tmp.53 %tmp.49 %tmp.52;
-        %tmp.55 = invoke %tmp.30 %tmp.31(%tmp.32, %tmp.54);
-        lputv %strByteArray.3 %tmp.55;
-        symbol [ strByteArray %strByteArray.3 68 20 32 ];
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 73 16 ]
-        symbol [ _environmentProfile %tmp.57 73 16 35 ];
-        %tmp.57 = getv ? :_environmentProfile;
-        symbol [ writeGpioDataByteArray %tmp.58 73 36 58 ];
-        %tmp.58 = getv function %tmp.57 :writeGpioDataByteArray;
-        %tmp.59 = lgetv %strByteArray.3;
-        symbol [ strByteArray %tmp.59 73 59 71 ];
-        invoke %tmp.57 %tmp.58(%tmp.59);
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_45_76_12_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_12_76_12_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_61_12_76_12_if_end:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 78 12 ]
-        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_29_82_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_29_82_8_stop" ]
+        symbol [ strByteArray %strByteArray.3 71 20 32 ];
+        symbol [ StringUtil %tmp.34 71 35 45 ];
+        %tmp.34 = getv ? :StringUtil;
+        symbol [ convertEncodedString %tmp.35 71 46 66 ];
+        %tmp.35 = getv function %tmp.34 :convertEncodedString;
+        %tmp.36 = lgetv %strData.2;
+        symbol [ strData %tmp.36 71 67 74 ];
+        %tmp.37 = newd 3;
+        %tmp.39 = const :fromRepresentation;
+        symbol [ fromRepresentation %tmp.39 72 21 39 const ];
+        symbol [ StringUtil %tmp.41 72 43 53 ];
+        %tmp.41 = getv ? :StringUtil;
+        symbol [ REPRESENTATION_STRING_PLAIN_TEXT %tmp.42 72 54 86 ];
+        %tmp.42 = getv %tmp.41 :REPRESENTATION_STRING_PLAIN_TEXT;
+        %tmp.43 = dup %tmp.37;
+        %tmp.44 = aputv %tmp.43 %tmp.39 %tmp.42;
+        %tmp.46 = const :toRepresentation;
+        symbol [ toRepresentation %tmp.46 73 21 37 const ];
+        symbol [ StringUtil %tmp.48 73 41 51 ];
+        %tmp.48 = getv ? :StringUtil;
+        symbol [ REPRESENTATION_BYTE_ARRAY %tmp.49 73 52 77 ];
+        %tmp.49 = getv %tmp.48 :REPRESENTATION_BYTE_ARRAY;
+        %tmp.50 = dup %tmp.44;
+        %tmp.51 = aputv %tmp.50 %tmp.46 %tmp.49;
+        %tmp.53 = const :encoding;
+        symbol [ encoding %tmp.53 74 21 29 const ];
+        symbol [ StringUtil %tmp.55 74 33 43 ];
+        %tmp.55 = getv ? :StringUtil;
+        symbol [ CHAR_ENCODING_UTF8 %tmp.56 74 44 62 ];
+        %tmp.56 = getv %tmp.55 :CHAR_ENCODING_UTF8;
+        %tmp.57 = dup %tmp.51;
+        %tmp.58 = aputv %tmp.57 %tmp.53 %tmp.56;
+        %tmp.59 = invoke %tmp.34 %tmp.35(%tmp.36, %tmp.58);
+        lputv %strByteArray.3 %tmp.59;
+        symbol [ strByteArray %strByteArray.3 71 20 32 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 76 16 ]
+        symbol [ _environmentProfile %tmp.61 76 16 35 ];
+        %tmp.61 = getv ? :_environmentProfile;
+        symbol [ writeGpioDataByteArray %tmp.62 76 36 58 ];
+        %tmp.62 = getv function %tmp.61 :writeGpioDataByteArray;
+        %tmp.63 = lgetv %strByteArray.3;
+        symbol [ strByteArray %tmp.63 76 59 71 ];
+        invoke %tmp.61 %tmp.62(%tmp.63);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_45_79_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_12_79_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_64_12_79_12_if_end:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 81 12 ]
+        [ "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_29_85_8_start" "_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_29_85_8_stop" ]
         %vc.4 = local;
-        symbol [ vc %vc.4 78 16 18 ];
-        symbol [ _dataModelFactory %tmp.61 78 21 38 ];
-        %tmp.61 = getv ? :_dataModelFactory;
-        symbol [ getViewController %tmp.62 78 39 56 ];
-        %tmp.62 = getv function %tmp.61 :getViewController;
-        %tmp.63 = invoke %tmp.61 %tmp.62();
-        lputv %vc.4 %tmp.63;
-        symbol [ vc %vc.4 78 16 18 ];
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 79 12 ]
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_12_81_12_if_stmt:
-        %tmp.64 = lgetv %vc.4;
-        symbol [ vc %tmp.64 79 16 18 ];
-        %tmp.65 = null;
-        %tmp.66 = ne %tmp.64 %tmp.65;
-        bf %tmp.66 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_12_81_12_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_12_81_12_if_true:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_28_81_12_start:
-[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 80 16 ]
-        %tmp.67 = lgetv %vc.4;
-        symbol [ vc %tmp.67 80 16 18 ];
-        %tmp.68 = as %tmp.67 { (!Null) };
-        symbol [ pushAlarmFlow %tmp.69 80 19 32 ];
-        %tmp.69 = getv function %tmp.68 :pushAlarmFlow;
-        invoke %tmp.68 %tmp.69();
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_28_81_12_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_12_81_12_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_79_12_81_12_if_end:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_29_82_8_stop:
-        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_8_82_8_if_end;
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_57_8_82_8_if_end:
-_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_56_51_83_4_stop:
+        symbol [ vc %vc.4 81 16 18 ];
+        symbol [ _dataModelFactory %tmp.65 81 21 38 ];
+        %tmp.65 = getv ? :_dataModelFactory;
+        symbol [ getViewController %tmp.66 81 39 56 ];
+        %tmp.66 = getv function %tmp.65 :getViewController;
+        %tmp.67 = invoke %tmp.65 %tmp.66();
+        lputv %vc.4 %tmp.67;
+        symbol [ vc %vc.4 81 16 18 ];
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 82 12 ]
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_12_84_12_if_stmt:
+        %tmp.68 = lgetv %vc.4;
+        symbol [ vc %tmp.68 82 16 18 ];
+        %tmp.69 = null;
+        %tmp.70 = ne %tmp.68 %tmp.69;
+        bf %tmp.70 @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_12_84_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_12_84_12_if_true:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_28_84_12_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc" 83 16 ]
+        %tmp.71 = lgetv %vc.4;
+        symbol [ vc %tmp.71 83 16 18 ];
+        %tmp.72 = as %tmp.71 { (!Null) };
+        symbol [ pushTimePicker %tmp.73 83 19 33 ];
+        %tmp.73 = getv function %tmp.72 :pushTimePicker;
+        invoke %tmp.72 %tmp.73();
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_28_84_12_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_12_84_12_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_82_12_84_12_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_29_85_8_stop:
+        goto @_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_8_85_8_if_end;
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_60_8_85_8_if_end:
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_DeviceDataModel_mc_58_51_86_4_stop:
     }
 }
 [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/DeviceDataModel.mc"; @line = 1; ]

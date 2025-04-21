@@ -204,6 +204,28 @@ _Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ViewController_mc_
         invoke %tmp.17 %tmp.18(%tmp.19, %tmp.20, %tmp.22);
 _Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ViewController_mc_54_44_59_4_stop:
     }
+    [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ViewController.mc"; @line = 61; @symbol_functiondef = [pushTimePicker,61,20,34]; ]
+    public
+    function pushTimePicker() as Void {
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ViewController_mc_61_45_63_4_start:
+[ "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ViewController.mc" 62 8 ]
+        symbol [ WatchUi %tmp.1 62 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.2 62 16 24 ];
+        %tmp.2 = getv function %tmp.1 :pushView;
+        symbol [ TimePicker %tmp.6 62 29 39 ];
+        %tmp.6 = getv ? :TimePicker;
+        %tmp.3 = newc %tmp.6 ();
+        symbol [ TimePickerDelegate %tmp.10 62 47 65 ];
+        %tmp.10 = getv ? :TimePickerDelegate;
+        %tmp.7 = newc %tmp.10 ();
+        symbol [ WatchUi %tmp.11 62 69 76 ];
+        %tmp.11 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.12 62 77 85 ];
+        %tmp.12 = getv %tmp.11 :SLIDE_UP;
+        invoke %tmp.1 %tmp.2(%tmp.3, %tmp.7, %tmp.12);
+_Users_juliaoneil_Documents_GarminProject_BioRise_Main_source_ViewController_mc_61_45_63_4_stop:
+    }
 }
 [ @file = "/Users/juliaoneil/Documents/GarminProject/BioRise_Main/source/ViewController.mc"; @line = 7; ]
 <init> {

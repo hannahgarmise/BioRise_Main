@@ -15,18 +15,20 @@ class DataModelFactory {
     private var _envModel as WeakReference?;
     private var _alarmDataModel as WeakReference?;
 
-    public function initialize(delegate as BluetoothDelegate, profileManager as ProfileManager, phoneComm as PhoneCommunication) {
+    
+    public function initialize(delegate as BluetoothDelegate, profileManager as ProfileManager, phoneComm as PhoneCommunication, viewController as ViewController?) {
         _delegate = delegate;
         _profileManager = profileManager;
         _phoneCommunication = phoneComm;
-    }
-
-    public function setViewController(viewController as ViewController) as Void {
         _viewController = viewController;
     }
 
     public function getViewController() as ViewController {
         return _viewController;
+    }
+
+    public function setViewController(viewController as ViewController) as Void {
+        _viewController = viewController;
     }
 
     public function getScanDataModel() as ScanDataModel {
