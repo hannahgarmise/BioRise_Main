@@ -61,8 +61,7 @@ class DataModelFactory {
 
         // FIXED VERSION BELOW:
         // TO DO: see if one of these is right and one is wrong
-        var dataModel = new $.DeviceDataModel(_delegate, self, scanResult); 
-        dataModel.initialize(_delegate, self, scanResult); 
+        var dataModel = new $.DeviceDataModel(_delegate, self, scanResult);
 
         _deviceDataModel = dataModel.weak();
         return dataModel;

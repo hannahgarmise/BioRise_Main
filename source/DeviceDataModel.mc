@@ -23,14 +23,17 @@ class DeviceDataModel {
     }
 
     public function procConnection(device as Device) as Void {
-        _device = device;
+    _device = device;
 
-        if (device.isConnected()) {
-            procDeviceConnected();
+    if (_device != null && _device.isConnected()) {
+        var vc = _dataModelFactory.getViewController();
+        if (vc != null) {
+            // Push an unmistakable screen
+            vc.pushScanMenu(); // just as a test!
         }
-
-        WatchUi.requestUpdate();
     }
+}
+
 
     public function pair() as Void {
         BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
