@@ -38,6 +38,13 @@ class DeviceDataModel {
 
         if (_device != null && _device.isConnected()) {
             procDeviceConnected(); // direct trigger
+            var testData = "test";
+            var testByteArray = StringUtil.convertEncodedString(testData, {
+                :fromRepresentation => StringUtil.REPRESENTATION_STRING_PLAIN_TEXT,
+                :toRepresentation => StringUtil.REPRESENTATION_BYTE_ARRAY,
+                :encoding => StringUtil.CHAR_ENCODING_UTF8
+            });
+            _environmentProfile.writeGpioDataByteArray(testByteArray);
         }
     }
 
