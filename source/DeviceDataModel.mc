@@ -25,9 +25,11 @@ class DeviceDataModel {
     public function procConnection(device as Device) as Void {
         _device = device;
 
-        if (_device != null && _device.isConnected()) {
+        if (device.isConnected()) {
             procDeviceConnected();
         }
+
+        WatchUi.requestUpdate();
     }
 
 
@@ -59,25 +61,6 @@ class DeviceDataModel {
         
         if (_device != null) {
             _environmentProfile = _dataModelFactory.getEnvironmentModel(_device);
-            System.println("CONNECTED! GOING THROUGH PROCESS");
-
-            // Send 7 (as an integer) and "warm" (as a string) to Arduino
-            if (_environmentProfile != null) {
-                System.println("[BLE] Sending data to Arduino after connection");
-
-                var intData = [7]b;
-                _environmentProfile.writeGpioDataByteArray(intData);
-
-                var strData = "warm";
-                var strByteArray = StringUtil.convertEncodedString(strData, {
-                    :fromRepresentation => StringUtil.REPRESENTATION_STRING_PLAIN_TEXT,
-                    :toRepresentation => StringUtil.REPRESENTATION_BYTE_ARRAY,
-                    :encoding => StringUtil.CHAR_ENCODING_UTF8
-                });
-                _environmentProfile.writeGpioDataByteArray(strByteArray);
-
-            
-            }
 
             var vc = _dataModelFactory.getViewController();
             vc.pushTimePicker();
