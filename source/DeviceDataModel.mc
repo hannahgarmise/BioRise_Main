@@ -36,9 +36,9 @@ class DeviceDataModel {
         BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
         _device = BluetoothLowEnergy.pairDevice(_scanResult);
 
-        if (_device != null && _device.isConnected()) {
-            procDeviceConnected(); // direct trigger
-        }
+        //if (_device != null && _device.isConnected()) {
+        procDeviceConnected(); // direct trigger
+        //}
     }
 
     public function unpair() as Void {
@@ -66,7 +66,7 @@ class DeviceDataModel {
             System.println("CONNECTED! GOING THROUGH PROCESS");
 
             // Send 7 (as an integer) and "warm" (as a string) to Arduino
-            if (_environmentProfile != null) {
+            //if (_environmentProfile != null) {
                 System.println("[BLE] Sending data to Arduino after connection");
 
                 /*
@@ -90,7 +90,7 @@ class DeviceDataModel {
                 _environmentProfile.writeGpioDataByteArray(strByteArray);
 
             
-            }
+            //}
 
             var vc = _dataModelFactory.getViewController();
             vc.pushTimePicker();
