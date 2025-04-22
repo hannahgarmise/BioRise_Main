@@ -25,9 +25,9 @@ class DeviceDataModel {
     public function procConnection(device as Device) as Void {
         _device = device;
 
-        //if (device.isConnected()) {
-        procDeviceConnected();
-        //}
+        if (device.isConnected()) {
+            procDeviceConnected();
+        }
 
         WatchUi.requestUpdate();
     }
