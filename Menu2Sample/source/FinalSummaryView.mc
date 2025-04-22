@@ -35,6 +35,7 @@ class FinalSummaryView extends WatchUi.View {
 
     public function onShow() {
         WatchUi.View.onShow();
+        BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_SCANNING);
         // Optional: auto-close after 4 seconds
 
     }
