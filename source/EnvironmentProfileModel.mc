@@ -39,7 +39,14 @@ class EnvironmentProfileModel {
         _custom_data_byte_array = []b;
         _gpio_data_byte_array = []b;
 
-        _BluetoothDelegate.queueCharacteristicWrite(_GpioCharacteristic, _gpio_data_byte_array.add(7));
+        var lowerTime = Application.Storage.getValue("time");
+        var upperTime = Application.Storage.getValue("time2");
+        var selected = Application.Storage.getValue("selectedSequence");
+
+        _BluetoothDelegate.queueCharacteristicWrite(_GpioCharacteristic, _gpio_data_byte_array.add(lowerTime));
+        _BluetoothDelegate.queueCharacteristicWrite(_GpioCharacteristic, _gpio_data_byte_array.add(upperTime));
+        _BluetoothDelegate.queueCharacteristicWrite(_GpioCharacteristic, _gpio_data_byte_array.add(selected));
+        
 
         var service = _service;
         if (service != null) {
