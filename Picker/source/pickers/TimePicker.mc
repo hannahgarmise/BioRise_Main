@@ -19,7 +19,6 @@ class TimePicker extends WatchUi.Picker {
 
     //! Constructor
     public function initialize() {
-
         var title = new WatchUi.Text({:text=>$.Rez.Strings.timePickerTitle, :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
             :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM, :color=>Graphics.COLOR_WHITE, :font=>Graphics.FONT_XTINY});
         var factories;
@@ -27,43 +26,31 @@ class TimePicker extends WatchUi.Picker {
         if (System.getDeviceSettings().is24Hour) {
             factories = new Array<PickerFactory or Text>[$.FACTORY_COUNT_24_HOUR];
             factories[0] = new $.NumberFactory(0, 23, 1, {
-            :font => Graphics.FONT_LARGE,
-            :background => Graphics.COLOR_PINK,
-            :justify => Graphics.TEXT_JUSTIFY_LEFT
+            :font => Graphics.FONT_LARGE
             });
 
             factories[1] = new $.WordFactory([$.Rez.Strings.timeSeparator], {
-            :font => Graphics.FONT_LARGE,
-            :background => Graphics.COLOR_PINK,
-            :justify => Graphics.TEXT_JUSTIFY_LEFT
+            :font => Graphics.FONT_LARGE
             });
 
             factories[2] = new $.NumberFactory(0, 59, 1, {
             :font => Graphics.FONT_LARGE,
-            :format => $.MINUTE_FORMAT,
-            :background => Graphics.COLOR_PINK,
-            :justify => Graphics.TEXT_JUSTIFY_LEFT
+            :format => $.MINUTE_FORMAT
             });
 
         } else {
             factories = new Array<PickerFactory or Text>[$.FACTORY_COUNT_12_HOUR];
             factories[0] = new $.NumberFactory(0, 23, 1, {
-            :font => Graphics.FONT_LARGE,
-            :background => Graphics.COLOR_PINK,
-            :justify => Graphics.TEXT_JUSTIFY_LEFT
+            :font => Graphics.FONT_LARGE
             });
 
             factories[1] = new $.WordFactory([$.Rez.Strings.timeSeparator], {
-            :font => Graphics.FONT_LARGE,
-            :background => Graphics.COLOR_PINK,
-            :justify => Graphics.TEXT_JUSTIFY_LEFT
+            :font => Graphics.FONT_LARGE
             });
 
             factories[2] = new $.NumberFactory(0, 59, 1, {
             :font => Graphics.FONT_LARGE,
-            :format => $.MINUTE_FORMAT,
-            :background => Graphics.COLOR_PINK,
-            :justify => Graphics.TEXT_JUSTIFY_LEFT
+            :format => $.MINUTE_FORMAT
             });
             factories[3] = new $.WordFactory([$.Rez.Strings.morning, $.Rez.Strings.afternoon], {});
         }
@@ -71,8 +58,6 @@ class TimePicker extends WatchUi.Picker {
         factories[1] = new $.WordFactory([$.Rez.Strings.timeSeparator], 
             {
                 :font => Graphics.FONT_LARGE,
-                :background => Graphics.COLOR_PINK,
-                :justify => Graphics.TEXT_JUSTIFY_LEFT
                 //:justify => Graphics.TEXT_JUSTIFY_CENTER
             }
         );
@@ -104,7 +89,7 @@ class TimePicker extends WatchUi.Picker {
     //! Update the view
     //! @param dc Device Context
     public function onUpdate(dc as Dc) as Void {
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_ORANGE);
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
         Picker.onUpdate(dc);
     }
