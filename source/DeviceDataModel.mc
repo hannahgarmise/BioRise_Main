@@ -39,17 +39,6 @@ class DeviceDataModel {
         if (_device != null && _device.isConnected()) {
             procDeviceConnected(); // direct trigger
         }
-
-        var intData = [7]b;
-        _environmentProfile.writeGpioDataByteArray(intData);
-
-        var strData = "warm";
-        var strByteArray = StringUtil.convertEncodedString(strData, {
-            :fromRepresentation => StringUtil.REPRESENTATION_STRING_PLAIN_TEXT,
-            :toRepresentation => StringUtil.REPRESENTATION_BYTE_ARRAY,
-            :encoding => StringUtil.CHAR_ENCODING_UTF8
-        });
-        _environmentProfile.writeGpioDataByteArray(strByteArray);
     }
 
     public function unpair() as Void {
