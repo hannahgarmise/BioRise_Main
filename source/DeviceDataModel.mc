@@ -23,16 +23,12 @@ class DeviceDataModel {
     }
 
     public function procConnection(device as Device) as Void {
-    _device = device;
+        _device = device;
 
-    if (_device != null && _device.isConnected()) {
-        var vc = _dataModelFactory.getViewController();
-        if (vc != null) {
-            // Push an unmistakable screen
-            vc.pushScanMenu(); // just as a test!
+        if (_device != null && _device.isConnected()) {
+            procDeviceConnected();
         }
     }
-}
 
 
     public function pair() as Void {
