@@ -47,7 +47,7 @@ class DeviceDataModel {
     }
 
     public function getActiveProfile() as EnvironmentProfileModel? {
-        if (_device != null && !_device.isConnected()) {
+        if (_device != null) {
             return null;
         }
         return _environmentProfile;
