@@ -36,9 +36,9 @@ class DeviceDataModel {
         BluetoothLowEnergy.setScanState(BluetoothLowEnergy.SCAN_STATE_OFF);
         _device = BluetoothLowEnergy.pairDevice(_scanResult);
 
-        //if (_device != null && _device.isConnected()) {
-        procDeviceConnected(); // direct trigger
-        //}
+        if (_device != null && _device.isConnected()) {
+            procDeviceConnected(); // direct trigger
+        }
     }
 
     public function unpair() as Void {
